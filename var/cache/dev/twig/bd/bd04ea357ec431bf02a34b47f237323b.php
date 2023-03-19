@@ -81,26 +81,36 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     <div class=\"col-2\">
                     </div>
                     <div class=\"col-4\">
-                        <div class=\"card product-card\">
-                            <div class=\"card-body text-center\">
-                                <img src=\"";
-        // line 24
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/product1.jpg"), "html", null, true);
-        echo "\" class=\"image\" alt=\"product image\">
-                                <h2 class=\"title\">France</h2>
+                        <a href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ville", ["country" => "France"]);
+        echo "\">
+                            <div class=\"card product-card\">
+                                <div class=\"card-body text-center\">
+                                    <img src=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/France.png"), "html", null, true);
+        echo "\" class=\"image w-75\" alt=\"product image\">
+                                    <h2 class=\"title\">France</h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class=\"col-4\">
-                        <div class=\"card product-card\">
-                            <div class=\"card-body  text-center\">
-                                <img src=\"";
+                        <a href=\"";
         // line 32
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/product4.jpg"), "html", null, true);
-        echo "\" class=\"image\" alt=\"product image\">
-                                <h2 class=\"title\">Belgique</h2>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ville", ["country" => "Belgique"]);
+        echo "\">
+                            <div class=\"card product-card\">
+                                <div class=\"card-body  text-center\">
+                                    <img src=\"";
+        // line 35
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Belgique.png"), "html", null, true);
+        echo "\" class=\"image w-75\" alt=\"product image\">
+                                    <h2 class=\"title\">Belgique</h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -127,10 +137,10 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     <div class=\"col-4\">
                         <div class=\"card product-card\">
                             <div class=\"card-body text-center\">
-                                <img src=\"";
-        // line 62
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/product1.jpg"), "html", null, true);
-        echo "\" class=\"image\" alt=\"product image\">
+                                <div><img src=\"";
+        // line 66
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Faluche.png"), "html", null, true);
+        echo "\" class=\"image w-75\" alt=\"product image\"></div>
                                 <h2 class=\"title\">Faluche</h2>
                             </div>
                         </div>
@@ -139,9 +149,9 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                         <div class=\"card product-card\">
                             <div class=\"card-body  text-center\">
                                 <img src=\"";
-        // line 70
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/product4.jpg"), "html", null, true);
-        echo "\" class=\"image\" alt=\"product image\">
+        // line 74
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Calotte.png"), "html", null, true);
+        echo "\" class=\"image w-75\" alt=\"product image\">
                                 <h2 class=\"title\">Calotte</h2>
                             </div>
                         </div>
@@ -150,9 +160,9 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                         <div class=\"card product-card\">
                             <div class=\"card-body  text-center\">
                                 <img src=\"";
-        // line 78
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/product4.jpg"), "html", null, true);
-        echo "\" class=\"image\" alt=\"product image\">
+        // line 82
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Penne.png"), "html", null, true);
+        echo "\" class=\"image w-75\" alt=\"product image\">
                                 <h2 class=\"title\">Penne</h2>
                             </div>
                         </div>
@@ -165,7 +175,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
 
         <div class=\"p-4 text-center\">
             <img src=\"";
-        // line 90
+        // line 94
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
         echo "\" alt=\"logo\" class=\"logo w-50\">
         </div>
@@ -205,7 +215,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                                         <div class=\"item\">
                                             <div class=\"imageWrapper\">
                                                 <img src=\"";
-        // line 127
+        // line 131
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w64\">
                                             </div>
@@ -221,7 +231,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                                         <div class=\"item\">
                                             <div class=\"imageWrapper\">
                                                 <img src=\"";
-        // line 140
+        // line 144
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar2.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w64\">
                                             </div>
@@ -286,7 +296,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
 
     public function getDebugInfo()
     {
-        return array (  225 => 140,  209 => 127,  169 => 90,  154 => 78,  143 => 70,  132 => 62,  99 => 32,  88 => 24,  68 => 6,  58 => 5,  35 => 1,);
+        return array (  235 => 144,  219 => 131,  179 => 94,  164 => 82,  153 => 74,  142 => 66,  108 => 35,  102 => 32,  92 => 25,  86 => 22,  68 => 6,  58 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -312,20 +322,24 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     <div class=\"col-2\">
                     </div>
                     <div class=\"col-4\">
-                        <div class=\"card product-card\">
-                            <div class=\"card-body text-center\">
-                                <img src=\"{{ asset(\"assets/img/sample/photo/product1.jpg\") }}\" class=\"image\" alt=\"product image\">
-                                <h2 class=\"title\">France</h2>
+                        <a href=\"{{ path('ville', {'country': 'France'})}}\">
+                            <div class=\"card product-card\">
+                                <div class=\"card-body text-center\">
+                                    <img src=\"{{ asset(\"assets/img/sample/photo/France.png\") }}\" class=\"image w-75\" alt=\"product image\">
+                                    <h2 class=\"title\">France</h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class=\"col-4\">
-                        <div class=\"card product-card\">
-                            <div class=\"card-body  text-center\">
-                                <img src=\"{{ asset(\"assets/img/sample/photo/product4.jpg\") }}\" class=\"image\" alt=\"product image\">
-                                <h2 class=\"title\">Belgique</h2>
+                        <a href=\"{{ path('ville', {'country': 'Belgique'})}}\">
+                            <div class=\"card product-card\">
+                                <div class=\"card-body  text-center\">
+                                    <img src=\"{{ asset(\"assets/img/sample/photo/Belgique.png\") }}\" class=\"image w-75\" alt=\"product image\">
+                                    <h2 class=\"title\">Belgique</h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -352,7 +366,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     <div class=\"col-4\">
                         <div class=\"card product-card\">
                             <div class=\"card-body text-center\">
-                                <img src=\"{{ asset(\"assets/img/sample/photo/product1.jpg\") }}\" class=\"image\" alt=\"product image\">
+                                <div><img src=\"{{ asset(\"assets/img/sample/photo/Faluche.png\") }}\" class=\"image w-75\" alt=\"product image\"></div>
                                 <h2 class=\"title\">Faluche</h2>
                             </div>
                         </div>
@@ -360,7 +374,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     <div class=\"col-4\">
                         <div class=\"card product-card\">
                             <div class=\"card-body  text-center\">
-                                <img src=\"{{ asset(\"assets/img/sample/photo/product4.jpg\") }}\" class=\"image\" alt=\"product image\">
+                                <img src=\"{{ asset(\"assets/img/sample/photo/Calotte.png\") }}\" class=\"image w-75\" alt=\"product image\">
                                 <h2 class=\"title\">Calotte</h2>
                             </div>
                         </div>
@@ -368,7 +382,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     <div class=\"col-4\">
                         <div class=\"card product-card\">
                             <div class=\"card-body  text-center\">
-                                <img src=\"{{ asset(\"assets/img/sample/photo/product4.jpg\") }}\" class=\"image\" alt=\"product image\">
+                                <img src=\"{{ asset(\"assets/img/sample/photo/Penne.png\") }}\" class=\"image w-75\" alt=\"product image\">
                                 <h2 class=\"title\">Penne</h2>
                             </div>
                         </div>

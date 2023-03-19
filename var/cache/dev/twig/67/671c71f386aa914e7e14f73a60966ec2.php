@@ -51,24 +51,44 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
         <title>";
         // line 5
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        ";
-        // line 8
-        echo "        ";
-        $this->displayBlock('stylesheets', $context, $blocks);
+        echo "</title>        
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover\" />
+        <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />
+        <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">
+        <meta name=\"theme-color\" content=\"#000000\">
+        <link rel=\"icon\" type=\"image/png\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/32x32.png"), "html", null, true);
+        echo "\" sizes=\"32x32\">
+        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"";
         // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/icon/192x192.png"), "html", null, true);
+        echo "\">
+        ";
+        // line 13
+        echo "        <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/style.css"), "html", null, true);
+        echo "\">
+        ";
+        // line 15
+        echo "        <link rel=\"manifest\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("__manifest.json"), "html", null, true);
+        echo "\">
+        ";
+        // line 16
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 19
         echo "
         ";
-        // line 12
+        // line 20
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 23
         echo "    </head>
     <body>
         ";
-        // line 17
+        // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 26
         echo "    </body>
 </html>
 ";
@@ -90,7 +110,7 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "FIND";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -99,7 +119,7 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
 
     }
 
-    // line 8
+    // line 16
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -109,7 +129,7 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
+        // line 17
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -122,7 +142,7 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
 
     }
 
-    // line 12
+    // line 20
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -132,7 +152,7 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 21
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -145,7 +165,7 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
 
     }
 
-    // line 17
+    // line 25
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -168,9 +188,14 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  169 => 25,  156 => 21,  146 => 20,  133 => 17,  123 => 16,  104 => 5,  92 => 26,  90 => 25,  86 => 23,  84 => 20,  81 => 19,  79 => 16,  74 => 15,  69 => 13,  65 => 11,  61 => 10,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -179,9 +204,17 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <title>{% block title %}FIND{% endblock %}</title>        
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover\" />
+        <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />
+        <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">
+        <meta name=\"theme-color\" content=\"#000000\">
+        <link rel=\"icon\" type=\"image/png\" href=\"{{ asset(\"assets/img/32x32.png\") }}\" sizes=\"32x32\">
+        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{{ asset(\"assets/img/icon/192x192.png\") }}\">
+        {# <link rel=\"stylesheet\" href=\"assets/css/style.css\"> #}
+        <link rel=\"stylesheet\" href=\"{{ asset(\"assets/css/style.css\") }}\">
+        {# <link rel=\"manifest\" href=\"__manifest.json\"> #}
+        <link rel=\"manifest\" href=\"{{ asset(\"__manifest.json\") }}\">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}

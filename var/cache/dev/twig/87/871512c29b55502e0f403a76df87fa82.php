@@ -51,40 +51,44 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
         <title>";
         // line 5
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-        ";
-        // line 7
-        echo "        <link rel=\"icon\" type=\"image/png\" href=\"assets/img/favicon.png\" sizes=\"32x32\">
+        echo "</title>        
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover\" />
         <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />
         <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">
         <meta name=\"theme-color\" content=\"#000000\">
-        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"assets/img/icon/192x192.png\">
+        <link rel=\"icon\" type=\"image/png\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/32x32.png"), "html", null, true);
+        echo "\" sizes=\"32x32\">
+        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/icon/192x192.png"), "html", null, true);
+        echo "\">
         ";
-        // line 14
+        // line 13
         echo "        <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/style.css"), "html", null, true);
         echo "\">
         ";
-        // line 16
+        // line 15
         echo "        <link rel=\"manifest\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("__manifest.json"), "html", null, true);
         echo "\">
         ";
-        // line 17
+        // line 16
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 20
+        // line 19
         echo "
         ";
-        // line 21
+        // line 20
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 24
+        // line 23
         echo "    </head>
     <body>
         ";
-        // line 26
+        // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 27
+        // line 26
         echo "    </body>
 </html>
 ";
@@ -115,7 +119,7 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
 
     }
 
-    // line 17
+    // line 16
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -125,7 +129,7 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 18
+        // line 17
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -138,7 +142,7 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
 
     }
 
-    // line 21
+    // line 20
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -148,7 +152,7 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 22
+        // line 21
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -161,7 +165,7 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
 
     }
 
-    // line 26
+    // line 25
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -191,7 +195,7 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  165 => 26,  152 => 22,  142 => 21,  129 => 18,  119 => 17,  100 => 5,  88 => 27,  86 => 26,  82 => 24,  80 => 21,  77 => 20,  75 => 17,  70 => 16,  65 => 14,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  169 => 25,  156 => 21,  146 => 20,  133 => 17,  123 => 16,  104 => 5,  92 => 26,  90 => 25,  86 => 23,  84 => 20,  81 => 19,  79 => 16,  74 => 15,  69 => 13,  65 => 11,  61 => 10,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -200,14 +204,13 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}FIND{% endblock %}</title>
-        {# <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\"> #}
-        <link rel=\"icon\" type=\"image/png\" href=\"assets/img/favicon.png\" sizes=\"32x32\">
+        <title>{% block title %}FIND{% endblock %}</title>        
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover\" />
         <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />
         <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">
         <meta name=\"theme-color\" content=\"#000000\">
-        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"assets/img/icon/192x192.png\">
+        <link rel=\"icon\" type=\"image/png\" href=\"{{ asset(\"assets/img/32x32.png\") }}\" sizes=\"32x32\">
+        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{{ asset(\"assets/img/icon/192x192.png\") }}\">
         {# <link rel=\"stylesheet\" href=\"assets/css/style.css\"> #}
         <link rel=\"stylesheet\" href=\"{{ asset(\"assets/css/style.css\") }}\">
         {# <link rel=\"manifest\" href=\"__manifest.json\"> #}

@@ -15,11 +15,6 @@ use App\Form\VilleType;
 use App\Repository\VilleRepository;
 
 use App\Entity\Corporations;
-use App\Entity\Particularites;
-use App\Entity\Anecdotes;
-use App\Form\CorporationsType;
-use App\Form\ParticularitesType;
-use App\Form\AnecdotesType;
 use App\Repository\CorporationsRepository;
 use App\Repository\ParticularitesRepository;
 use App\Repository\AnecdotesRepository;
@@ -84,6 +79,7 @@ class FindController extends AbstractController
 
         $country = $request->get('country');
 
+
         // TABLEAU VILLE
         $serializer = SerializerBuilder::create()->build();
         $ville = $villeRepository->findAll();
@@ -93,7 +89,7 @@ class FindController extends AbstractController
 
         $data['country'] = $country;
 
-            return $this->render('location/town.html.twig', $data );
+            return $this->render('find/town.html.twig', $data );
         }
 
 

@@ -53,10 +53,10 @@ class __TwigTemplate_7fa23b2f45a251963a77aaf1aede04f0 extends Template
                 <ion-icon name=\"menu-outline\"></ion-icon>
             </a>
         </div>
-        <div class=\"pageTitle\" style=\"opacity: 1 !important;\">
+        <div class=\"\" style=\"opacity: 1 !important;\">
                 <img src=\"";
         // line 15
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/icon/56x56.png"), "html", null, true);
         echo "\" alt=\"logo\" class=\"logo\">
         </div>
         <div class=\"right\">
@@ -120,8 +120,8 @@ class __TwigTemplate_7fa23b2f45a251963a77aaf1aede04f0 extends Template
                 <ion-icon name=\"menu-outline\"></ion-icon>
             </a>
         </div>
-        <div class=\"pageTitle\" style=\"opacity: 1 !important;\">
-                <img src=\"{{ asset(\"assets/img/logo.png\") }}\" alt=\"logo\" class=\"logo\">
+        <div class=\"\" style=\"opacity: 1 !important;\">
+                <img src=\"{{ asset(\"assets/img/icon/56x56.png\") }}\" alt=\"logo\" class=\"logo\">
         </div>
         <div class=\"right\">
             <a href=\"#\" class=\"headerButton toggle-searchbox\">
