@@ -1,0 +1,447 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="section mt-2">
+            <div class="profile-head">
+                <div class="avatar">
+                    <img src="{{ asset("assets/img/sample/avatar/avatar1.jpg") }}" alt="avatar" class="imaged w64 rounded">
+                </div>
+                <div class="in">
+                    <h3 class="name">ChickenWings</h3>
+                    <h5 class="subtext">Faluchard, Calottin</h5>
+                </div>
+
+                <button type="button" class="mx-4 btn btn-outline-secondary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#actionSheetShareBox">Contacter</button>
+
+
+                <!-- Share Box Action Sheet -->
+                <div class="offcanvas offcanvas-bottom action-sheet inset" tabindex="-1" id="actionSheetShareBox">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title">Contacter</h5>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="action-sheet-content text-center">
+                            <div class="row">
+                                <div class="col-2">
+                                    <a href="#" class="btn btn-icon btn-facebook" data-bs-dismiss="offcanvas">
+                                        <ion-icon name="logo-facebook"></ion-icon>
+                                    </a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="#" class="btn btn-icon btn-twitter" data-bs-dismiss="offcanvas">
+                                        <ion-icon name="logo-twitter"></ion-icon>
+                                    </a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="#" class="btn btn-icon btn-linkedin" data-bs-dismiss="offcanvas">
+                                        <ion-icon name="logo-linkedin"></ion-icon>
+                                    </a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="#" class="btn btn-icon btn-instagram" data-bs-dismiss="offcanvas">
+                                        <ion-icon name="logo-instagram"></ion-icon>
+                                    </a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="#" class="btn btn-icon btn-whatsapp" data-bs-dismiss="offcanvas">
+                                        <ion-icon name="logo-whatsapp"></ion-icon>
+                                    </a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="#" class="btn btn-icon btn-twitch" data-bs-dismiss="offcanvas">
+                                        <ion-icon name="logo-twitch"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- * Share Box Action Sheet -->
+
+
+
+
+            </div>
+        </div>
+
+        <div class="section mt-1 mb-2">
+            <div class="profile-info">
+                <div class=" bio">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at magna porttitor lorem mollis
+                    ornare. Fusce varius varius massa.
+                </div>
+                <!-- <div class="chip chip-media mt-1 mx-1">
+                    <i class="chip-icon bg-danger">
+                        <ion-icon name="pin"></ion-icon>
+                    </i>
+                    <span class="chip-label">Paris</span>
+                </div>
+                <div class="chip chip-media mt-1 mx-1">
+                    <i class="chip-icon bg-danger">
+                        <ion-icon name="pin"></ion-icon>
+                    </i>
+                    <span class="chip-label">Namur</span>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="section full">
+            <div class="wide-block transparent p-0">
+                <ul class="nav nav-tabs lined iconed" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#career" role="tab">
+                            <ion-icon name="git-branch-outline"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#feed" role="tab">
+                            <ion-icon name="grid-outline"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#friends" role="tab">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- tab content -->
+        <div class="section full mb-2">
+            <div class="tab-content">
+
+                <!-- feed -->
+                <div class="tab-pane fade" id="feed" role="tabpanel">
+                    <div class="mt-2 p-2 pt-0 pb-0">
+                        <div class="row">
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="{{ asset("assets/img/sample/photo/1.jpg") }}" alt="image" class="imaged w-100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 pt-0 pb-0">
+                        <a href="#" class="btn btn-primary btn-block">More Photo</a>
+                    </div>
+                </div>
+                <!-- * feed -->
+
+                <!-- * friends -->
+                <div class="tab-pane fade" id="friends" role="tabpanel">
+                    <ul class="listview image-listview flush transparent pt-1">
+                        <li>
+                            <a href="#" class="item">
+                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Edward Lindgren
+                                        <div class="text-muted">532 followers</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Emelda Scandroot
+                                        <div class="text-muted">120k followers</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Henry Bove
+                                        <div class="text-muted">920k followers</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Ava Gregoraci
+                                        <div class="text-muted">5092 followers</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Emmy Elsner
+                                        <div class="text-muted">92 followers</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Lisanne Viscaal
+                                        <div class="text-muted">893 followers</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                <div class="in">
+                                    <div>
+                                        Cecilia Pozo
+                                        <div class="text-muted">51k followers</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- * friends -->
+
+                <!--  career -->
+                <div class="tab-pane fade show active" id="career" role="tabpanel">
+
+                        <div class="px-4 pt-2 pb-2">
+    
+                            <ul class="nav nav-tabs capsuled" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#parcours" role="tab">
+                                        Parcours
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#distinctions" role="tab">
+                                        Distinctions
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#associations" role="tab">
+                                        Associations
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="parcours" role="tabpanel">
+                                    <div class="timeline timed mt-2">
+                                        <div class="item">
+                                            <span class="time">2016</span>
+                                            <div class="dot bg-success"></div>
+                                            <div class="content">
+                                                <h4 class="title">Membre Pharma</h4>
+                                                <div class="text">Cercle Pharma, Namur</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <span class="time">2017</span>
+                                            <div class="dot bg-success"></div>
+                                            <div class="content">
+                                                <h4 class="title">Del. Bouffe</h4>
+                                                <div class="text">Cercle Pharma, Namur</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <span class="time">2017</span>
+                                            <div class="dot bg-danger"></div>
+                                            <div class="content">
+                                                <h4 class="title">Baptisé Calottin</h4>
+                                                <div class="text">Régionale Tournai-Mouscron, Namur</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <span class="time">2018</span>
+                                            <div class="dot bg-primary"></div>
+                                            <div class="content">
+                                                <h4 class="title">Béjaune</h4>
+                                                <div class="text">Ordre Rabelaisien de Belgique, Belgique</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <span class="time">2019</span>
+                                            <div class="dot bg-danger"></div>
+                                            <div class="content">
+                                                <h4 class="title">Stagiaire</h4>
+                                                <div class="text">Musée Belge des Traditions Estudiantines</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <span class="time">2020</span>
+                                            <div class="dot bg-primary"></div>
+                                            <div class="content">
+                                                <h4 class="title">Impétrant</h4>
+                                                <div class="text">Interfilière Paris</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <span class="time">2022</span>
+                                            <div class="dot bg-primary"></div>
+                                            <div class="content">
+                                                <h4 class="title">Baptisé Faluchard</h4>
+                                                <div class="text">Interfilière, Paris</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="distinctions" role="tabpanel">
+                                    <div class="timeline timed mt-2">
+                                        <div class="item">
+                                            <span class="time">2016</span>
+                                            <div class="dot bg-success"></div>
+                                            <div class="content">
+                                                <h4 class="title">Membre Pharma</h4>
+                                                <div class="text">Cercle Pharma, Namur</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <span class="time">2017</span>
+                                            <div class="dot bg-success"></div>
+                                            <div class="content">
+                                                <h4 class="title">Del. Bouffe</h4>
+                                                <div class="text">Cercle Pharma, Namur</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="associations" role="tabpanel">
+                                    <ul class="listview image-listview flush transparent pt-1">
+                                        <li>
+                                            <a href="#" class="item">
+                                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                                <div class="in">
+                                                    <div>
+                                                        Edward Lindgren
+                                                        <div class="text-muted">532 followers</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="item">
+                                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                                <div class="in">
+                                                    <div>
+                                                        Emelda Scandroot
+                                                        <div class="text-muted">120k followers</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="item">
+                                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                                <div class="in">
+                                                    <div>
+                                                        Henry Bove
+                                                        <div class="text-muted">920k followers</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="item">
+                                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                                <div class="in">
+                                                    <div>
+                                                        Ava Gregoraci
+                                                        <div class="text-muted">5092 followers</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="item">
+                                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                                <div class="in">
+                                                    <div>
+                                                        Emmy Elsner
+                                                        <div class="text-muted">92 followers</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="item">
+                                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                                <div class="in">
+                                                    <div>
+                                                        Lisanne Viscaal
+                                                        <div class="text-muted">893 followers</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="item">
+                                                <img src="{{ asset("assets/img/sample/avatar/avatar3.jpg") }}" alt="image" class="image">
+                                                <div class="in">
+                                                    <div>
+                                                        Cecilia Pozo
+                                                        <div class="text-muted">51k followers</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                        </div>
+
+
+                </div>
+                <!-- * career -->
+            </div>
+        </div>
+        <!-- * tab content -->
+
+    </div>
+    <!-- * App Capsule -->
+{% endblock %}
