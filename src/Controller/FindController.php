@@ -262,4 +262,13 @@ class FindController extends AbstractController
     }
 
 
+
+        // CORPORATION
+        #[Route('/Localisation/corporation', name: 'corporation_html', methods: ['GET'])]
+        public function corporationHtml()
+        {
+            return $this->render('find/corporation.html.twig');
+        }
+
+
 }

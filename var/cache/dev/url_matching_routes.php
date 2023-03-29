@@ -13,6 +13,7 @@ return [
         '/accueil' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\FindController::accueil'], null, null, null, false, false, null]],
         '/revisions' => [[['_route' => 'revisions', '_controller' => 'App\\Controller\\FindController::revisions'], null, null, null, false, false, null]],
         '/profile' => [[['_route' => 'profile', '_controller' => 'App\\Controller\\FindController::profile'], null, null, null, false, false, null]],
+        '/Localisation/corporation' => [[['_route' => 'corporation_html', '_controller' => 'App\\Controller\\FindController::corporationHtml'], null, ['GET' => 0], null, false, false, null]],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
         '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
