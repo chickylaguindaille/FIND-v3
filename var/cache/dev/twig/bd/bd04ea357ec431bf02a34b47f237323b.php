@@ -65,6 +65,11 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
+        echo "
+";
+        // line 7
+        $this->loadTemplate("home/home.css.twig", "home.html.twig", 7)->display($context);
+        // line 8
         echo " <!-- App Capsule -->
     <div id=\"appCapsule\">
 
@@ -75,20 +80,20 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
 
         <div class=\"section full mt-3 mb-3\">
 
-            <!-- cards location -->
+            <!-- CARDS COUNTRY -->
             <div class=\"section mt-2\">
                 <div class=\"row\">
                     <div class=\"col-2\">
                     </div>
                     <div class=\"col-4\">
                         <a href=\"";
-        // line 22
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ville", ["country" => "France"]);
         echo "\">
                             <div class=\"card product-card\">
                                 <div class=\"card-body text-center\">
                                     <img src=\"";
-        // line 25
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/France.png"), "html", null, true);
         echo "\" class=\"image w-75\" alt=\"product image\">
                                     <h2 class=\"title\">France</h2>
@@ -98,13 +103,13 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     </div>
                     <div class=\"col-4\">
                         <a href=\"";
-        // line 32
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ville", ["country" => "Belgique"]);
         echo "\">
                             <div class=\"card product-card\">
                                 <div class=\"card-body  text-center\">
                                     <img src=\"";
-        // line 35
+        // line 37
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Belgique.png"), "html", null, true);
         echo "\" class=\"image w-75\" alt=\"product image\">
                                     <h2 class=\"title\">Belgique</h2>
@@ -114,11 +119,12 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     </div>
                 </div>
             </div>
-            <!-- * cards location -->
+            <!-- * FIN CARDS COUNTRY-->
 
-
-            <div class=\"section full mt-2\">
-                <div class=\"pt-2 pb-2 px-4\">
+            ";
+        // line 48
+        echo "            <div class=\"section full mt-2\">
+                <div class=\"pt-2 pb-1 px-4\">
                     <form class=\"search-form\">
                         <div class=\"form-group searchbox\">
                             <input type=\"text\" class=\"form-control\" value=\"\" placeholder=\"FIND\">
@@ -129,53 +135,179 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     </form>
                 </div>
             </div>
+            ";
+        // line 61
+        echo "
+            <!-- BOUTON MODAL TRI -->
+            <div>
+                <button type=\"button\" class=\"btn btn-primary p-0 ms-4\" data-bs-toggle=\"modal\" data-bs-target=\"#Modalfilter\">
+                <span class=\"mx-2\">Filtrer</span>
+                </button>
+            </div>
 
+            <!-- MODAL TRI -->
+            <div class=\"modal fade\" id=\"Modalfilter\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
+                <div class=\"modal-dialog modal-dialog-centered \">
+                    <div class=\"modal-content\">
+                    <div class=\"modal-header\">
+                        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Filtrer la recherche</h5>
+                        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                    </div>
+                    <div class=\"modal-body\">
 
-            <!-- cards location -->
-            <div class=\"section mt-2\">
-                <div class=\"row\">
-                    <div class=\"col-4\">
-                        <div class=\"card product-card\">
-                            <div class=\"card-body text-center\">
-                                <div><img src=\"";
-        // line 66
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Faluche.png"), "html", null, true);
-        echo "\" class=\"image w-75\" alt=\"product image\"></div>
-                                <h2 class=\"title\">Faluche</h2>
-                            </div>
+                        <div class=\"form-group col-12\">
+                            <label for=\"hat\">Pays</label>
+                            <select name=\"hat\" class=\"form-select\" id=\"countryfilter\" ";
+        // line 81
+        echo twig_escape_filter($this->env, (isset($context["required"]) || array_key_exists("required", $context) ? $context["required"] : (function () { throw new RuntimeError('Variable "required" does not exist.', 81, $this->source); })()), "html", null, true);
+        echo ">
+                                <option value=\"\">/</option>
+                                <option value=\"France\">France</option>
+                                <option value=\"Belgique\">Belgique</option>
+                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"town\">Région</label>
+                            <select name=\"town\" class=\"form-select\" id=\"regionfilter\" ";
+        // line 90
+        echo twig_escape_filter($this->env, (isset($context["required"]) || array_key_exists("required", $context) ? $context["required"] : (function () { throw new RuntimeError('Variable "required" does not exist.', 90, $this->source); })()), "html", null, true);
+        echo ">
+                                <option value=\"\">/</option>
+                                ";
+        // line 92
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_sort_filter($this->env, (isset($context["regions"]) || array_key_exists("regions", $context) ? $context["regions"] : (function () { throw new RuntimeError('Variable "regions" does not exist.', 92, $this->source); })())));
+        foreach ($context['_seq'] as $context["_key"] => $context["name"]) {
+            // line 93
+            echo "                                    <option value=\"";
+            echo twig_escape_filter($this->env, $context["name"], "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $context["name"], "html", null, true);
+            echo "</option>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['name'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 95
+        echo "                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"town\">Ville</label>
+                            <select name=\"town\" class=\"form-select\" id=\"townfilter\" ";
+        // line 100
+        echo twig_escape_filter($this->env, (isset($context["required"]) || array_key_exists("required", $context) ? $context["required"] : (function () { throw new RuntimeError('Variable "required" does not exist.', 100, $this->source); })()), "html", null, true);
+        echo ">
+                                <option value=\"\">/</option>
+                                ";
+        // line 102
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_sort_filter($this->env, (isset($context["towns"]) || array_key_exists("towns", $context) ? $context["towns"] : (function () { throw new RuntimeError('Variable "towns" does not exist.', 102, $this->source); })())));
+        foreach ($context['_seq'] as $context["_key"] => $context["town"]) {
+            // line 103
+            echo "                                    <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["town"], "name", [], "any", false, false, false, 103), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["town"], "name", [], "any", false, false, false, 103), "html", null, true);
+            echo "</option>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['town'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 105
+        echo "                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"type\">Type</label>
+                            <select name=\"type\" class=\"form-select\" id=\"typefilter\" ";
+        // line 110
+        echo twig_escape_filter($this->env, (isset($context["required"]) || array_key_exists("required", $context) ? $context["required"] : (function () { throw new RuntimeError('Variable "required" does not exist.', 110, $this->source); })()), "html", null, true);
+        echo ">
+                                <option value=\"\">/</option>
+                                ";
+        // line 112
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_sort_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["listes"]) || array_key_exists("listes", $context) ? $context["listes"] : (function () { throw new RuntimeError('Variable "listes" does not exist.', 112, $this->source); })()), 0, [], "array", false, false, false, 112), "assotype", [], "array", false, false, false, 112)));
+        foreach ($context['_seq'] as $context["_key"] => $context["name"]) {
+            // line 113
+            echo "                                    <option value=\"";
+            echo twig_escape_filter($this->env, $context["name"], "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $context["name"], "html", null, true);
+            echo "</option>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['name'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 115
+        echo "                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"hat\">Couvre-Chef</label>
+                            <select name=\"hat\" class=\"form-select\" id=\"hatfilter\" ";
+        // line 120
+        echo twig_escape_filter($this->env, (isset($context["required"]) || array_key_exists("required", $context) ? $context["required"] : (function () { throw new RuntimeError('Variable "required" does not exist.', 120, $this->source); })()), "html", null, true);
+        echo ">
+                                <option value=\"\">/</option>
+                                ";
+        // line 122
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_sort_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["listes"]) || array_key_exists("listes", $context) ? $context["listes"] : (function () { throw new RuntimeError('Variable "listes" does not exist.', 122, $this->source); })()), 0, [], "array", false, false, false, 122), "hats", [], "array", false, false, false, 122)));
+        foreach ($context['_seq'] as $context["_key"] => $context["name"]) {
+            // line 123
+            echo "                                    <option value=\"";
+            echo twig_escape_filter($this->env, $context["name"], "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $context["name"], "html", null, true);
+            echo "</option>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['name'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 125
+        echo "                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"hat\">Genre</label>
+                            <select name=\"hat\" class=\"form-select\" id=\"genderfilter\" ";
+        // line 130
+        echo twig_escape_filter($this->env, (isset($context["required"]) || array_key_exists("required", $context) ? $context["required"] : (function () { throw new RuntimeError('Variable "required" does not exist.', 130, $this->source); })()), "html", null, true);
+        echo ">
+                                <option value=\"\">/</option>
+                                <option value=\"Mixte\">Mixte</option>
+                                <option value=\"Masculin\">Masculin</option>
+                                <option value=\"Féminin\">Féminin</option>
+                            </select>
                         </div>
                     </div>
-                    <div class=\"col-4\">
-                        <div class=\"card product-card\">
-                            <div class=\"card-body  text-center\">
-                                <img src=\"";
-        // line 74
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Calotte.png"), "html", null, true);
-        echo "\" class=\"image w-75\" alt=\"product image\">
-                                <h2 class=\"title\">Calotte</h2>
-                            </div>
-                        </div>
+                    <div class=\"modal-footer\">
+                        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Fermer</button>
+                        <button id=\"btntrier\" type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\">Trier</button>
                     </div>
-                    <div class=\"col-4\">
-                        <div class=\"card product-card\">
-                            <div class=\"card-body  text-center\">
-                                <img src=\"";
-        // line 82
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Penne.png"), "html", null, true);
-        echo "\" class=\"image w-75\" alt=\"product image\">
-                                <h2 class=\"title\">Penne</h2>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <!-- * cards location -->
+            ";
+        // line 146
+        echo "
+            <!-- cards location -->
+            ";
+        // line 176
+        echo "            <!-- * cards location -->
 
         </div>
 
         <div class=\"p-4 text-center\">
             <img src=\"";
-        // line 94
+        // line 181
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
         echo "\" alt=\"logo\" class=\"logo w-50\">
         </div>
@@ -215,7 +347,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                                         <div class=\"item\">
                                             <div class=\"imageWrapper\">
                                                 <img src=\"";
-        // line 131
+        // line 218
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w64\">
                                             </div>
@@ -231,7 +363,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                                         <div class=\"item\">
                                             <div class=\"imageWrapper\">
                                                 <img src=\"";
-        // line 144
+        // line 231
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar2.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w64\">
                                             </div>
@@ -296,7 +428,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
 
     public function getDebugInfo()
     {
-        return array (  235 => 144,  219 => 131,  179 => 94,  164 => 82,  153 => 74,  142 => 66,  108 => 35,  102 => 32,  92 => 25,  86 => 22,  68 => 6,  58 => 5,  35 => 1,);
+        return array (  367 => 231,  351 => 218,  311 => 181,  304 => 176,  300 => 146,  282 => 130,  275 => 125,  264 => 123,  260 => 122,  255 => 120,  248 => 115,  237 => 113,  233 => 112,  228 => 110,  221 => 105,  210 => 103,  206 => 102,  201 => 100,  194 => 95,  183 => 93,  179 => 92,  174 => 90,  162 => 81,  140 => 61,  126 => 48,  113 => 37,  107 => 34,  97 => 27,  91 => 24,  73 => 8,  71 => 7,  68 => 6,  58 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -306,6 +438,8 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
 {# {% block title %}Accueil{% endblock %} #}
 
 {% block content %}
+
+{% include 'home/home.css.twig' %}
  <!-- App Capsule -->
     <div id=\"appCapsule\">
 
@@ -316,7 +450,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
 
         <div class=\"section full mt-3 mb-3\">
 
-            <!-- cards location -->
+            <!-- CARDS COUNTRY -->
             <div class=\"section mt-2\">
                 <div class=\"row\">
                     <div class=\"col-2\">
@@ -343,11 +477,11 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     </div>
                 </div>
             </div>
-            <!-- * cards location -->
+            <!-- * FIN CARDS COUNTRY-->
 
-
+            {# INPUT RECHERCHE #}
             <div class=\"section full mt-2\">
-                <div class=\"pt-2 pb-2 px-4\">
+                <div class=\"pt-2 pb-1 px-4\">
                     <form class=\"search-form\">
                         <div class=\"form-group searchbox\">
                             <input type=\"text\" class=\"form-control\" value=\"\" placeholder=\"FIND\">
@@ -358,10 +492,95 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                     </form>
                 </div>
             </div>
+            {# FIN INPUT RECHERCHE #}
 
+            <!-- BOUTON MODAL TRI -->
+            <div>
+                <button type=\"button\" class=\"btn btn-primary p-0 ms-4\" data-bs-toggle=\"modal\" data-bs-target=\"#Modalfilter\">
+                <span class=\"mx-2\">Filtrer</span>
+                </button>
+            </div>
+
+            <!-- MODAL TRI -->
+            <div class=\"modal fade\" id=\"Modalfilter\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
+                <div class=\"modal-dialog modal-dialog-centered \">
+                    <div class=\"modal-content\">
+                    <div class=\"modal-header\">
+                        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Filtrer la recherche</h5>
+                        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                    </div>
+                    <div class=\"modal-body\">
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"hat\">Pays</label>
+                            <select name=\"hat\" class=\"form-select\" id=\"countryfilter\" {{required}}>
+                                <option value=\"\">/</option>
+                                <option value=\"France\">France</option>
+                                <option value=\"Belgique\">Belgique</option>
+                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"town\">Région</label>
+                            <select name=\"town\" class=\"form-select\" id=\"regionfilter\" {{required}}>
+                                <option value=\"\">/</option>
+                                {% for name in regions|sort %}
+                                    <option value=\"{{name}}\">{{name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"town\">Ville</label>
+                            <select name=\"town\" class=\"form-select\" id=\"townfilter\" {{required}}>
+                                <option value=\"\">/</option>
+                                {% for town in towns|sort %}
+                                    <option value=\"{{town.name}}\">{{town.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"type\">Type</label>
+                            <select name=\"type\" class=\"form-select\" id=\"typefilter\" {{required}}>
+                                <option value=\"\">/</option>
+                                {% for name in listes[0]['assotype']|sort %}
+                                    <option value=\"{{name}}\">{{name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"hat\">Couvre-Chef</label>
+                            <select name=\"hat\" class=\"form-select\" id=\"hatfilter\" {{required}}>
+                                <option value=\"\">/</option>
+                                {% for name in listes[0]['hats']|sort %}
+                                    <option value=\"{{name}}\">{{name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class=\"form-group col-12\">
+                            <label for=\"hat\">Genre</label>
+                            <select name=\"hat\" class=\"form-select\" id=\"genderfilter\" {{required}}>
+                                <option value=\"\">/</option>
+                                <option value=\"Mixte\">Mixte</option>
+                                <option value=\"Masculin\">Masculin</option>
+                                <option value=\"Féminin\">Féminin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class=\"modal-footer\">
+                        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Fermer</button>
+                        <button id=\"btntrier\" type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\">Trier</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            {# FIN MODAL TRI #}
 
             <!-- cards location -->
-            <div class=\"section mt-2\">
+            {# <div class=\"section mt-2\">
                 <div class=\"row\">
                     <div class=\"col-4\">
                         <div class=\"card product-card\">
@@ -388,7 +607,7 @@ class __TwigTemplate_1119040b6e52d882d2b80b931bbcdfa0 extends Template
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> #}
             <!-- * cards location -->
 
         </div>

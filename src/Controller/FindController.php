@@ -23,82 +23,48 @@ use App\Repository\DecorumRepository;
 use App\Repository\PinsRepository;
 use App\Repository\CroixRepository;
 use JMS\Serializer\SerializerBuilder;
+use Psr\Log\LoggerInterface;
+
+use App\Service\FindApiService;
+
 
 class FindController extends AbstractController
 {
-    /**
-     * @Route("/connexions", name="connexions")
-     * @Template()
-     */
-    public function connexions(Request $request)
-    {
-        return $this->render('connexions/connexions.html.twig');
-    }
 
-    /**
-     * @Route("/calendar", name="calendar")
-     * @Template()
-     */
-    public function calendar(Request $request)
-    {
-        return $this->render('calendar/calendar.html.twig');
-    }
+    private $findApi;
 
-    /**
-     * @Route("/accueil", name="accueil")
-     * @Template()
-     */
-    public function accueil(Request $request)
-    {
-        return $this->render('home.html.twig');
-    }
-    
-    /**
-     * @Route("/revisions", name="revisions")
-     * @Template()
-     */
-    public function revisions(Request $request)
-    {
-        return $this->render('revisions/revisions.html.twig');
-    }
 
-    /**
-     * @Route("/profile", name="profile")
-     * @Template()
-     */
-    public function profile(Request $request)
+    public function __construct(LoggerInterface $logger, FindApiService $findApi)
     {
-        return $this->render('profile/profile.html.twig');
+        // parent::__construct($logger);
+        $this->findApi = $findApi;
+
     }
 
 
     // VILLES
-        #[Route('/Localisation/{country}/Ville', name: 'ville', methods: ['GET'])]
-        public function villes(Request $request, VilleRepository $villeRepository): Response
+        #[Route('/Localisation/{country}/Villes', name: 'ville', methods: ['GET'])]
+        public function villes($country, Request $request, VilleRepository $villeRepository): Response
         {
 
-        $country = $request->get('country');
-
-
-        // TABLEAU VILLE
-        $serializer = SerializerBuilder::create()->build();
-        $ville = $villeRepository->findAll();
-        $ville = $serializer->toArray($ville);
-
-        $data['villes'] = $ville;
-
+        // $country = $request->get('country');
         $data['country'] = $country;
 
-            return $this->render('find/town.html.twig', $data );
+        $towns = $this->findApi->getTowns($country);
+        $data['towns'] = $towns['data'];
+        // exit(var_dump($data['towns']));
+
+            return $this->render('find/towns/town.html.twig', $data );
         }
 
 
     
     // VILLES RECHERCHE
-        #[Route('/Localisation/{country}/Ville/change', name: 'change_ville', methods: ['GET'])]
+        #[Route('/Localisation/{country}/Villes/change', name: 'change_ville', methods: ['GET'])]
         public function changeVilles($country, Request $request, VilleRepository $villeRepository): Response
         {
     
+
         // TABLEAU VILLE
         $serializer = SerializerBuilder::create()->build();
         $ville = $villeRepository->findAll();
@@ -149,22 +115,28 @@ class FindController extends AbstractController
         {
             $data['country'] = $country;
             $data['ville'] = $ville;
+            $villeid = $request->get('villeid');
+
+            $data['town'] = $this->findApi->getTown($villeid);
+            $associations = $this->findApi->getAssociations($country, null, $ville, null, null, null);
+            $data['associations'] = $associations['data'];
+            // exit(var_dump($data['associations']));
 
             // TABLEAU CORPORATIONS
-            $serializer = SerializerBuilder::create()->build();
-            $corporations = $corporationsRepository->findAll();
-            $corporations = $serializer->toArray($corporations);
+            // $serializer = SerializerBuilder::create()->build();
+            // $corporations = $corporationsRepository->findAll();
+            // $corporations = $serializer->toArray($corporations);
 
 
-            $numbercorpos = count($corporations) - 1;
-            $filterarray = array();
+            // $numbercorpos = count($corporations) - 1;
+            // $filterarray = array();
 
-            for ($i = 0; $i <= $numbercorpos; $i++) {
-                if($corporations[$i]['ville'] == $ville)
-                        array_push($filterarray, $corporations[$i]);
-            }
+            // for ($i = 0; $i <= $numbercorpos; $i++) {
+            //     if($corporations[$i]['ville'] == $ville)
+            //             array_push($filterarray, $corporations[$i]);
+            // }
 
-            $data['corporations'] = $filterarray;
+            // $data['corporations'] = $filterarray;
 
             return $this->render('corporations/corporations.html.twig', $data);
         }
@@ -177,7 +149,7 @@ class FindController extends AbstractController
         {
 
             $data['country'] = $country;
-            $ville = $request->get('ville');
+            // $ville = $request->get('ville');
 
             // TABLEAU CORPORATIONS
             $serializer = SerializerBuilder::create()->build();
@@ -227,35 +199,16 @@ class FindController extends AbstractController
 
 
     // CORPORATION
-    #[Route('/Localisation/{country}/{ville}/{corpo}/{id}', name: 'corporation', methods: ['GET'])]
-    public function corporation($country, $ville, Request $request, Corporations $corporation, ParticularitesRepository $particularitesRepository, AnecdotesRepository $anecdotesRepository, ChantRepository $chantRepository, DecorumRepository $decorumRepository, PinsRepository $pinsRepository, CroixRepository $croixRepository): Response
+    #[Route('/Localisation/{country}/{ville}/{corpo}', name: 'corporation', methods: ['GET'])]
+    public function corporation($country, $ville, Request $request): Response
     {
-
-        $serializer = SerializerBuilder::create()->build();
-
-        $particularites = $particularitesRepository->findAll();
-        $data['particularites'] = $serializer->toArray($particularites);
-
-        $anecdotes = $anecdotesRepository->findAll();
-        $data['anecdotes'] = $serializer->toArray($anecdotes);
-
-        $chant = $chantRepository->findAll();
-        $data['chant'] = $serializer->toArray($chant);
-
-        $decorum = $decorumRepository->findAll();
-        $data['decorum'] = $serializer->toArray($decorum);
-
-        $pins = $pinsRepository->findAll();
-        $data['pins'] = $serializer->toArray($pins);
-
-        $croix = $croixRepository->findAll();
-        $data['croix'] = $serializer->toArray($croix);
-
         $data['country'] = $country;
-
         $data['ville'] = $ville;
+        $associationid = $request->get('associationid');
 
-        $data['corporation'] = $serializer->toArray($corporation);
+        $data['association'] = $this->findApi->getAssociation($associationid);
+
+        // exit(var_dump($association));
 
         return $this->render('corporations/corporation.html.twig', $data);
 

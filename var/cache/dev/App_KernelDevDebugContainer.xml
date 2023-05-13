@@ -332,8 +332,19 @@
     <service id="App\Controller\FindController" class="App\Controller\FindController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="monolog.logger"/>
+      <argument type="service" id="App\Service\FindApiService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\FindController"/>
+      </call>
+    </service>
+    <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="monolog.logger"/>
+      <argument type="service" id="App\Service\FindApiService"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\HomeController"/>
       </call>
     </service>
     <service id="App\Repository\CorporationsRepository" class="App\Repository\CorporationsRepository" autowire="true" autoconfigure="true">
@@ -343,6 +354,13 @@
     <service id="App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Service\FindApiService" class="App\Service\FindApiService" autowire="true" autoconfigure="true">
+      <argument type="service" id="monolog.logger"/>
+      <argument>%env(resolve:FIND_API_URL)%</argument>
+    </service>
+    <service id="App\Service\FindService" class="App\Service\FindService" autowire="true" autoconfigure="true">
+      <argument type="service" id="monolog.logger"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -1461,6 +1479,11 @@
       <argument></argument>
       <argument type="service" id="assets.empty_version_strategy"/>
       <argument type="service" id="assets.context"/>
+    </service>
+    <service id="psr18.http_client" class="Symfony\Component\HttpClient\Psr18Client">
+      <argument type="service" id=".debug.http_client"/>
+      <argument>null</argument>
+      <argument>null</argument>
     </service>
     <service id="http_client.abstract_retry_strategy" class="Symfony\Component\HttpClient\Retry\GenericRetryStrategy" abstract="true">
       <argument type="abstract">http codes</argument>
@@ -6098,6 +6121,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FindController" class="App\Controller\FindController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FindController" class="App\Controller\FindController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\FindController" class="App\Controller\FindController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CorporationsRepository" class="App\Repository\CorporationsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CorporationsRepository" class="App\Repository\CorporationsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" abstract="true"/>
@@ -6450,30 +6476,10 @@
         <argument key="villeRepository" type="service_closure" id="App\Repository\VilleRepository"/>
       </argument>
     </service>
-    <service id=".errored.v.P2IT7" class="App\Entity\Corporations"/>
-    <service id=".errored.3TUkKfX" class="App\Repository\ParticularitesRepository"/>
-    <service id=".errored.jFRTsaF" class="App\Repository\AnecdotesRepository"/>
-    <service id=".errored.PKYWjeJ" class="App\Repository\ChantRepository"/>
-    <service id=".errored.el0U.9O" class="App\Repository\DecorumRepository"/>
-    <service id=".errored.jQi6e0W" class="App\Repository\PinsRepository"/>
-    <service id=".errored.2_aqNv0" class="App\Repository\CroixRepository"/>
-    <service id=".service_locator.U.yze7b" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="anecdotesRepository" type="service_closure" id=".errored.jFRTsaF"/>
-        <argument key="chantRepository" type="service_closure" id=".errored.PKYWjeJ"/>
-        <argument key="corporation" type="service_closure" id=".errored.v.P2IT7"/>
-        <argument key="croixRepository" type="service_closure" id=".errored.2_aqNv0"/>
-        <argument key="decorumRepository" type="service_closure" id=".errored.el0U.9O"/>
-        <argument key="particularitesRepository" type="service_closure" id=".errored.3TUkKfX"/>
-        <argument key="pinsRepository" type="service_closure" id=".errored.jQi6e0W"/>
-      </argument>
-    </service>
-    <service id=".service_locator.lZAexV8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.oLjTYHn" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\FindController::changeVilles" type="service_closure" id=".service_locator.vqbRAJs"/>
-        <argument key="App\Controller\FindController::corporation" type="service_closure" id=".service_locator.U.yze7b"/>
         <argument key="App\Controller\FindController::corporations" type="service_closure" id=".service_locator.xfDPf.V"/>
         <argument key="App\Controller\FindController::rechercheCorporations" type="service_closure" id=".service_locator.xfDPf.V"/>
         <argument key="App\Controller\FindController::villes" type="service_closure" id=".service_locator.vqbRAJs"/>
@@ -6482,7 +6488,6 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Controller\FindController:changeVilles" type="service_closure" id=".service_locator.vqbRAJs"/>
-        <argument key="App\Controller\FindController:corporation" type="service_closure" id=".service_locator.U.yze7b"/>
         <argument key="App\Controller\FindController:corporations" type="service_closure" id=".service_locator.xfDPf.V"/>
         <argument key="App\Controller\FindController:rechercheCorporations" type="service_closure" id=".service_locator.xfDPf.V"/>
         <argument key="App\Controller\FindController:villes" type="service_closure" id=".service_locator.vqbRAJs"/>
@@ -6916,6 +6921,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
+      <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.wSgjnB6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7098,12 +7109,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.lZAexV8"/>
+      <argument type="service" id=".service_locator.oLjTYHn"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.lZAexV8"/>
+      <argument type="service" id=".service_locator.oLjTYHn"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7939,6 +7950,7 @@
     <service id="Symfony\Contracts\Translation\TranslatorInterface" alias="translator.data_collector"/>
     <service id="Symfony\Component\Asset\Packages" alias="assets.packages"/>
     <service id="Symfony\Contracts\HttpClient\HttpClientInterface" alias=".debug.http_client"/>
+    <service id="Psr\Http\Client\ClientInterface" alias="psr18.http_client"/>
     <service id="mailer" alias="mailer.mailer"/>
     <service id="Symfony\Component\Mailer\MailerInterface" alias="mailer.mailer"/>
     <service id="Symfony\Component\Mailer\Transport\TransportInterface" alias="mailer.default_transport"/>
@@ -8068,7 +8080,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.lZAexV8"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.oLjTYHn"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8093,8 +8105,7 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.nuVYdA9" alias=".service_locator.xfDPf.V"/>
-    <service id=".service_locator.Z9zUc09" alias=".service_locator.U.yze7b"/>
-    <service id=".service_locator.Fw4_fnB" alias=".service_locator.lZAexV8"/>
+    <service id=".service_locator.Uwk1xWa" alias=".service_locator.oLjTYHn"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

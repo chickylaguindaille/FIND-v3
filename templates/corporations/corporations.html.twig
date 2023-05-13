@@ -1,0 +1,188 @@
+{% extends "layout.html.twig" %}
+
+{# {% block title %}Accueil{% endblock %} #}
+
+{% block content %}
+
+    {% include 'inc/allpage.css.twig' %}
+    {# {% include 'find/towns/town.css.twig' %} #}
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="section full mt-2 mb-3">
+            <div class="pb-2 d-flex justify-content-center">
+
+                <div class="py-2 px-3 position-absolute start-0">
+                    <a href="javascript:;" class=" goBack text-secondary">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <img src="{{asset(town.blason)}}" alt="image" class="blason"> 
+                    <h3 class="m-0 px-2">  - </h3>
+                    <h3 class="m-0">{{town.name}}</h3>
+                </div>
+            </div>
+            <div class="px-4">
+                <form class="search-form">
+                    <div class="form-group searchbox">
+                        <input type="text" class="form-control" value="" placeholder="FIND">
+                        <i class="input-icon">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </i>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm  mt-1" data-bs-toggle="offcanvas" data-bs-target="#actionSheetContent">Filtrer</button>
+
+                        <!-- Content Action Sheet -->
+                        <div class="offcanvas offcanvas-bottom action-sheet" tabindex="-1" id="actionSheetContent">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title">Filtrer votre recherche</h5>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="action-sheet-content p-1">
+                                    <div class="section full mb-2">
+                                            <div class="input-list">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="radioList" id="radioList1" checked>
+                                                    <label class="form-check-label" for="radioList1">Début du mot</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="radioList" id="radioList2">
+                                                    <label class="form-check-label" for="radioList2">Dans le contenu</label>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-block" data-bs-dismiss="offcanvas">Sauvegarder</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- * Content Action Sheet -->
+
+
+
+                    <button type="button" class="btn btn-primary btn-sm  mt-1" data-bs-toggle="offcanvas" data-bs-target="#actionSheetContentTri">Tri</button>
+
+                        <!-- Content Action Sheet -->
+                        <div class="offcanvas offcanvas-bottom action-sheet" tabindex="-1" id="actionSheetContentTri">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title">Filtrer votre recherche</h5>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="action-sheet-content p-1">
+                                    <div class="section full mb-2">
+                                            <div class="input-list">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="radioList" id="radioList1" checked>
+                                                    <label class="form-check-label" for="radioList1">Alphabétiquement</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="radioList" id="radioList2">
+                                                    <label class="form-check-label" for="radioList2">Type d'association</label>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-block" data-bs-dismiss="offcanvas">Sauvegarder</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- * Content Action Sheet -->
+                </form>
+            </div>
+        </div>
+
+
+
+        {% set alphabet = "?" %}
+
+        {% for association in associations %}
+            {% if association.name|first != alphabet %}
+                {% set alphabet = association.name|first %}
+                <div class="listview-title sticky-title">
+                    <strong>{{alphabet}}</strong>
+                </div>
+            {% endif %}
+            <ul class="listview image-listview media">
+                <li>
+                    <a href="{{ path('corporation', {'country': country, 'ville': ville, 'corpo': association.name, 'associationid': association.id })}}">
+                        <div class="item">
+                            <div class="imageWrapper">
+                                <img src="{{asset(association.logo??"")}}" alt="image" class="blason">
+                            </div>
+                            <div class="in">
+                                <div>
+                                    <h4 class="mb-05">{{association.name}}</h4>
+                                    <div class="text-muted">
+                                        <div>{% if association.nickname is defined and association.nickname != '' %}({{association.nickname}}){% endif %}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        {% endfor %}
+
+
+        {# <div class="listview-title sticky-title">
+            <strong>I</strong>
+        </div>
+        <ul class="listview image-listview media">
+            <li>
+                <div class="item">
+                    <div class="imageWrapper">
+                        <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w64">
+                    </div>
+                    <div class="in">
+                        <div>
+                            <h4 class="mb-05">Interfilière</h4>
+                            <div class="text-muted">
+                                <div>(IPP)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item">
+                    <div class="imageWrapper">
+                        <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w64">
+                    </div>
+                    <div class="in">
+                        <div>
+                            <h4 class="mb-05">Ingénieurs Puceaux Parisiens</h4>
+                            <div class="text-muted">
+                                <div>(IF)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="listview-title sticky-title">
+            <strong>P</strong>
+        </div>
+        <ul class="listview image-listview media">
+            <li>
+                <div class="item">
+                    <div class="imageWrapper">
+                        <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w64">
+                    </div>
+                    <div class="in">
+                        <div>
+                            <h4 class="mb-05">Parameds</h4>
+                            <div class="text-muted">
+                                <div>(Roses)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul> #}
+
+
+    </div>
+
+
+    <!-- * App Capsule -->
+{% endblock %}
