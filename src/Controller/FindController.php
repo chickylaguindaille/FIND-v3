@@ -208,10 +208,11 @@ class FindController extends AbstractController
 
         $data['association'] = $this->findApi->getAssociation($associationid);
 
-        // exit(var_dump($association));
+        uksort($data['association']['committee'], function($a, $b) {
+            return $b - $a;
+        });
 
         return $this->render('corporations/corporation.html.twig', $data);
-
     }
 
 

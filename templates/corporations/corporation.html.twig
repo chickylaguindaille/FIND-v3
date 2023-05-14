@@ -3,6 +3,7 @@
 {% block content %}
 
     {% include 'inc/allpage.css.twig' %}
+    {% include 'corporations/corporation.css.twig' %}
 
     <!-- App Capsule -->
     <div id="appCapsule">
@@ -16,7 +17,7 @@
                     <div class="col-8">
                     <!-- <div class="card-body"> -->
                         <h5 class="card-title" style="font-size: 6vw !important">{{association.name}}</h5>
-                        <h6 class="card-subtitle">{% if association.nickname is defined and association.nickname != '' %}({{association.nickname}}){% endif %} {{association.town}}, {{association.region}}, {{association.country}}</h6>
+                        <h6 class="card-subtitle">{% if association.nickname is defined and association.nickname != '' %}({{association.nickname}}){% endif %} {{association.town}}, {{association.country}}</h6>
                         <h6 class="card-subtitle">{% if association.creation is defined %}{{association.creation|date("d/m/Y")}}{% endif %}</h6>
                         <!-- <p class="card-text">Paris, France</p> -->
                     </div>
@@ -113,7 +114,7 @@
                                 <ul class="listview link-listview">
                                     {% for key, docu in association.document %}
                                         <li>
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#documentModal{{key}}">
+                                            <a href="{{asset(docu.file.path)}}" target="_blank">
                                                 <div>
                                                     <span class="mb-05">{{docu.title}}</span>
                                                     <div class="text-muted">
@@ -123,20 +124,6 @@
                                                     </div>
                                                 </div>
                                             </a>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="documentModal{{key}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                    <div class="modal-body">
-                                                        <iframe src="https://cdn.1j1ju.com/medias/2f/ab/e1-its-a-wonderful-world-corruption-ascension-regle.pdf" height="100%" width="100%"></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </li>
                                     {% endfor %}
                                 </ul>
@@ -332,7 +319,71 @@
                                                             <th class="col-8">Personne</th>
                                                         </tr>
                                                     </thead>
+
                                                     <tbody>
+
+
+                                                    {% for key, commit in association.committee%}
+                                                        <tr style="height: 80px;">
+                                                            <th class="align-middle">{{key}}</th>
+                                                            <td class="p-0">
+                                                                <table class="table" style="height: 80px;">
+                                                                    {% for key, postes in commit|sort %}
+                                                                        {% set dimensions = postes|length %}
+                                                                        {% for i in 0..(dimensions - 1) %}
+                                                                            <tr style="height: 80px;">
+                                                                                <td class="align-middle">{{ key }}</td>
+                                                                            </tr>
+                                                                        {% endfor %}
+                                                                    {% endfor %}
+                                                                </table>
+                                                            </td>
+                                                            <td class="p-0">
+                                                                <table class="table" style="height: 80px;">
+                                                                {% for key, postes in commit %}
+                                                                    {% for key, poste in postes %}
+                                                                      <tr  style="height: 80px;">
+                                                                        <td class="align-middle">{{poste.firstname??""}} {{poste.name??""}} {% if poste.nickname is defined and poste.nickname is not empty and poste.nickname != '' %} | {{poste.nickname}}{% endif %}</td>
+                                                                      </tr>
+                                                                    {% endfor %}
+                                                                {% endfor %}
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                
+                                                    {% endfor %}
+
+
+                                                        {# <tr>
+                                                            <th>2022</th>
+                                                            <td class="p-0">
+                                                                <table class="table">
+                                                                      <tr>
+                                                                        <td>GM</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <td>GC</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <td>GC</td>
+                                                                      </tr>
+                                                                  </table>
+                                                            </td>
+                                                            <td class="p-0">
+                                                                <table class="table">
+                                                                      <tr>
+                                                                        <td>Mark Repère</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <td>Jacob Nickolson</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <td>Larry Bird</td>
+                                                                      </tr>
+                                                                  </table>
+                                                            </td>
+                                                        </tr>
+
                                                         <tr>
                                                             <th>2022</th>
                                                             <td class="p-0">
@@ -413,7 +464,7 @@
                                                                       </tr>
                                                                   </table>
                                                             </td>
-                                                        </tr>
+                                                        </tr> #}
                                                     </tbody>
                                                 </table>
                                             </div>
