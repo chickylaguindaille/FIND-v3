@@ -1,0 +1,119 @@
+{% extends "layout.html.twig" %}
+
+{# {% block title %}Accueil{% endblock %} #}
+
+{% block body %}
+
+<body class="bg-white">
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader no-border transparent position-absolute">
+        <div class="left">
+            <a href="#" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle"></div>
+        <div class="right">
+            {# <a href="{{path('login')}}" class="headerButton">
+                Connexion
+            </a> #}
+        </div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="login-form">
+            <div class="section">
+                <h1>Inscription</h1>
+                <h4>Remplis le formulaire pour rejoindre FIND</h4>
+            </div>
+            <div class="section mt-2 mb-5">
+                <form id="subscribe-form" role="form" method="post" action="{{path('auth_ajax_subscribe')}}">
+                {% if error is defined and error != "" %}
+                    <div class="text-danger text-start">{{error}}</div>
+                {% endif %}
+                    <div class="form-group boxed">
+                        <div class="input-wrapper">
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="form-group boxed">
+                        <div class="input-wrapper">
+                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nom de famille">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="form-group boxed">
+                        <div class="input-wrapper">
+                            <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Surnom">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="form-group boxed">
+                        <div class="input-wrapper">
+                            <input name="email" type="email" class="form-control" id="email1" placeholder="Adresse email">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="form-group boxed">
+                        <div class="input-wrapper">
+                            <input name="password" type="password" class="form-control" id="password1" autocomplete="off" placeholder="Mot de passe">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+
+                    {# <div class="form-group boxed">
+                        <div class="input-wrapper">
+                            <input type="password" class="form-control" id="password2" autocomplete="off" placeholder="Password (again)">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div> #}
+
+                    <div class=" mt-1 text-start">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="customCheckb1">
+                            <label class="form-check-label" for="customCheckb1">J'accepte les <a href="#">CGU</a></label>
+                        </div>
+
+                    </div>
+
+                    <div class="form-button-group">
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">Inscription</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- * App Capsule -->
+
+{% endblock %}

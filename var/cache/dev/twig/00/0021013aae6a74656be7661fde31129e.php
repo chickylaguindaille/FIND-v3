@@ -153,7 +153,10 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
             <a href=\"#\" class=\"button\">
                 <ion-icon name=\"settings-outline\"></ion-icon>
             </a>
-            <a href=\"#\" class=\"button\">
+            <a href=\"";
+        // line 111
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+        echo "\" class=\"button\">
                 <ion-icon name=\"log-out-outline\"></ion-icon>
             </a>
         </div>
@@ -180,7 +183,7 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  51 => 7,  43 => 1,);
+        return array (  158 => 111,  51 => 7,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -295,7 +298,7 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
             <a href=\"#\" class=\"button\">
                 <ion-icon name=\"settings-outline\"></ion-icon>
             </a>
-            <a href=\"#\" class=\"button\">
+            <a href=\"{{path('logout')}}\" class=\"button\">
                 <ion-icon name=\"log-out-outline\"></ion-icon>
             </a>
         </div>

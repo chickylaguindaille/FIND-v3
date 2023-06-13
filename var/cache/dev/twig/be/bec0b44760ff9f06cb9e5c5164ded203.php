@@ -49,6 +49,10 @@ class __TwigTemplate_4e8681822eb1a06212a0e4f67fdffcc6 extends Template
     border-top: 0px;
 }
 
+.simple-listview > li {
+    display: block !important;
+}
+
 </style>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -77,6 +81,10 @@ class __TwigTemplate_4e8681822eb1a06212a0e4f67fdffcc6 extends Template
 }
 .table td, .table th{
     border-top: 0px;
+}
+
+.simple-listview > li {
+    display: block !important;
 }
 
 </style>", "corporations/corporation.css.twig", "/opt/lampp/htdocs/FIND-v3/templates/corporations/corporation.css.twig");

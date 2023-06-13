@@ -71,7 +71,7 @@ class HomeController extends AbstractController
         $associations = $this->findApi->getAssociations();
         $listes = $this->findApi->getListes();
         $towns = $this->findApi->getTowns(null);
-
+// exit(var_dump($listes));
         $data['associations'] = $associations['data'];
         $data['listes'] = $listes['data'];
         $data['towns'] = $towns['data'];

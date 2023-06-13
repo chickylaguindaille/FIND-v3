@@ -62,20 +62,34 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink' => 1,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 0,
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
+'App%5CController%5CBaseController' => 0,
+'[C]App%5CController%5CBaseController' => 1,
+'App%5CController%5CBaseController%23__construct' => 0,
+'[C]App%5CController%5CBaseController%23__construct' => 1,
+'App%5CController%5CBaseController%23responseFormatterPrivate' => 0,
+'[C]App%5CController%5CBaseController%23responseFormatterPrivate' => 1,
+'App%5CController%5CBaseController%23responseFormatterPublic' => 0,
+'[C]App%5CController%5CBaseController%23responseFormatterPublic' => 1,
+'App%5CController%5CBaseController%23formatSearchJson' => 0,
+'[C]App%5CController%5CBaseController%23formatSearchJson' => 1,
+'App%5CController%5CBaseController%23renderView' => 0,
+'[C]App%5CController%5CBaseController%23renderView' => 1,
+'App%5CController%5CBaseController%23render' => 0,
+'[C]App%5CController%5CBaseController%23render' => 1,
+'App%5CController%5CBaseController%23slug' => 0,
+'[C]App%5CController%5CBaseController%23slug' => 1,
+'App%5CController%5CBaseController%23stripAccents' => 0,
+'[C]App%5CController%5CBaseController%23stripAccents' => 1,
+'App%5CController%5CBaseController%23getJsonResponse' => 0,
+'[C]App%5CController%5CBaseController%23getJsonResponse' => 1,
+'App%5CController%5CBaseController%24errorMsgs' => 0,
+'[C]App%5CController%5CBaseController%24errorMsgs' => 1,
+'App%5CController%5CBaseController%24logger' => 0,
+'[C]App%5CController%5CBaseController%24logger' => 1,
 'App%5CController%5CFindController' => 0,
 '[C]App%5CController%5CFindController' => 1,
 'App%5CController%5CFindController%23__construct' => 0,
 '[C]App%5CController%5CFindController%23__construct' => 1,
-'App%5CController%5CFindController%23connexions' => 2,
-'[C]App%5CController%5CFindController%23connexions' => 1,
-'App%5CController%5CFindController%23calendar' => 3,
-'[C]App%5CController%5CFindController%23calendar' => 1,
-'App%5CController%5CFindController%23accueil' => 4,
-'[C]App%5CController%5CFindController%23accueil' => 1,
-'App%5CController%5CFindController%23revisions' => 5,
-'[C]App%5CController%5CFindController%23revisions' => 1,
-'App%5CController%5CFindController%23profile' => 6,
-'[C]App%5CController%5CFindController%23profile' => 1,
 'App%5CController%5CFindController%23villes' => 0,
 '[C]App%5CController%5CFindController%23villes' => 1,
 'App%5CController%5CFindController%23changeVilles' => 0,
@@ -90,6 +104,42 @@ return [[
 '[C]App%5CController%5CFindController%23corporationHtml' => 1,
 'App%5CController%5CFindController%24findApi' => 0,
 '[C]App%5CController%5CFindController%24findApi' => 1,
+'App%5CController%5CHomeController' => 0,
+'[C]App%5CController%5CHomeController' => 1,
+'App%5CController%5CHomeController%23__construct' => 0,
+'[C]App%5CController%5CHomeController%23__construct' => 1,
+'App%5CController%5CHomeController%23connexions' => 2,
+'[C]App%5CController%5CHomeController%23connexions' => 1,
+'App%5CController%5CHomeController%23calendar' => 3,
+'[C]App%5CController%5CHomeController%23calendar' => 1,
+'App%5CController%5CHomeController%23accueil' => 4,
+'[C]App%5CController%5CHomeController%23accueil' => 1,
+'App%5CController%5CHomeController%23revisions' => 5,
+'[C]App%5CController%5CHomeController%23revisions' => 1,
+'App%5CController%5CHomeController%23profile' => 6,
+'[C]App%5CController%5CHomeController%23profile' => 1,
+'App%5CController%5CHomeController%24findApi' => 0,
+'[C]App%5CController%5CHomeController%24findApi' => 1,
+'App%5CController%5CSecurityController' => 0,
+'[C]App%5CController%5CSecurityController' => 1,
+'App%5CController%5CSecurityController%23__construct' => 0,
+'[C]App%5CController%5CSecurityController%23__construct' => 1,
+'App%5CController%5CSecurityController%23login' => 7,
+'[C]App%5CController%5CSecurityController%23login' => 1,
+'App%5CController%5CSecurityController%23subscribe' => 8,
+'[C]App%5CController%5CSecurityController%23subscribe' => 1,
+'App%5CController%5CSecurityController%23subscribeValidation' => 9,
+'[C]App%5CController%5CSecurityController%23subscribeValidation' => 1,
+'App%5CController%5CSecurityController%23logout' => 10,
+'[C]App%5CController%5CSecurityController%23logout' => 1,
+'App%5CController%5CSecurityController%23ajaxSubscribe' => 11,
+'[C]App%5CController%5CSecurityController%23ajaxSubscribe' => 1,
+'App%5CController%5CSecurityController%23forgotPassword' => 12,
+'[C]App%5CController%5CSecurityController%23forgotPassword' => 1,
+'App%5CController%5CSecurityController%23sendRequestResetPassword' => 13,
+'[C]App%5CController%5CSecurityController%23sendRequestResetPassword' => 1,
+'App%5CController%5CSecurityController%24findAuth' => 0,
+'[C]App%5CController%5CSecurityController%24findAuth' => 1,
 'App%5CEntity%5CVille' => 0,
 '[C]App%5CEntity%5CVille' => 1,
 'App%5CEntity%5CVille%23getId' => 0,
@@ -666,7 +716,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1683975087,
+1 => 1686669979,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -783,6 +833,160 @@ return [[
         [
             $o[0],
             $o[1],
+        ],
+        []
+    );
+},
+7 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/login',
+                ],
+                'name' => [
+                    'login',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+8 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/subscribe',
+                ],
+                'name' => [
+                    'subscribe',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+9 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/subscribe/validation',
+                ],
+                'name' => [
+                    'subscribe_validation',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+10 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/logout',
+                ],
+                'name' => [
+                    'logout',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+11 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/auth/subscribe',
+                ],
+                'name' => [
+                    'auth_ajax_subscribe',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+12 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/forgot/password',
+                ],
+                'name' => [
+                    'forgot_password',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+13 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/forgot/password/request',
+                ],
+                'name' => [
+                    'send_reset_request_password',
+                ],
+            ],
+        ],
+        [
+            $o[0],
         ],
         []
     );

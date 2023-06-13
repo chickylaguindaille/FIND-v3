@@ -234,91 +234,159 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
             // line 86
             echo "                        <div class=\"section full\">
                             <div class=\"section-title py-2\" style=\"border-top: 1px solid #E1E1E1;\">Anecdotes</div>
-                            <div class=\"section full mt-0\">
-                                ";
-            // line 89
+
+                        <ul class=\"listview image-listview media\">
+
+                            ";
+            // line 91
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 89, $this->source); })()), "anecdote", [], "any", false, false, false, 89));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 91, $this->source); })()), "anecdote", [], "any", false, false, false, 91));
             foreach ($context['_seq'] as $context["key"] => $context["anecdo"]) {
-                // line 90
-                echo "                                    <div class=\"accordion\" id=\"accordionExample";
-                echo twig_escape_filter($this->env, $context["key"], "html", null, true);
-                echo "\">
-                                        <div class=\"accordion-item\">
-                                            <h2 class=\"accordion-header\">
-                                                <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\"
-                                                    data-bs-target=\"#accordion";
+                // line 92
+                echo "                                <li class=\"multi-level\">
+                                    <a href=\"#\" class=\"item\">
+                                        <div class=\"imageWrapper\" data-bs-toggle=\"modal\" data-bs-target=\"#DialogImageAnecdote";
                 // line 94
                 echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                 echo "\">
-                                                    ";
-                // line 95
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["anecdo"], "title", [], "any", false, false, false, 95), "html", null, true);
-                echo "
-                                                </button>
-                                            </h2>
-                                            <div id=\"accordion";
+                                        </div>
+                                        <div class=\"in\">
+                                            <div>
+                                                <span>";
                 // line 98
-                echo twig_escape_filter($this->env, $context["key"], "html", null, true);
-                echo "\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionExample";
-                echo twig_escape_filter($this->env, $context["key"], "html", null, true);
-                echo "\">
-                                                <div class=\"accordion-body\">
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["anecdo"], "title", [], "any", false, false, false, 98), "html", null, true);
+                echo "</span>
+                                                <div class=\"text-muted\">
                                                     ";
                 // line 100
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["anecdo"], "text", [], "any", false, false, false, 100), "html", null, true);
-                echo "
+                if (((twig_get_attribute($this->env, $this->source, $context["anecdo"], "year", [], "any", true, true, false, 100) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["anecdo"], "year", [], "any", false, false, false, 100))) && (twig_get_attribute($this->env, $this->source, $context["anecdo"], "year", [], "any", false, false, false, 100) != ""))) {
+                    echo "<i>";
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["anecdo"], "year", [], "any", false, false, false, 100), "d/m/Y"), "html", null, true);
+                    echo "</i>";
+                }
+                // line 101
+                echo "                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <ul class=\"listview simple-listview\" style=\"padding-left: 0px !important;\">
+                                        <li class=\"\">
+                                        <div class=\"d-flex\">
+                                            ";
+                // line 108
+                if ((twig_get_attribute($this->env, $this->source, $context["anecdo"], "file", [], "any", true, true, false, 108) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["anecdo"], "file", [], "any", false, false, false, 108)))) {
+                    echo "<img src=\"";
+                    if ((twig_get_attribute($this->env, $this->source, $context["anecdo"], "file", [], "any", true, true, false, 108) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["anecdo"], "file", [], "any", false, false, false, 108)))) {
+                        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["anecdo"], "file", [], "any", false, false, false, 108), 0, [], "any", false, false, false, 108), "path", [], "any", false, false, false, 108)), "html", null, true);
+                    } else {
+                        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Faluche.png"), "html", null, true);
+                    }
+                    echo "\" alt=\"image\" class=\"imaged w64\">";
+                }
+                // line 109
+                echo "                                            <div class=\"my-auto\">
+                                                <div class=\"mx-3\">";
+                // line 110
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["anecdo"], "text", [], "any", false, false, false, 110), "html", null, true);
+                echo "</div>
+                                                <div class=\"mx-3 text-muted\">";
+                // line 111
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["anecdo"], "source", [], "any", false, false, false, 111), "html", null, true);
+                echo "</div>
+                                            </div>
+                                        </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                ";
+                // line 117
+                if (twig_get_attribute($this->env, $this->source, $context["anecdo"], "file", [], "any", true, true, false, 117)) {
+                    // line 118
+                    echo "                                    <!-- Dialog Image -->
+                                    <div class=\"modal fade dialogbox\" id=\"DialogImageAnecdote";
+                    // line 119
+                    echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+                    echo "\" data-bs-backdrop=\"static\" tabindex=\"-1\" role=\"dialog\">
+                                        <div class=\"modal-dialog\" role=\"document\">
+                                            <div class=\"modal-content\">
+                                                <img src=\"";
+                    // line 122
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["anecdo"], "file", [], "any", false, false, false, 122), 0, [], "any", false, false, false, 122), "path", [], "any", false, false, false, 122)), "html", null, true);
+                    echo "\" alt=\"image\" class=\"img-fluid\">
+                                                <div class=\"modal-footer\">
+                                                    <div class=\"btn-inline\">
+                                                        <a href=\"#\" class=\"btn btn-text-secondary\" data-bs-dismiss=\"modal\">Fermer</a>
+                                                        <a href=\"#\" class=\"btn btn-text-primary\" data-bs-dismiss=\"modal\">SHARE</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 ";
+                }
+                // line 133
+                echo "                            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['anecdo'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 106
-            echo "                            </div>
+            // line 134
+            echo "
+                        </ul>
+
+
+
+
+
+
+                            ";
+            // line 161
+            echo "
+
+
+
+
+
                         </div>
                         ";
         }
-        // line 109
+        // line 169
         echo "
                         ";
-        // line 110
-        if (((twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "document", [], "any", true, true, false, 110) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 110, $this->source); })()), "document", [], "any", false, false, false, 110))) && (twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 110, $this->source); })()), "document", [], "any", false, false, false, 110) != ""))) {
-            // line 111
+        // line 170
+        if (((twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "document", [], "any", true, true, false, 170) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 170, $this->source); })()), "document", [], "any", false, false, false, 170))) && (twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 170, $this->source); })()), "document", [], "any", false, false, false, 170) != ""))) {
+            // line 171
             echo "                        <div class=\"section full\">
                             <div class=\"section-title py-2\" style=\"border-top: 1px solid #E1E1E1;\">Documents</div>
                             <div class=\"section full mt-0\">
                                 <ul class=\"listview link-listview\">
                                     ";
-            // line 115
+            // line 175
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 115, $this->source); })()), "document", [], "any", false, false, false, 115));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 175, $this->source); })()), "document", [], "any", false, false, false, 175));
             foreach ($context['_seq'] as $context["key"] => $context["docu"]) {
-                // line 116
+                // line 176
                 echo "                                        <li>
                                             <a href=\"";
-                // line 117
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["docu"], "file", [], "any", false, false, false, 117), "path", [], "any", false, false, false, 117)), "html", null, true);
+                // line 177
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["docu"], "file", [], "any", false, false, false, 177), "path", [], "any", false, false, false, 177)), "html", null, true);
                 echo "\" target=\"_blank\">
                                                 <div>
                                                     <span class=\"mb-05\">";
-                // line 119
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["docu"], "title", [], "any", false, false, false, 119), "html", null, true);
+                // line 179
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["docu"], "title", [], "any", false, false, false, 179), "html", null, true);
                 echo "</span>
                                                     <div class=\"text-muted\">
                                                         <div>
                                                             ";
-                // line 122
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["docu"], "type", [], "any", false, false, false, 122), "html", null, true);
+                // line 182
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["docu"], "type", [], "any", false, false, false, 182), "html", null, true);
                 echo " ";
-                if (((twig_get_attribute($this->env, $this->source, $context["docu"], "year", [], "any", true, true, false, 122) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["docu"], "year", [], "any", false, false, false, 122))) && (twig_get_attribute($this->env, $this->source, $context["docu"], "year", [], "any", false, false, false, 122) != ""))) {
+                if (((twig_get_attribute($this->env, $this->source, $context["docu"], "year", [], "any", true, true, false, 182) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["docu"], "year", [], "any", false, false, false, 182))) && (twig_get_attribute($this->env, $this->source, $context["docu"], "year", [], "any", false, false, false, 182) != ""))) {
                     echo " - ";
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["docu"], "year", [], "any", false, false, false, 122), "d/m/Y"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["docu"], "year", [], "any", false, false, false, 182), "d/m/Y"), "html", null, true);
                 }
-                // line 123
+                // line 183
                 echo "                                                        </div>
                                                     </div>
                                                 </div>
@@ -329,13 +397,13 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['docu'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 129
+            // line 189
             echo "                                </ul>
                             </div>
                         </div>
                         ";
         }
-        // line 133
+        // line 193
         echo "
                         <div class=\"text-center\">
                             <button type=\"button\" class=\"btn btn-primary m-2\" data-bs-toggle=\"modal\" data-bs-target=\"#ModalBasic\">Soumettre une information</button>
@@ -380,29 +448,29 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
                     <!-- * Modal Basic -->
 
                     ";
-        // line 176
-        if (((twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "decorum", [], "any", true, true, false, 176) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 176, $this->source); })()), "decorum", [], "any", false, false, false, 176))) && (twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 176, $this->source); })()), "decorum", [], "any", false, false, false, 176) != ""))) {
-            // line 177
+        // line 236
+        if (((twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "decorum", [], "any", true, true, false, 236) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 236, $this->source); })()), "decorum", [], "any", false, false, false, 236))) && (twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 236, $this->source); })()), "decorum", [], "any", false, false, false, 236) != ""))) {
+            // line 237
             echo "                    <div class=\"tab-pane fade\" id=\"decorum\" role=\"tabpanel\">
                         <div class=\"section-title py-2\">Transmission</div>
                         <ul class=\"listview image-listview media\">
 
                             ";
-            // line 181
+            // line 241
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 181, $this->source); })()), "decorum", [], "any", false, false, false, 181));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 241, $this->source); })()), "decorum", [], "any", false, false, false, 241));
             foreach ($context['_seq'] as $context["key"] => $context["deco"]) {
-                // line 182
+                // line 242
                 echo "                                <li class=\"multi-level\">
                                     <a href=\"#\" class=\"item\">
                                         <div class=\"imageWrapper\" data-bs-toggle=\"modal\" data-bs-target=\"#DialogImageDecorum";
-                // line 184
+                // line 244
                 echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                 echo "\">
                                             <img src=\"";
-                // line 185
-                if ((twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", true, true, false, 185) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", false, false, false, 185)))) {
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", false, false, false, 185), 0, [], "any", false, false, false, 185), "path", [], "any", false, false, false, 185)), "html", null, true);
+                // line 245
+                if ((twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", true, true, false, 245) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", false, false, false, 245)))) {
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", false, false, false, 245), 0, [], "any", false, false, false, 245), "path", [], "any", false, false, false, 245)), "html", null, true);
                 } else {
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/Faluche.png"), "html", null, true);
                 }
@@ -411,44 +479,44 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
                                         <div class=\"in\">
                                             <div>
                                                 <span>";
-                // line 189
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["deco"], "title", [], "any", false, false, false, 189), "html", null, true);
+                // line 249
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["deco"], "title", [], "any", false, false, false, 249), "html", null, true);
                 echo "</span>
                                                 <div class=\"text-muted\">
                                                     ";
-                // line 191
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["deco"], "type", [], "any", false, false, false, 191), "html", null, true);
+                // line 251
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["deco"], "type", [], "any", false, false, false, 251), "html", null, true);
                 echo " ";
-                if (((twig_get_attribute($this->env, $this->source, $context["deco"], "year", [], "any", true, true, false, 191) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["deco"], "year", [], "any", false, false, false, 191))) && (twig_get_attribute($this->env, $this->source, $context["deco"], "year", [], "any", false, false, false, 191) != ""))) {
+                if (((twig_get_attribute($this->env, $this->source, $context["deco"], "year", [], "any", true, true, false, 251) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["deco"], "year", [], "any", false, false, false, 251))) && (twig_get_attribute($this->env, $this->source, $context["deco"], "year", [], "any", false, false, false, 251) != ""))) {
                     echo " - ";
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["deco"], "year", [], "any", false, false, false, 191), "d/m/Y"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["deco"], "year", [], "any", false, false, false, 251), "d/m/Y"), "html", null, true);
                 }
-                // line 192
+                // line 252
                 echo "                                                </div>
                                             </div>
                                         </div>
                                     </a>
                                     <ul class=\"listview simple-listview\" style=\"padding-left: 0px !important;\">
                                         <li>";
-                // line 197
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["deco"], "text", [], "any", false, false, false, 197), "html", null, true);
+                // line 257
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["deco"], "text", [], "any", false, false, false, 257), "html", null, true);
                 echo "</li>
                                     </ul>
                                 </li>
                                 ";
-                // line 200
-                if (twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", true, true, false, 200)) {
-                    // line 201
+                // line 260
+                if (twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", true, true, false, 260)) {
+                    // line 261
                     echo "                                    <!-- Dialog Image -->
                                     <div class=\"modal fade dialogbox\" id=\"DialogImageDecorum";
-                    // line 202
+                    // line 262
                     echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                     echo "\" data-bs-backdrop=\"static\" tabindex=\"-1\" role=\"dialog\">
                                         <div class=\"modal-dialog\" role=\"document\">
                                             <div class=\"modal-content\">
                                                 <img src=\"";
-                    // line 205
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", false, false, false, 205), 0, [], "any", false, false, false, 205), "path", [], "any", false, false, false, 205)), "html", null, true);
+                    // line 265
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["deco"], "file", [], "any", false, false, false, 265), 0, [], "any", false, false, false, 265), "path", [], "any", false, false, false, 265)), "html", null, true);
                     echo "\" alt=\"image\" class=\"img-fluid\">
                                                 <div class=\"modal-footer\">
                                                     <div class=\"btn-inline\">
@@ -461,80 +529,80 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
                                     </div>
                                 ";
                 }
-                // line 216
+                // line 276
                 echo "                            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['deco'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 217
+            // line 277
             echo "
                         </ul>
                         ";
         }
-        // line 220
+        // line 280
         echo "
                         ";
-        // line 221
-        if (((twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "goodies", [], "any", true, true, false, 221) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 221, $this->source); })()), "goodies", [], "any", false, false, false, 221))) && (twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 221, $this->source); })()), "goodies", [], "any", false, false, false, 221) != ""))) {
-            // line 222
+        // line 281
+        if (((twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "goodies", [], "any", true, true, false, 281) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 281, $this->source); })()), "goodies", [], "any", false, false, false, 281))) && (twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 281, $this->source); })()), "goodies", [], "any", false, false, false, 281) != ""))) {
+            // line 282
             echo "                        <div class=\"section-title py-2\" style=\"border-bottom: 1px solid #E1E1E1;\">Goodies</div>
                         <!-- feed -->
                         <div class=\"tab-pane fade show active\" id=\"feed\" role=\"tabpanel\">
                             <div class=\"mt-2 p-2 pt-0 pb-0\">
                                 <div class=\"row\">
                                     ";
-            // line 227
+            // line 287
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 227, $this->source); })()), "goodies", [], "any", false, false, false, 227));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 287, $this->source); })()), "goodies", [], "any", false, false, false, 287));
             foreach ($context['_seq'] as $context["key"] => $context["goodie"]) {
-                // line 228
+                // line 288
                 echo "                                        <div class=\"col-4 mb-2\" data-bs-toggle=\"modal\" data-bs-target=\"#DialogImageGoodies";
                 echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                 echo "\">
                                             <img src=\"";
-                // line 229
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["goodie"], "file", [], "any", false, false, false, 229), 0, [], "any", false, false, false, 229), "path", [], "any", false, false, false, 229)), "html", null, true);
+                // line 289
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["goodie"], "file", [], "any", false, false, false, 289), 0, [], "any", false, false, false, 289), "path", [], "any", false, false, false, 289)), "html", null, true);
                 echo "\" alt=\"image\" class=\"imaged w-100\">
                                         </div>
                                     
                                         <!-- Dialog Image -->
                                         <div class=\"modal fade dialogbox\" id=\"DialogImageGoodies";
-                // line 233
+                // line 293
                 echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                 echo "\" data-bs-backdrop=\"static\" tabindex=\"-1\" role=\"dialog\">
                                             <div class=\"modal-dialog\" role=\"document\">
                                                 <div class=\"modal-content\">
                                                     <img src=\"";
-                // line 236
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["goodie"], "file", [], "any", false, false, false, 236), 0, [], "any", false, false, false, 236), "path", [], "any", false, false, false, 236)), "html", null, true);
+                // line 296
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["goodie"], "file", [], "any", false, false, false, 296), 0, [], "any", false, false, false, 296), "path", [], "any", false, false, false, 296)), "html", null, true);
                 echo "\" alt=\"image\" class=\"img-fluid\">
                                                     <div class=\"modal-footer\">
                                                         <div class=\"infosmodalimage m-0 p-1\">
                                                             <b>";
-                // line 239
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "title", [], "any", false, false, false, 239), "html", null, true);
+                // line 299
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "title", [], "any", false, false, false, 299), "html", null, true);
                 echo "</b>
                                                             <i>(";
-                // line 240
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "type", [], "any", false, false, false, 240), "html", null, true);
-                if (((twig_get_attribute($this->env, $this->source, $context["goodie"], "year", [], "any", true, true, false, 240) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["goodie"], "year", [], "any", false, false, false, 240))) && (twig_get_attribute($this->env, $this->source, $context["goodie"], "year", [], "any", false, false, false, 240) != ""))) {
+                // line 300
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "type", [], "any", false, false, false, 300), "html", null, true);
+                if (((twig_get_attribute($this->env, $this->source, $context["goodie"], "year", [], "any", true, true, false, 300) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["goodie"], "year", [], "any", false, false, false, 300))) && (twig_get_attribute($this->env, $this->source, $context["goodie"], "year", [], "any", false, false, false, 300) != ""))) {
                     echo " - ";
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "year", [], "any", false, false, false, 240), "d/m/Y"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "year", [], "any", false, false, false, 300), "d/m/Y"), "html", null, true);
                     echo "</i>";
                 }
                 echo ")</i><br>
                                                             ";
-                // line 241
-                if (((twig_get_attribute($this->env, $this->source, $context["goodie"], "text", [], "any", true, true, false, 241) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["goodie"], "text", [], "any", false, false, false, 241))) && (twig_get_attribute($this->env, $this->source, $context["goodie"], "text", [], "any", false, false, false, 241) != ""))) {
+                // line 301
+                if (((twig_get_attribute($this->env, $this->source, $context["goodie"], "text", [], "any", true, true, false, 301) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["goodie"], "text", [], "any", false, false, false, 301))) && (twig_get_attribute($this->env, $this->source, $context["goodie"], "text", [], "any", false, false, false, 301) != ""))) {
                     echo "<span>";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "text", [], "any", false, false, false, 241), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "text", [], "any", false, false, false, 301), "html", null, true);
                     echo "</span>";
                 }
                 echo "<br>
                                                             <div class=\"text-muted\">Source : ";
-                // line 242
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "source", [], "any", false, false, false, 242), "html", null, true);
+                // line 302
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["goodie"], "source", [], "any", false, false, false, 302), "html", null, true);
                 echo "</div>
                                                         </div>
                                                         <div class=\"btn-inline\">
@@ -550,65 +618,65 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['goodie'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 253
+            // line 313
             echo "                                </div>
                             </div>
                         </div>
                         ";
         }
-        // line 257
+        // line 317
         echo "                        
                 <!-- * Dialog Image -->
                 <!-- * feed -->
                     </div>
 
                     ";
-        // line 262
-        if (((twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", true, true, false, 262) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 262, $this->source); })()), "sing", [], "any", false, false, false, 262))) && (twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 262, $this->source); })()), "sing", [], "any", false, false, false, 262) != ""))) {
-            // line 263
+        // line 322
+        if (((twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", true, true, false, 322) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 322, $this->source); })()), "sing", [], "any", false, false, false, 322))) && (twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 322, $this->source); })()), "sing", [], "any", false, false, false, 322) != ""))) {
+            // line 323
             echo "                    <div class=\"tab-pane fade\" id=\"chant\" role=\"tabpanel\">
                         <div class=\"blog-post text-center\">
                             <h2 class=\"title pt-2\">";
-            // line 265
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 265, $this->source); })()), "sing", [], "any", false, false, false, 265), "title", [], "any", false, false, false, 265), "html", null, true);
+            // line 325
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 325, $this->source); })()), "sing", [], "any", false, false, false, 325), "title", [], "any", false, false, false, 325), "html", null, true);
             echo "</h2>
                 
                             <div class=\"post-body\">
                                 ";
-            // line 268
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 268, $this->source); })()), "sing", [], "any", false, false, false, 268), "text", [], "any", false, false, false, 268), "html", null, true);
+            // line 328
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 328, $this->source); })()), "sing", [], "any", false, false, false, 328), "text", [], "any", false, false, false, 328), "html", null, true);
             echo "
                             </div>
                             ";
-            // line 270
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", false, true, false, 270), "author", [], "any", true, true, false, 270) || twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", false, true, false, 270), "year", [], "any", true, true, false, 270))) {
-                // line 271
+            // line 330
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", false, true, false, 330), "author", [], "any", true, true, false, 330) || twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", false, true, false, 330), "year", [], "any", true, true, false, 330))) {
+                // line 331
                 echo "                                <div class=\"post-header\">
                                     <div>
                                         <a href=\"#\">
                                             ";
-                // line 274
-                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", false, true, false, 274), "author", [], "any", true, true, false, 274)) {
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 274, $this->source); })()), "sing", [], "any", false, false, false, 274), "author", [], "any", false, false, false, 274), "html", null, true);
+                // line 334
+                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", false, true, false, 334), "author", [], "any", true, true, false, 334)) {
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 334, $this->source); })()), "sing", [], "any", false, false, false, 334), "author", [], "any", false, false, false, 334), "html", null, true);
                 }
-                // line 275
+                // line 335
                 echo "                                        </a>
                                     </div>
                                     ";
-                // line 277
-                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", false, true, false, 277), "year", [], "any", true, true, false, 277)) {
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 277, $this->source); })()), "sing", [], "any", false, false, false, 277), "year", [], "any", false, false, false, 277), "d/m/Y"), "html", null, true);
+                // line 337
+                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["association"] ?? null), "sing", [], "any", false, true, false, 337), "year", [], "any", true, true, false, 337)) {
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 337, $this->source); })()), "sing", [], "any", false, false, false, 337), "year", [], "any", false, false, false, 337), "d/m/Y"), "html", null, true);
                 }
-                // line 278
+                // line 338
                 echo "                                </div>
                             ";
             }
-            // line 280
+            // line 340
             echo "                        </div>
                     </div>
                     ";
         }
-        // line 283
+        // line 343
         echo "
 
 
@@ -653,35 +721,35 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
 
 
                                                     ";
-        // line 326
+        // line 386
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 326, $this->source); })()), "committee", [], "any", false, false, false, 326));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["association"]) || array_key_exists("association", $context) ? $context["association"] : (function () { throw new RuntimeError('Variable "association" does not exist.', 386, $this->source); })()), "committee", [], "any", false, false, false, 386));
         foreach ($context['_seq'] as $context["key"] => $context["commit"]) {
-            // line 327
+            // line 387
             echo "                                                        <tr style=\"height: 80px;\">
                                                             <th class=\"align-middle\">";
-            // line 328
+            // line 388
             echo twig_escape_filter($this->env, $context["key"], "html", null, true);
             echo "</th>
                                                             <td class=\"p-0\">
                                                                 <table class=\"table\" style=\"height: 80px;\">
                                                                     ";
-            // line 331
+            // line 391
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_sort_filter($this->env, $context["commit"]));
             foreach ($context['_seq'] as $context["key"] => $context["postes"]) {
-                // line 332
+                // line 392
                 echo "                                                                        ";
                 $context["dimensions"] = twig_length_filter($this->env, $context["postes"]);
-                // line 333
+                // line 393
                 echo "                                                                        ";
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(range(0, ((isset($context["dimensions"]) || array_key_exists("dimensions", $context) ? $context["dimensions"] : (function () { throw new RuntimeError('Variable "dimensions" does not exist.', 333, $this->source); })()) - 1)));
+                $context['_seq'] = twig_ensure_traversable(range(0, ((isset($context["dimensions"]) || array_key_exists("dimensions", $context) ? $context["dimensions"] : (function () { throw new RuntimeError('Variable "dimensions" does not exist.', 393, $this->source); })()) - 1)));
                 foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                    // line 334
+                    // line 394
                     echo "                                                                            <tr style=\"height: 80px;\">
                                                                                 <td class=\"align-middle\">";
-                    // line 335
+                    // line 395
                     echo twig_escape_filter($this->env, $context["key"], "html", null, true);
                     echo "</td>
                                                                             </tr>
@@ -690,38 +758,38 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 338
+                // line 398
                 echo "                                                                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['postes'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 339
+            // line 399
             echo "                                                                </table>
                                                             </td>
                                                             <td class=\"p-0\">
                                                                 <table class=\"table\" style=\"height: 80px;\">
                                                                 ";
-            // line 343
+            // line 403
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["commit"]);
             foreach ($context['_seq'] as $context["key"] => $context["postes"]) {
-                // line 344
+                // line 404
                 echo "                                                                    ";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["postes"]);
                 foreach ($context['_seq'] as $context["key"] => $context["poste"]) {
-                    // line 345
+                    // line 405
                     echo "                                                                      <tr  style=\"height: 80px;\">
                                                                         <td class=\"align-middle\">";
-                    // line 346
-                    (((twig_get_attribute($this->env, $this->source, $context["poste"], "firstname", [], "any", true, true, false, 346) &&  !(null === twig_get_attribute($this->env, $this->source, $context["poste"], "firstname", [], "any", false, false, false, 346)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["poste"], "firstname", [], "any", false, false, false, 346), "html", null, true))) : (print ("")));
+                    // line 406
+                    (((twig_get_attribute($this->env, $this->source, $context["poste"], "firstname", [], "any", true, true, false, 406) &&  !(null === twig_get_attribute($this->env, $this->source, $context["poste"], "firstname", [], "any", false, false, false, 406)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["poste"], "firstname", [], "any", false, false, false, 406), "html", null, true))) : (print ("")));
                     echo " ";
-                    (((twig_get_attribute($this->env, $this->source, $context["poste"], "name", [], "any", true, true, false, 346) &&  !(null === twig_get_attribute($this->env, $this->source, $context["poste"], "name", [], "any", false, false, false, 346)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["poste"], "name", [], "any", false, false, false, 346), "html", null, true))) : (print ("")));
+                    (((twig_get_attribute($this->env, $this->source, $context["poste"], "name", [], "any", true, true, false, 406) &&  !(null === twig_get_attribute($this->env, $this->source, $context["poste"], "name", [], "any", false, false, false, 406)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["poste"], "name", [], "any", false, false, false, 406), "html", null, true))) : (print ("")));
                     echo " ";
-                    if (((twig_get_attribute($this->env, $this->source, $context["poste"], "nickname", [], "any", true, true, false, 346) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["poste"], "nickname", [], "any", false, false, false, 346))) && (twig_get_attribute($this->env, $this->source, $context["poste"], "nickname", [], "any", false, false, false, 346) != ""))) {
+                    if (((twig_get_attribute($this->env, $this->source, $context["poste"], "nickname", [], "any", true, true, false, 406) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["poste"], "nickname", [], "any", false, false, false, 406))) && (twig_get_attribute($this->env, $this->source, $context["poste"], "nickname", [], "any", false, false, false, 406) != ""))) {
                         echo " | ";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["poste"], "nickname", [], "any", false, false, false, 346), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["poste"], "nickname", [], "any", false, false, false, 406), "html", null, true);
                     }
                     echo "</td>
                                                                       </tr>
@@ -730,13 +798,13 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['key'], $context['poste'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 349
+                // line 409
                 echo "                                                                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['key'], $context['postes'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 350
+            // line 410
             echo "                                                                </table>
                                                             </td>
                                                         </tr>
@@ -746,11 +814,11 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['commit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 355
+        // line 415
         echo "
 
                                                         ";
-        // line 468
+        // line 528
         echo "                                                    </tbody>
                                                 </table>
                                             </div>
@@ -960,7 +1028,7 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
 
     public function getDebugInfo()
     {
-        return array (  754 => 468,  750 => 355,  740 => 350,  734 => 349,  718 => 346,  715 => 345,  710 => 344,  706 => 343,  700 => 339,  694 => 338,  685 => 335,  682 => 334,  677 => 333,  674 => 332,  670 => 331,  664 => 328,  661 => 327,  657 => 326,  612 => 283,  607 => 280,  603 => 278,  599 => 277,  595 => 275,  591 => 274,  586 => 271,  584 => 270,  579 => 268,  573 => 265,  569 => 263,  567 => 262,  560 => 257,  554 => 253,  537 => 242,  529 => 241,  520 => 240,  516 => 239,  510 => 236,  504 => 233,  497 => 229,  492 => 228,  488 => 227,  481 => 222,  479 => 221,  476 => 220,  471 => 217,  465 => 216,  451 => 205,  445 => 202,  442 => 201,  440 => 200,  434 => 197,  427 => 192,  420 => 191,  415 => 189,  404 => 185,  400 => 184,  396 => 182,  392 => 181,  386 => 177,  384 => 176,  339 => 133,  333 => 129,  322 => 123,  315 => 122,  309 => 119,  304 => 117,  301 => 116,  297 => 115,  291 => 111,  289 => 110,  286 => 109,  281 => 106,  269 => 100,  262 => 98,  256 => 95,  252 => 94,  244 => 90,  240 => 89,  235 => 86,  233 => 85,  230 => 84,  225 => 81,  211 => 80,  207 => 78,  205 => 77,  200 => 76,  183 => 75,  178 => 72,  175 => 71,  167 => 66,  161 => 62,  159 => 61,  155 => 59,  113 => 21,  101 => 20,  97 => 19,  86 => 15,  76 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  822 => 528,  818 => 415,  808 => 410,  802 => 409,  786 => 406,  783 => 405,  778 => 404,  774 => 403,  768 => 399,  762 => 398,  753 => 395,  750 => 394,  745 => 393,  742 => 392,  738 => 391,  732 => 388,  729 => 387,  725 => 386,  680 => 343,  675 => 340,  671 => 338,  667 => 337,  663 => 335,  659 => 334,  654 => 331,  652 => 330,  647 => 328,  641 => 325,  637 => 323,  635 => 322,  628 => 317,  622 => 313,  605 => 302,  597 => 301,  588 => 300,  584 => 299,  578 => 296,  572 => 293,  565 => 289,  560 => 288,  556 => 287,  549 => 282,  547 => 281,  544 => 280,  539 => 277,  533 => 276,  519 => 265,  513 => 262,  510 => 261,  508 => 260,  502 => 257,  495 => 252,  488 => 251,  483 => 249,  472 => 245,  468 => 244,  464 => 242,  460 => 241,  454 => 237,  452 => 236,  407 => 193,  401 => 189,  390 => 183,  383 => 182,  377 => 179,  372 => 177,  369 => 176,  365 => 175,  359 => 171,  357 => 170,  354 => 169,  344 => 161,  334 => 134,  328 => 133,  314 => 122,  308 => 119,  305 => 118,  303 => 117,  294 => 111,  290 => 110,  287 => 109,  277 => 108,  268 => 101,  262 => 100,  257 => 98,  250 => 94,  246 => 92,  242 => 91,  235 => 86,  233 => 85,  230 => 84,  225 => 81,  211 => 80,  207 => 78,  205 => 77,  200 => 76,  183 => 75,  178 => 72,  175 => 71,  167 => 66,  161 => 62,  159 => 61,  155 => 59,  113 => 21,  101 => 20,  97 => 19,  86 => 15,  76 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -1052,7 +1120,61 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
                         {% if association.anecdote is defined and association.anecdote is not empty and association.anecdote != '' %}
                         <div class=\"section full\">
                             <div class=\"section-title py-2\" style=\"border-top: 1px solid #E1E1E1;\">Anecdotes</div>
-                            <div class=\"section full mt-0\">
+
+                        <ul class=\"listview image-listview media\">
+
+                            {% for key, anecdo in association.anecdote %}
+                                <li class=\"multi-level\">
+                                    <a href=\"#\" class=\"item\">
+                                        <div class=\"imageWrapper\" data-bs-toggle=\"modal\" data-bs-target=\"#DialogImageAnecdote{{key}}\">
+                                        </div>
+                                        <div class=\"in\">
+                                            <div>
+                                                <span>{{anecdo.title}}</span>
+                                                <div class=\"text-muted\">
+                                                    {% if anecdo.year is defined and anecdo.year is not empty and anecdo.year != '' %}<i>{{anecdo.year|date(\"d/m/Y\")}}</i>{% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <ul class=\"listview simple-listview\" style=\"padding-left: 0px !important;\">
+                                        <li class=\"\">
+                                        <div class=\"d-flex\">
+                                            {% if anecdo.file is defined and anecdo.file is not empty %}<img src=\"{% if anecdo.file is defined and anecdo.file is not empty %}{{asset(anecdo.file.0.path)}}{% else %}{{asset(\"assets/img/sample/photo/Faluche.png\")}}{% endif %}\" alt=\"image\" class=\"imaged w64\">{% endif %}
+                                            <div class=\"my-auto\">
+                                                <div class=\"mx-3\">{{anecdo.text}}</div>
+                                                <div class=\"mx-3 text-muted\">{{anecdo.source}}</div>
+                                            </div>
+                                        </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if anecdo.file is defined %}
+                                    <!-- Dialog Image -->
+                                    <div class=\"modal fade dialogbox\" id=\"DialogImageAnecdote{{key}}\" data-bs-backdrop=\"static\" tabindex=\"-1\" role=\"dialog\">
+                                        <div class=\"modal-dialog\" role=\"document\">
+                                            <div class=\"modal-content\">
+                                                <img src=\"{{asset(anecdo.file.0.path)}}\" alt=\"image\" class=\"img-fluid\">
+                                                <div class=\"modal-footer\">
+                                                    <div class=\"btn-inline\">
+                                                        <a href=\"#\" class=\"btn btn-text-secondary\" data-bs-dismiss=\"modal\">Fermer</a>
+                                                        <a href=\"#\" class=\"btn btn-text-primary\" data-bs-dismiss=\"modal\">SHARE</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                        </ul>
+
+
+
+
+
+
+                            {# <div class=\"section full mt-0\">
                                 {% for key, anecdo in association.anecdote %}
                                     <div class=\"accordion\" id=\"accordionExample{{key}}\">
                                         <div class=\"accordion-item\">
@@ -1070,7 +1192,13 @@ class __TwigTemplate_03b7bed213f6250bd84ceced3f381654 extends Template
                                         </div>
                                     </div>
                                 {% endfor %}
-                            </div>
+                            </div> #}
+
+
+
+
+
+
                         </div>
                         {% endif %}
 

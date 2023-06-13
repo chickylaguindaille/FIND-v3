@@ -85,7 +85,61 @@
                         {% if association.anecdote is defined and association.anecdote is not empty and association.anecdote != '' %}
                         <div class="section full">
                             <div class="section-title py-2" style="border-top: 1px solid #E1E1E1;">Anecdotes</div>
-                            <div class="section full mt-0">
+
+                        <ul class="listview image-listview media">
+
+                            {% for key, anecdo in association.anecdote %}
+                                <li class="multi-level">
+                                    <a href="#" class="item">
+                                        <div class="imageWrapper" data-bs-toggle="modal" data-bs-target="#DialogImageAnecdote{{key}}">
+                                        </div>
+                                        <div class="in">
+                                            <div>
+                                                <span>{{anecdo.title}}</span>
+                                                <div class="text-muted">
+                                                    {% if anecdo.year is defined and anecdo.year is not empty and anecdo.year != '' %}<i>{{anecdo.year|date("d/m/Y")}}</i>{% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <ul class="listview simple-listview" style="padding-left: 0px !important;">
+                                        <li class="">
+                                        <div class="d-flex">
+                                            {% if anecdo.file is defined and anecdo.file is not empty %}<img src="{% if anecdo.file is defined and anecdo.file is not empty %}{{asset(anecdo.file.0.path)}}{% else %}{{asset("assets/img/sample/photo/Faluche.png")}}{% endif %}" alt="image" class="imaged w64">{% endif %}
+                                            <div class="my-auto">
+                                                <div class="mx-3">{{anecdo.text}}</div>
+                                                <div class="mx-3 text-muted">{{anecdo.source}}</div>
+                                            </div>
+                                        </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if anecdo.file is defined %}
+                                    <!-- Dialog Image -->
+                                    <div class="modal fade dialogbox" id="DialogImageAnecdote{{key}}" data-bs-backdrop="static" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <img src="{{asset(anecdo.file.0.path)}}" alt="image" class="img-fluid">
+                                                <div class="modal-footer">
+                                                    <div class="btn-inline">
+                                                        <a href="#" class="btn btn-text-secondary" data-bs-dismiss="modal">Fermer</a>
+                                                        <a href="#" class="btn btn-text-primary" data-bs-dismiss="modal">SHARE</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                        </ul>
+
+
+
+
+
+
+                            {# <div class="section full mt-0">
                                 {% for key, anecdo in association.anecdote %}
                                     <div class="accordion" id="accordionExample{{key}}">
                                         <div class="accordion-item">
@@ -103,7 +157,13 @@
                                         </div>
                                     </div>
                                 {% endfor %}
-                            </div>
+                            </div> #}
+
+
+
+
+
+
                         </div>
                         {% endif %}
 

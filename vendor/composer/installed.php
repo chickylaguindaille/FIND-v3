@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'c204fc0af0d8c8cd9ab67f0ea602d6de9e4be184',
+        'reference' => 'bebccdad72dfbb7de401ce2a257aaf17d35f3bb5',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'c204fc0af0d8c8cd9ab67f0ea602d6de9e4be184',
+            'reference' => 'bebccdad72dfbb7de401ce2a257aaf17d35f3bb5',
             'dev_requirement' => false,
         ),
         'doctrine/annotations' => array(
@@ -170,6 +170,15 @@
             'install_path' => __DIR__ . '/../egulias/email-validator',
             'aliases' => array(),
             'reference' => '3a85486b709bc384dae8eb78fb2eec649bdb64ff',
+            'dev_requirement' => false,
+        ),
+        'firebase/php-jwt' => array(
+            'pretty_version' => 'v6.5.0',
+            'version' => '6.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'reference' => 'e94e7353302b0c11ec3cfff7180cd0b1743975d2',
             'dev_requirement' => false,
         ),
         'guzzlehttp/guzzle' => array(

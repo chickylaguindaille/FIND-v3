@@ -29,3 +29,8 @@ services:
         arguments:
             - '@logger'
             - '%env(resolve:FIND_API_URL)%'
+
+    App\Service\FindAuthService:
+        arguments:
+            - '@logger'
+            - '%env(resolve:FIND_AUTH_URL)%'
