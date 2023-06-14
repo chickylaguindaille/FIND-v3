@@ -89,14 +89,6 @@ class HomeController extends AbstractController
         return $this->render('revisions/revisions.html.twig');
     }
 
-    /**
-     * @Route("/profile", name="profile")
-     * @Template()
-     */
-    public function profile(Request $request)
-    {
-        return $this->render('profile/profile.html.twig');
-    }
 
 
 }

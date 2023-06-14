@@ -102,7 +102,10 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
                     <span>Modifier mon profil</span>
                 </div>
                 <li>
-                    <a href=\"app-pages.html\" class=\"item\">
+                    <a href=\"";
+        // line 60
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modification_informations");
+        echo "\" class=\"item\">
                         <div class=\"icon-box bg-primary\">
                             <ion-icon name=\"information-circle-outline\"></ion-icon>
                         </div>
@@ -183,7 +186,7 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  158 => 111,  51 => 7,  43 => 1,);
+        return array (  161 => 111,  107 => 60,  51 => 7,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -247,7 +250,7 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
                     <span>Modifier mon profil</span>
                 </div>
                 <li>
-                    <a href=\"app-pages.html\" class=\"item\">
+                    <a href=\"{{ path('modification_informations')}}\" class=\"item\">
                         <div class=\"icon-box bg-primary\">
                             <ion-icon name=\"information-circle-outline\"></ion-icon>
                         </div>

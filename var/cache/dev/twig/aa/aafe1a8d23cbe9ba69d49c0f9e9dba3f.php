@@ -63,7 +63,7 @@ class __TwigTemplate_7bbadfc3d6e6bb830f3d5c006a82574f extends Template
         <a href=\"";
         // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
-        echo "\" class=\"item active\">
+        echo "\" class=\"item\">
             <div class=\"col\">
                 <ion-icon name=\"search-outline\"></ion-icon>
                 <strong>FIND</strong>
@@ -81,7 +81,11 @@ class __TwigTemplate_7bbadfc3d6e6bb830f3d5c006a82574f extends Template
         <a href=\"";
         // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
-        echo "\" class=\"item\">
+        echo "\" class=\"item ";
+        if ((array_key_exists("page", $context) && ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 27, $this->source); })()) == "profile"))) {
+            echo "active";
+        }
+        echo "\">
             <div class=\"col\">
                 <ion-icon name=\"person-circle-outline\"></ion-icon>
                 <strong>Mon folklore</strong>
@@ -128,7 +132,7 @@ class __TwigTemplate_7bbadfc3d6e6bb830f3d5c006a82574f extends Template
                 <strong>Calendar</strong>
             </div>
         </a>
-        <a href=\"{{ path('accueil')}}\" class=\"item active\">
+        <a href=\"{{ path('accueil')}}\" class=\"item\">
             <div class=\"col\">
                 <ion-icon name=\"search-outline\"></ion-icon>
                 <strong>FIND</strong>
@@ -140,7 +144,7 @@ class __TwigTemplate_7bbadfc3d6e6bb830f3d5c006a82574f extends Template
                 <strong>Révisions</strong>
             </div>
         </a>
-        <a href=\"{{ path('profile')}}\" class=\"item\">
+        <a href=\"{{ path('profile')}}\" class=\"item {% if page is defined and page == \"profile\" %}active{% endif %}\">
             <div class=\"col\">
                 <ion-icon name=\"person-circle-outline\"></ion-icon>
                 <strong>Mon folklore</strong>

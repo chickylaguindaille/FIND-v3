@@ -10,8 +10,8 @@
                     <img src="{{ asset("assets/img/sample/avatar/avatar1.jpg") }}" alt="avatar" class="imaged w64 rounded">
                 </div>
                 <div class="in">
-                    <h3 class="name">ChickenWings</h3>
-                    <h5 class="subtext">Faluchard, Calottin</h5>
+                    <h3 class="name">{{profile.firstname??""}} {{profile.lastname??""}}</h3>
+                    <h5 class="subtext">{{profile.username??""}}</h5>
                 </div>
 
                 <button type="button" class="mx-4 btn btn-outline-secondary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#actionSheetShareBox">Contacter</button>
@@ -24,37 +24,42 @@
                     </div>
                     <div class="offcanvas-body">
                         <div class="action-sheet-content text-center">
-                            <div class="row">
-                                <div class="col-2">
-                                    <a href="#" class="btn btn-icon btn-facebook" data-bs-dismiss="offcanvas">
-                                        <ion-icon name="logo-facebook"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class="col-2">
-                                    <a href="#" class="btn btn-icon btn-twitter" data-bs-dismiss="offcanvas">
-                                        <ion-icon name="logo-twitter"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class="col-2">
-                                    <a href="#" class="btn btn-icon btn-linkedin" data-bs-dismiss="offcanvas">
-                                        <ion-icon name="logo-linkedin"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class="col-2">
-                                    <a href="#" class="btn btn-icon btn-instagram" data-bs-dismiss="offcanvas">
-                                        <ion-icon name="logo-instagram"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class="col-2">
-                                    <a href="#" class="btn btn-icon btn-whatsapp" data-bs-dismiss="offcanvas">
-                                        <ion-icon name="logo-whatsapp"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class="col-2">
-                                    <a href="#" class="btn btn-icon btn-twitch" data-bs-dismiss="offcanvas">
-                                        <ion-icon name="logo-twitch"></ion-icon>
-                                    </a>
-                                </div>
+                            <div class="row justify-content-center">
+                                {% if profile.socialmedia.phone is defined and profile.socialmedia.phone is not empty %}
+                                    <div class="col-2">
+                                        <a href="tel:{{profile.socialmedia.phone}}" class="btn btn-icon btn-success">
+                                            <ion-icon name="call-outline"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% if profile.socialmedia.facebook is defined and profile.socialmedia.facebook is not empty %}
+                                    <div class="col-2">
+                                        <a href="{{profile.socialmedia.facebook??""}}" target="_blank" class="btn btn-icon btn-facebook">
+                                            <ion-icon name="logo-facebook"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% if profile.socialmedia.twitter is defined and profile.socialmedia.twitter is not empty %}
+                                    <div class="col-2">
+                                        <a href="{{profile.socialmedia.twitter??""}}" target="_blank" class="btn btn-icon btn-twitter">
+                                            <ion-icon name="logo-twitter"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% if profile.socialmedia.linkedin is defined and profile.socialmedia.linkedin is not empty %}
+                                    <div class="col-2">
+                                        <a href="{{profile.socialmedia.linkedin??""}}" target="_blank" class="btn btn-icon btn-linkedin">
+                                            <ion-icon name="logo-linkedin"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% if profile.socialmedia.instagram is defined and profile.socialmedia.instagram is not empty %}
+                                    <div class="col-2">
+                                        <a href="{{profile.socialmedia.instagram??""}}" target="_blank" class="btn btn-icon btn-instagram">
+                                            <ion-icon name="logo-instagram"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -70,8 +75,7 @@
         <div class="section mt-1 mb-2">
             <div class="profile-info">
                 <div class=" bio">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at magna porttitor lorem mollis
-                    ornare. Fusce varius varius massa.
+                    {{profile.bio??""}}
                 </div>
                 <!-- <div class="chip chip-media mt-1 mx-1">
                     <i class="chip-icon bg-danger">

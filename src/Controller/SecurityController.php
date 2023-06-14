@@ -20,7 +20,7 @@ class SecurityController extends BaseController
     private $findAuth;
 
 
-    public function __construct(LoggerInterface $logger,  FindAuthService $findAuth)
+    public function __construct(LoggerInterface $logger, FindAuthService $findAuth)
     {
         parent::__construct($logger);
         // $this->recaptchaService = $recaptchaService;

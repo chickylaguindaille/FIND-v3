@@ -12,7 +12,7 @@
                 <strong>Calendar</strong>
             </div>
         </a>
-        <a href="{{ path('accueil')}}" class="item active">
+        <a href="{{ path('accueil')}}" class="item">
             <div class="col">
                 <ion-icon name="search-outline"></ion-icon>
                 <strong>FIND</strong>
@@ -24,7 +24,7 @@
                 <strong>Révisions</strong>
             </div>
         </a>
-        <a href="{{ path('profile')}}" class="item">
+        <a href="{{ path('profile')}}" class="item {% if page is defined and page == "profile" %}active{% endif %}">
             <div class="col">
                 <ion-icon name="person-circle-outline"></ion-icon>
                 <strong>Mon folklore</strong>

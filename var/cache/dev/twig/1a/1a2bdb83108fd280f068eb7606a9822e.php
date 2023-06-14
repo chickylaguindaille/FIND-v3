@@ -77,8 +77,16 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
         echo "\" alt=\"avatar\" class=\"imaged w64 rounded\">
                 </div>
                 <div class=\"in\">
-                    <h3 class=\"name\">ChickenWings</h3>
-                    <h5 class=\"subtext\">Faluchard, Calottin</h5>
+                    <h3 class=\"name\">";
+        // line 13
+        (((twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "firstname", [], "any", true, true, false, 13) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "firstname", [], "any", false, false, false, 13)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "firstname", [], "any", false, false, false, 13), "html", null, true))) : (print ("")));
+        echo " ";
+        (((twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "lastname", [], "any", true, true, false, 13) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "lastname", [], "any", false, false, false, 13)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "lastname", [], "any", false, false, false, 13), "html", null, true))) : (print ("")));
+        echo "</h3>
+                    <h5 class=\"subtext\">";
+        // line 14
+        (((twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "username", [], "any", true, true, false, 14) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "username", [], "any", false, false, false, 14)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "username", [], "any", false, false, false, 14), "html", null, true))) : (print ("")));
+        echo "</h5>
                 </div>
 
                 <button type=\"button\" class=\"mx-4 btn btn-outline-secondary btn-sm\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#actionSheetShareBox\">Contacter</button>
@@ -91,38 +99,79 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                     </div>
                     <div class=\"offcanvas-body\">
                         <div class=\"action-sheet-content text-center\">
-                            <div class=\"row\">
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-facebook\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-facebook\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-twitter\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-twitter\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-linkedin\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-linkedin\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-instagram\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-instagram\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-whatsapp\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-whatsapp\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-twitch\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-twitch\"></ion-icon>
-                                    </a>
-                                </div>
-                            </div>
+                            <div class=\"row justify-content-center\">
+                                ";
+        // line 28
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 28), "phone", [], "any", true, true, false, 28) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 28, $this->source); })()), "socialmedia", [], "any", false, false, false, 28), "phone", [], "any", false, false, false, 28)))) {
+            // line 29
+            echo "                                    <div class=\"col-2\">
+                                        <a href=\"tel:";
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 30, $this->source); })()), "socialmedia", [], "any", false, false, false, 30), "phone", [], "any", false, false, false, 30), "html", null, true);
+            echo "\" class=\"btn btn-icon btn-success\">
+                                            <ion-icon name=\"call-outline\"></ion-icon>
+                                        </a>
+                                    </div>
+                                ";
+        }
+        // line 35
+        echo "                                ";
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 35), "facebook", [], "any", true, true, false, 35) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 35, $this->source); })()), "socialmedia", [], "any", false, false, false, 35), "facebook", [], "any", false, false, false, 35)))) {
+            // line 36
+            echo "                                    <div class=\"col-2\">
+                                        <a href=\"";
+            // line 37
+            (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 37), "facebook", [], "any", true, true, false, 37) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 37), "facebook", [], "any", false, false, false, 37)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 37), "facebook", [], "any", false, false, false, 37), "html", null, true))) : (print ("")));
+            echo "\" target=\"_blank\" class=\"btn btn-icon btn-facebook\">
+                                            <ion-icon name=\"logo-facebook\"></ion-icon>
+                                        </a>
+                                    </div>
+                                ";
+        }
+        // line 42
+        echo "                                ";
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 42), "twitter", [], "any", true, true, false, 42) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 42, $this->source); })()), "socialmedia", [], "any", false, false, false, 42), "twitter", [], "any", false, false, false, 42)))) {
+            // line 43
+            echo "                                    <div class=\"col-2\">
+                                        <a href=\"";
+            // line 44
+            (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 44), "twitter", [], "any", true, true, false, 44) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 44), "twitter", [], "any", false, false, false, 44)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 44), "twitter", [], "any", false, false, false, 44), "html", null, true))) : (print ("")));
+            echo "\" target=\"_blank\" class=\"btn btn-icon btn-twitter\">
+                                            <ion-icon name=\"logo-twitter\"></ion-icon>
+                                        </a>
+                                    </div>
+                                ";
+        }
+        // line 49
+        echo "                                ";
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 49), "linkedin", [], "any", true, true, false, 49) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 49, $this->source); })()), "socialmedia", [], "any", false, false, false, 49), "linkedin", [], "any", false, false, false, 49)))) {
+            // line 50
+            echo "                                    <div class=\"col-2\">
+                                        <a href=\"";
+            // line 51
+            (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 51), "linkedin", [], "any", true, true, false, 51) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 51), "linkedin", [], "any", false, false, false, 51)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 51), "linkedin", [], "any", false, false, false, 51), "html", null, true))) : (print ("")));
+            echo "\" target=\"_blank\" class=\"btn btn-icon btn-linkedin\">
+                                            <ion-icon name=\"logo-linkedin\"></ion-icon>
+                                        </a>
+                                    </div>
+                                ";
+        }
+        // line 56
+        echo "                                ";
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 56), "instagram", [], "any", true, true, false, 56) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 56, $this->source); })()), "socialmedia", [], "any", false, false, false, 56), "instagram", [], "any", false, false, false, 56)))) {
+            // line 57
+            echo "                                    <div class=\"col-2\">
+                                        <a href=\"";
+            // line 58
+            (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 58), "instagram", [], "any", true, true, false, 58) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 58), "instagram", [], "any", false, false, false, 58)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "socialmedia", [], "any", false, true, false, 58), "instagram", [], "any", false, false, false, 58), "html", null, true))) : (print ("")));
+            echo "\" target=\"_blank\" class=\"btn btn-icon btn-instagram\">
+                                            <ion-icon name=\"logo-instagram\"></ion-icon>
+                                        </a>
+                                    </div>
+                                ";
+        }
+        // line 63
+        echo "                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,8 +186,10 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
         <div class=\"section mt-1 mb-2\">
             <div class=\"profile-info\">
                 <div class=\" bio\">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at magna porttitor lorem mollis
-                    ornare. Fusce varius varius massa.
+                    ";
+        // line 78
+        (((twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "bio", [], "any", true, true, false, 78) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "bio", [], "any", false, false, false, 78)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "bio", [], "any", false, false, false, 78), "html", null, true))) : (print ("")));
+        echo "
                 </div>
                 <!-- <div class=\"chip chip-media mt-1 mx-1\">
                     <i class=\"chip-icon bg-danger\">
@@ -188,73 +239,73 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                         <div class=\"row\">
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 123
+        // line 127
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 126
+        // line 130
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 129
+        // line 133
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 132
+        // line 136
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 135
+        // line 139
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 138
+        // line 142
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 141
+        // line 145
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 144
+        // line 148
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 147
+        // line 151
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 150
+        // line 154
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 153
+        // line 157
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
                             <div class=\"col-4 mb-2\">
                                 <img src=\"";
-        // line 156
+        // line 160
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/1.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"imaged w-100\">
                             </div>
@@ -272,7 +323,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                         <li>
                             <a href=\"#\" class=\"item\">
                                 <img src=\"";
-        // line 171
+        // line 175
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                 <div class=\"in\">
@@ -286,7 +337,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                         <li>
                             <a href=\"#\" class=\"item\">
                                 <img src=\"";
-        // line 182
+        // line 186
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                 <div class=\"in\">
@@ -300,7 +351,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                         <li>
                             <a href=\"#\" class=\"item\">
                                 <img src=\"";
-        // line 193
+        // line 197
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                 <div class=\"in\">
@@ -314,7 +365,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                         <li>
                             <a href=\"#\" class=\"item\">
                                 <img src=\"";
-        // line 204
+        // line 208
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                 <div class=\"in\">
@@ -328,7 +379,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                         <li>
                             <a href=\"#\" class=\"item\">
                                 <img src=\"";
-        // line 215
+        // line 219
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                 <div class=\"in\">
@@ -342,7 +393,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                         <li>
                             <a href=\"#\" class=\"item\">
                                 <img src=\"";
-        // line 226
+        // line 230
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                 <div class=\"in\">
@@ -356,7 +407,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                         <li>
                             <a href=\"#\" class=\"item\">
                                 <img src=\"";
-        // line 237
+        // line 241
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                 <div class=\"in\">
@@ -479,7 +530,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                                         <li>
                                             <a href=\"#\" class=\"item\">
                                                 <img src=\"";
-        // line 357
+        // line 361
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                                 <div class=\"in\">
@@ -493,7 +544,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                                         <li>
                                             <a href=\"#\" class=\"item\">
                                                 <img src=\"";
-        // line 368
+        // line 372
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                                 <div class=\"in\">
@@ -507,7 +558,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                                         <li>
                                             <a href=\"#\" class=\"item\">
                                                 <img src=\"";
-        // line 379
+        // line 383
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                                 <div class=\"in\">
@@ -521,7 +572,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                                         <li>
                                             <a href=\"#\" class=\"item\">
                                                 <img src=\"";
-        // line 390
+        // line 394
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                                 <div class=\"in\">
@@ -535,7 +586,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                                         <li>
                                             <a href=\"#\" class=\"item\">
                                                 <img src=\"";
-        // line 401
+        // line 405
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                                 <div class=\"in\">
@@ -549,7 +600,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                                         <li>
                                             <a href=\"#\" class=\"item\">
                                                 <img src=\"";
-        // line 412
+        // line 416
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                                 <div class=\"in\">
@@ -563,7 +614,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                                         <li>
                                             <a href=\"#\" class=\"item\">
                                                 <img src=\"";
-        // line 423
+        // line 427
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/avatar/avatar3.jpg"), "html", null, true);
         echo "\" alt=\"image\" class=\"image\">
                                                 <div class=\"in\">
@@ -610,7 +661,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
 
     public function getDebugInfo()
     {
-        return array (  567 => 423,  553 => 412,  539 => 401,  525 => 390,  511 => 379,  497 => 368,  483 => 357,  360 => 237,  346 => 226,  332 => 215,  318 => 204,  304 => 193,  290 => 182,  276 => 171,  258 => 156,  252 => 153,  246 => 150,  240 => 147,  234 => 144,  228 => 141,  222 => 138,  216 => 135,  210 => 132,  204 => 129,  198 => 126,  192 => 123,  76 => 10,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  618 => 427,  604 => 416,  590 => 405,  576 => 394,  562 => 383,  548 => 372,  534 => 361,  411 => 241,  397 => 230,  383 => 219,  369 => 208,  355 => 197,  341 => 186,  327 => 175,  309 => 160,  303 => 157,  297 => 154,  291 => 151,  285 => 148,  279 => 145,  273 => 142,  267 => 139,  261 => 136,  255 => 133,  249 => 130,  243 => 127,  191 => 78,  174 => 63,  166 => 58,  163 => 57,  160 => 56,  152 => 51,  149 => 50,  146 => 49,  138 => 44,  135 => 43,  132 => 42,  124 => 37,  121 => 36,  118 => 35,  110 => 30,  107 => 29,  105 => 28,  88 => 14,  82 => 13,  76 => 10,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -627,8 +678,8 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                     <img src=\"{{ asset(\"assets/img/sample/avatar/avatar1.jpg\") }}\" alt=\"avatar\" class=\"imaged w64 rounded\">
                 </div>
                 <div class=\"in\">
-                    <h3 class=\"name\">ChickenWings</h3>
-                    <h5 class=\"subtext\">Faluchard, Calottin</h5>
+                    <h3 class=\"name\">{{profile.firstname??\"\"}} {{profile.lastname??\"\"}}</h3>
+                    <h5 class=\"subtext\">{{profile.username??\"\"}}</h5>
                 </div>
 
                 <button type=\"button\" class=\"mx-4 btn btn-outline-secondary btn-sm\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#actionSheetShareBox\">Contacter</button>
@@ -641,37 +692,42 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
                     </div>
                     <div class=\"offcanvas-body\">
                         <div class=\"action-sheet-content text-center\">
-                            <div class=\"row\">
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-facebook\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-facebook\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-twitter\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-twitter\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-linkedin\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-linkedin\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-instagram\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-instagram\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-whatsapp\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-whatsapp\"></ion-icon>
-                                    </a>
-                                </div>
-                                <div class=\"col-2\">
-                                    <a href=\"#\" class=\"btn btn-icon btn-twitch\" data-bs-dismiss=\"offcanvas\">
-                                        <ion-icon name=\"logo-twitch\"></ion-icon>
-                                    </a>
-                                </div>
+                            <div class=\"row justify-content-center\">
+                                {% if profile.socialmedia.phone is defined and profile.socialmedia.phone is not empty %}
+                                    <div class=\"col-2\">
+                                        <a href=\"tel:{{profile.socialmedia.phone}}\" class=\"btn btn-icon btn-success\">
+                                            <ion-icon name=\"call-outline\"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% if profile.socialmedia.facebook is defined and profile.socialmedia.facebook is not empty %}
+                                    <div class=\"col-2\">
+                                        <a href=\"{{profile.socialmedia.facebook??\"\"}}\" target=\"_blank\" class=\"btn btn-icon btn-facebook\">
+                                            <ion-icon name=\"logo-facebook\"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% if profile.socialmedia.twitter is defined and profile.socialmedia.twitter is not empty %}
+                                    <div class=\"col-2\">
+                                        <a href=\"{{profile.socialmedia.twitter??\"\"}}\" target=\"_blank\" class=\"btn btn-icon btn-twitter\">
+                                            <ion-icon name=\"logo-twitter\"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% if profile.socialmedia.linkedin is defined and profile.socialmedia.linkedin is not empty %}
+                                    <div class=\"col-2\">
+                                        <a href=\"{{profile.socialmedia.linkedin??\"\"}}\" target=\"_blank\" class=\"btn btn-icon btn-linkedin\">
+                                            <ion-icon name=\"logo-linkedin\"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% if profile.socialmedia.instagram is defined and profile.socialmedia.instagram is not empty %}
+                                    <div class=\"col-2\">
+                                        <a href=\"{{profile.socialmedia.instagram??\"\"}}\" target=\"_blank\" class=\"btn btn-icon btn-instagram\">
+                                            <ion-icon name=\"logo-instagram\"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -687,8 +743,7 @@ class __TwigTemplate_145055509e316fc3eff29b0ab5bf0a6b extends Template
         <div class=\"section mt-1 mb-2\">
             <div class=\"profile-info\">
                 <div class=\" bio\">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at magna porttitor lorem mollis
-                    ornare. Fusce varius varius massa.
+                    {{profile.bio??\"\"}}
                 </div>
                 <!-- <div class=\"chip chip-media mt-1 mx-1\">
                     <i class=\"chip-icon bg-danger\">
