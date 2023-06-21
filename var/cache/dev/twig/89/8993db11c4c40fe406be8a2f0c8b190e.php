@@ -102,7 +102,10 @@ class __TwigTemplate_879af5307d792a5afbddf391d00836cd extends Template
                     <span>Modifier mon profil</span>
                 </div>
                 <li>
-                    <a href=\"app-pages.html\" class=\"item\">
+                    <a href=\"";
+        // line 60
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modification_informations");
+        echo "\" class=\"item\">
                         <div class=\"icon-box bg-primary\">
                             <ion-icon name=\"information-circle-outline\"></ion-icon>
                         </div>
@@ -153,7 +156,10 @@ class __TwigTemplate_879af5307d792a5afbddf391d00836cd extends Template
             <a href=\"#\" class=\"button\">
                 <ion-icon name=\"settings-outline\"></ion-icon>
             </a>
-            <a href=\"#\" class=\"button\">
+            <a href=\"";
+        // line 111
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+        echo "\" class=\"button\">
                 <ion-icon name=\"log-out-outline\"></ion-icon>
             </a>
         </div>
@@ -180,7 +186,7 @@ class __TwigTemplate_879af5307d792a5afbddf391d00836cd extends Template
 
     public function getDebugInfo()
     {
-        return array (  51 => 7,  43 => 1,);
+        return array (  161 => 111,  107 => 60,  51 => 7,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -244,7 +250,7 @@ class __TwigTemplate_879af5307d792a5afbddf391d00836cd extends Template
                     <span>Modifier mon profil</span>
                 </div>
                 <li>
-                    <a href=\"app-pages.html\" class=\"item\">
+                    <a href=\"{{ path('modification_informations')}}\" class=\"item\">
                         <div class=\"icon-box bg-primary\">
                             <ion-icon name=\"information-circle-outline\"></ion-icon>
                         </div>
@@ -295,7 +301,7 @@ class __TwigTemplate_879af5307d792a5afbddf391d00836cd extends Template
             <a href=\"#\" class=\"button\">
                 <ion-icon name=\"settings-outline\"></ion-icon>
             </a>
-            <a href=\"#\" class=\"button\">
+            <a href=\"{{path('logout')}}\" class=\"button\">
                 <ion-icon name=\"log-out-outline\"></ion-icon>
             </a>
         </div>

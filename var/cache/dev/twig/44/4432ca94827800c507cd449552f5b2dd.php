@@ -24,10 +24,15 @@ class __TwigTemplate_72f42f64f1fc2785d1896fdd6f88a8a2 extends Template
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
+            'body' => [$this, 'block_body'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -39,33 +44,28 @@ class __TwigTemplate_72f42f64f1fc2785d1896fdd6f88a8a2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "security/subscribe.html.twig"));
 
-        // line 1
-        echo "<!doctype html>
-<html lang=\"en\">
+        $this->parent = $this->loadTemplate("layout.html.twig", "security/subscribe.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
-<head>
-    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
-    <meta name=\"viewport\"
-        content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover\" />
-    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />
-    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">
-    <meta name=\"theme-color\" content=\"#000000\">
-    <title>Mobilekit Mobile UI Kit</title>
-    <meta name=\"description\" content=\"Mobilekit HTML Mobile UI Kit\">
-    <meta name=\"keywords\" content=\"bootstrap 5, mobile template, cordova, phonegap, mobile, html\" />
-    <link rel=\"icon\" type=\"image/png\" href=\"";
-        // line 14
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/favicon.png"), "html", null, true);
-        echo "\" sizes=\"32x32\">
-    ";
-        // line 16
-        echo "    <link rel=\"stylesheet\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/style.css"), "html", null, true);
-        echo "\">
-    ";
-        // line 18
-        echo "</head>
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+    }
+
+    // line 5
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 6
+        echo "
 <body class=\"bg-white\">
 
     <!-- loader -->
@@ -84,7 +84,7 @@ class __TwigTemplate_72f42f64f1fc2785d1896fdd6f88a8a2 extends Template
         <div class=\"pageTitle\"></div>
         <div class=\"right\">
             ";
-        // line 40
+        // line 27
         echo "        </div>
     </div>
     <!-- * App Header -->
@@ -99,19 +99,19 @@ class __TwigTemplate_72f42f64f1fc2785d1896fdd6f88a8a2 extends Template
             </div>
             <div class=\"section mt-2 mb-5\">
                 <form id=\"subscribe-form\" role=\"form\" method=\"post\" action=\"";
-        // line 53
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auth_ajax_subscribe");
         echo "\">
                 ";
-        // line 54
-        if ((array_key_exists("error", $context) && ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 54, $this->source); })()) != ""))) {
-            // line 55
+        // line 41
+        if ((array_key_exists("error", $context) && ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 41, $this->source); })()) != ""))) {
+            // line 42
             echo "                    <div class=\"text-danger text-start\">";
-            echo twig_escape_filter($this->env, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 55, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 42, $this->source); })()), "html", null, true);
             echo "</div>
                 ";
         }
-        // line 57
+        // line 44
         echo "                    <div class=\"form-group boxed\">
                         <div class=\"input-wrapper\">
                             <input type=\"text\" class=\"form-control\" id=\"firstname\" name=\"firstname\" placeholder=\"Prénom\">
@@ -158,7 +158,7 @@ class __TwigTemplate_72f42f64f1fc2785d1896fdd6f88a8a2 extends Template
                     </div>
 
                     ";
-        // line 110
+        // line 97
         echo "
                     <div class=\" mt-1 text-start\">
                         <div class=\"form-check\">
@@ -181,40 +181,12 @@ class __TwigTemplate_72f42f64f1fc2785d1896fdd6f88a8a2 extends Template
     </div>
     <!-- * App Capsule -->
 
-
-
-    <!-- ============== Js Files ==============  -->
-    <!-- Bootstrap -->
-    <script src=\"";
-        // line 136
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/lib/bootstrap.min.js"), "html", null, true);
-        echo "\"></script>
-    <!-- Ionicons -->
-    <script type=\"module\" src=\"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js\"></script>
-    <!-- Splide -->
-    <script src=\"";
-        // line 140
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/plugins/splide/splide.min.js"), "html", null, true);
-        echo "\"></script>
-    <!-- ProgressBar js -->
-    <script src=\"";
-        // line 142
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/plugins/progressbar-js/progressbar.min.js"), "html", null, true);
-        echo "\"></script>
-    <!-- Base Js File -->
-    <script src=\"";
-        // line 144
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/base.js"), "html", null, true);
-        echo "\"></script>
-
-</body>
-
-</html>";
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
     }
 
@@ -230,29 +202,16 @@ class __TwigTemplate_72f42f64f1fc2785d1896fdd6f88a8a2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  207 => 144,  202 => 142,  197 => 140,  190 => 136,  162 => 110,  115 => 57,  109 => 55,  107 => 54,  103 => 53,  88 => 40,  67 => 18,  62 => 16,  58 => 14,  43 => 1,);
+        return array (  162 => 97,  115 => 44,  109 => 42,  107 => 41,  103 => 40,  88 => 27,  68 => 6,  58 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!doctype html>
-<html lang=\"en\">
+        return new Source("{% extends \"layout.html.twig\" %}
 
-<head>
-    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
-    <meta name=\"viewport\"
-        content=\"width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover\" />
-    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />
-    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">
-    <meta name=\"theme-color\" content=\"#000000\">
-    <title>Mobilekit Mobile UI Kit</title>
-    <meta name=\"description\" content=\"Mobilekit HTML Mobile UI Kit\">
-    <meta name=\"keywords\" content=\"bootstrap 5, mobile template, cordova, phonegap, mobile, html\" />
-    <link rel=\"icon\" type=\"image/png\" href=\"{{ asset('assets/img/favicon.png')}}\" sizes=\"32x32\">
-    {# <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{{ asset('assets/img/icon/192x192.png')}}\"> #}
-    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/style.css')}}\">
-    {# <link rel=\"manifest\" href=\"{{ asset('__manifest.json')}}\"> #}
-</head>
+{# {% block title %}Accueil{% endblock %} #}
+
+{% block body %}
 
 <body class=\"bg-white\">
 
@@ -366,22 +325,6 @@ class __TwigTemplate_72f42f64f1fc2785d1896fdd6f88a8a2 extends Template
     </div>
     <!-- * App Capsule -->
 
-
-
-    <!-- ============== Js Files ==============  -->
-    <!-- Bootstrap -->
-    <script src=\"{{ asset('assets/js/lib/bootstrap.min.js')}}\"></script>
-    <!-- Ionicons -->
-    <script type=\"module\" src=\"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js\"></script>
-    <!-- Splide -->
-    <script src=\"{{ asset('assets/js/plugins/splide/splide.min.js')}}\"></script>
-    <!-- ProgressBar js -->
-    <script src=\"{{ asset('assets/js/plugins/progressbar-js/progressbar.min.js')}}\"></script>
-    <!-- Base Js File -->
-    <script src=\"{{ asset('assets/js/base.js')}}\"></script>
-
-</body>
-
-</html>", "security/subscribe.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/security/subscribe.html.twig");
+{% endblock %}", "security/subscribe.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/security/subscribe.html.twig");
     }
 }

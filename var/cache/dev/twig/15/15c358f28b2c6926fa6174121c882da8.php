@@ -54,10 +54,15 @@ class __TwigTemplate_ae04a90c2c2f9b133532651a9bbafb9c extends Template
             </a>
         </div>
         <div class=\"\" style=\"opacity: 1 !important;\">
-                <img src=\"";
+            <a href=\"";
         // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
+        echo "\" class=\"item\">
+                <img src=\"";
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/icon/56x56.png"), "html", null, true);
         echo "\" alt=\"logo\" class=\"logo\">
+            </a>
         </div>
         <div class=\"right\">
             <a href=\"#\" class=\"headerButton toggle-searchbox\">
@@ -102,7 +107,7 @@ class __TwigTemplate_ae04a90c2c2f9b133532651a9bbafb9c extends Template
 
     public function getDebugInfo()
     {
-        return array (  59 => 15,  43 => 1,);
+        return array (  63 => 16,  59 => 15,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -121,7 +126,9 @@ class __TwigTemplate_ae04a90c2c2f9b133532651a9bbafb9c extends Template
             </a>
         </div>
         <div class=\"\" style=\"opacity: 1 !important;\">
+            <a href=\"{{ path('accueil')}}\" class=\"item\">
                 <img src=\"{{ asset(\"assets/img/icon/56x56.png\") }}\" alt=\"logo\" class=\"logo\">
+            </a>
         </div>
         <div class=\"right\">
             <a href=\"#\" class=\"headerButton toggle-searchbox\">

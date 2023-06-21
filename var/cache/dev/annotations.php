@@ -116,27 +116,39 @@ return [[
 '[C]App%5CController%5CHomeController%23accueil' => 1,
 'App%5CController%5CHomeController%23revisions' => 5,
 '[C]App%5CController%5CHomeController%23revisions' => 1,
-'App%5CController%5CHomeController%23profile' => 6,
-'[C]App%5CController%5CHomeController%23profile' => 1,
 'App%5CController%5CHomeController%24findApi' => 0,
 '[C]App%5CController%5CHomeController%24findApi' => 1,
+'App%5CController%5CProfileController' => 0,
+'[C]App%5CController%5CProfileController' => 1,
+'App%5CController%5CProfileController%23__construct' => 0,
+'[C]App%5CController%5CProfileController%23__construct' => 1,
+'App%5CController%5CProfileController%23profile' => 6,
+'[C]App%5CController%5CProfileController%23profile' => 1,
+'App%5CController%5CProfileController%23modificationInformations' => 7,
+'[C]App%5CController%5CProfileController%23modificationInformations' => 1,
+'App%5CController%5CProfileController%23patchModificationInformations' => 8,
+'[C]App%5CController%5CProfileController%23patchModificationInformations' => 1,
+'App%5CController%5CProfileController%24findApi' => 0,
+'[C]App%5CController%5CProfileController%24findApi' => 1,
+'App%5CController%5CProfileController%24findAuth' => 0,
+'[C]App%5CController%5CProfileController%24findAuth' => 1,
 'App%5CController%5CSecurityController' => 0,
 '[C]App%5CController%5CSecurityController' => 1,
 'App%5CController%5CSecurityController%23__construct' => 0,
 '[C]App%5CController%5CSecurityController%23__construct' => 1,
-'App%5CController%5CSecurityController%23login' => 7,
+'App%5CController%5CSecurityController%23login' => 9,
 '[C]App%5CController%5CSecurityController%23login' => 1,
-'App%5CController%5CSecurityController%23subscribe' => 8,
+'App%5CController%5CSecurityController%23subscribe' => 10,
 '[C]App%5CController%5CSecurityController%23subscribe' => 1,
-'App%5CController%5CSecurityController%23subscribeValidation' => 9,
+'App%5CController%5CSecurityController%23subscribeValidation' => 11,
 '[C]App%5CController%5CSecurityController%23subscribeValidation' => 1,
-'App%5CController%5CSecurityController%23logout' => 10,
+'App%5CController%5CSecurityController%23logout' => 12,
 '[C]App%5CController%5CSecurityController%23logout' => 1,
-'App%5CController%5CSecurityController%23ajaxSubscribe' => 11,
+'App%5CController%5CSecurityController%23ajaxSubscribe' => 13,
 '[C]App%5CController%5CSecurityController%23ajaxSubscribe' => 1,
-'App%5CController%5CSecurityController%23forgotPassword' => 12,
+'App%5CController%5CSecurityController%23forgotPassword' => 14,
 '[C]App%5CController%5CSecurityController%23forgotPassword' => 1,
-'App%5CController%5CSecurityController%23sendRequestResetPassword' => 13,
+'App%5CController%5CSecurityController%23sendRequestResetPassword' => 15,
 '[C]App%5CController%5CSecurityController%23sendRequestResetPassword' => 1,
 'App%5CController%5CSecurityController%24findAuth' => 0,
 '[C]App%5CController%5CSecurityController%24findAuth' => 1,
@@ -716,7 +728,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1686669979,
+1 => 1686749410,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -840,6 +852,54 @@ return [[
 7 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+            clone ($p['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Template'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Template')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/modification/informations',
+                ],
+                'name' => [
+                    'modification_informations',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+            $o[1],
+        ],
+        []
+    );
+},
+8 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+            clone ($p['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Template'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Template')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/modification/informations/patch',
+                ],
+                'name' => [
+                    'modification_informations_patch',
+                ],
+            ],
+        ],
+        [
+            $o[0],
+            $o[1],
+        ],
+        []
+    );
+},
+9 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
         ],
         null,
@@ -859,7 +919,7 @@ return [[
         []
     );
 },
-8 => static function () {
+10 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -881,7 +941,7 @@ return [[
         []
     );
 },
-9 => static function () {
+11 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -903,7 +963,7 @@ return [[
         []
     );
 },
-10 => static function () {
+12 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -925,7 +985,7 @@ return [[
         []
     );
 },
-11 => static function () {
+13 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -947,7 +1007,7 @@ return [[
         []
     );
 },
-12 => static function () {
+14 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -969,7 +1029,7 @@ return [[
         []
     );
 },
-13 => static function () {
+15 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),

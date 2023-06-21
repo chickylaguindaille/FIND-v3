@@ -173,7 +173,6 @@ class __TwigTemplate_bae101e3e273a3ed10fa47013e023d5b extends Template
 
         // line 15
         echo "        ";
-        $this->loadTemplate("home.html.twig", "layout.html.twig", 15)->display($context);
         // line 16
         echo "    ";
         
@@ -291,7 +290,7 @@ class __TwigTemplate_bae101e3e273a3ed10fa47013e023d5b extends Template
 
     public function getDebugInfo()
     {
-        return array (  270 => 44,  264 => 41,  258 => 38,  250 => 33,  246 => 30,  244 => 29,  234 => 28,  224 => 24,  221 => 23,  211 => 22,  201 => 20,  198 => 19,  188 => 18,  178 => 16,  175 => 15,  165 => 14,  155 => 12,  152 => 11,  142 => 10,  131 => 25,  129 => 22,  126 => 21,  124 => 18,  121 => 17,  119 => 14,  116 => 13,  114 => 10,  111 => 9,  101 => 8,  90 => 5,  88 => 4,  78 => 3,  67 => 46,  65 => 28,  62 => 27,  60 => 8,  57 => 7,  55 => 3,  52 => 2,  50 => 1,);
+        return array (  269 => 44,  263 => 41,  257 => 38,  249 => 33,  245 => 30,  243 => 29,  233 => 28,  223 => 24,  220 => 23,  210 => 22,  200 => 20,  197 => 19,  187 => 18,  177 => 16,  175 => 15,  165 => 14,  155 => 12,  152 => 11,  142 => 10,  131 => 25,  129 => 22,  126 => 21,  124 => 18,  121 => 17,  119 => 14,  116 => 13,  114 => 10,  111 => 9,  101 => 8,  90 => 5,  88 => 4,  78 => 3,  67 => 46,  65 => 28,  62 => 27,  60 => 8,  57 => 7,  55 => 3,  52 => 2,  50 => 1,);
     }
 
     public function getSourceContext()
@@ -310,7 +309,7 @@ class __TwigTemplate_bae101e3e273a3ed10fa47013e023d5b extends Template
     {% endblock %}
 
     {% block content %}
-        {% include 'home.html.twig' %}
+        {# {% include 'home.html.twig' %} #}
     {% endblock %}
 
     {% block footer %}
