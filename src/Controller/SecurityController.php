@@ -29,7 +29,7 @@ class SecurityController extends BaseController
     }
 
     /**
-     * @Route("/login", name="login")
+     * @Route("/app/login", name="login")
      */
     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
@@ -51,7 +51,7 @@ class SecurityController extends BaseController
     }
 
     /**
-     * @Route("/subscribe", name="subscribe")
+     * @Route("/app/subscribe", name="subscribe")
      */
     public function subscribe(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
@@ -64,7 +64,7 @@ class SecurityController extends BaseController
     }
 
     /**
-     * @Route("/subscribe/validation", name="subscribe_validation")
+     * @Route("/app/subscribe/validation", name="subscribe_validation")
      */
     public function subscribeValidation(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
@@ -75,7 +75,7 @@ class SecurityController extends BaseController
     }
 
     /**
-     * @Route("/logout", name="logout")
+     * @Route("/app/logout", name="logout")
      */
     public function logout()
     {
@@ -85,7 +85,7 @@ class SecurityController extends BaseController
 
 
     // /**
-    //  * @Route("/homepage", name="homepage")
+    //  * @Route("/app/homepage", name="homepage")
     //  */
     // public function homepage(Request $request)
     // {
@@ -107,7 +107,7 @@ class SecurityController extends BaseController
 
 
     /**
-     * @Route("/auth/subscribe", name="auth_ajax_subscribe")
+     * @Route("/app/auth/subscribe", name="auth_ajax_subscribe")
      */
     public function ajaxSubscribe(Request $request)
     {
@@ -211,7 +211,7 @@ class SecurityController extends BaseController
 
 
     /**
-     * @Route("/forgot/password", name="forgot_password")
+     * @Route("/app/forgot/password", name="forgot_password")
      */
     public function forgotPassword(Request $request)
     {
@@ -219,7 +219,7 @@ class SecurityController extends BaseController
     }
 
     /**
-     * @Route("/forgot/password/request", name="send_reset_request_password")
+     * @Route("/app/forgot/password/request", name="send_reset_request_password")
      */
     public function sendRequestResetPassword(Request $request)
     {
