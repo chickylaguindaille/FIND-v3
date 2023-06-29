@@ -43,7 +43,7 @@ class FindController extends AbstractController
 
 
     // VILLES
-        #[Route('/Localisation/{country}/Villes', name: 'ville', methods: ['GET'])]
+        #[Route('/app/Localisation/{country}/Villes', name: 'ville', methods: ['GET'])]
         public function villes($country, Request $request, VilleRepository $villeRepository): Response
         {
 
@@ -60,7 +60,7 @@ class FindController extends AbstractController
 
     
     // VILLES RECHERCHE
-        #[Route('/Localisation/{country}/Villes/change', name: 'change_ville', methods: ['GET'])]
+        #[Route('/app/Localisation/{country}/Villes/change', name: 'change_ville', methods: ['GET'])]
         public function changeVilles($country, Request $request, VilleRepository $villeRepository): Response
         {
     
@@ -110,7 +110,7 @@ class FindController extends AbstractController
     
 
     // CORPORATIONS
-        #[Route('/Localisation/{country}/{ville}/Corporations', name: 'corporations', methods: ['GET'])]
+        #[Route('/app/Localisation/{country}/{ville}/Corporations', name: 'corporations', methods: ['GET'])]
         public function corporations($country, $ville, Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
         {
             $data['country'] = $country;
@@ -144,7 +144,7 @@ class FindController extends AbstractController
 
 
     // RECHERCHE CORPORATIONS
-        #[Route('/Localisation/{country}/{ville}/Corporations/change', name: 'change_corporations', methods: ['GET'])]
+        #[Route('/app/Localisation/{country}/{ville}/Corporations/change', name: 'change_corporations', methods: ['GET'])]
         public function rechercheCorporations($country, $ville, Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
         {
 
@@ -199,7 +199,7 @@ class FindController extends AbstractController
 
 
     // CORPORATION
-    #[Route('/Localisation/{country}/{ville}/{corpo}', name: 'corporation', methods: ['GET'])]
+    #[Route('/app/Localisation/{country}/{ville}/{corpo}', name: 'corporation', methods: ['GET'])]
     public function corporation($country, $ville, Request $request): Response
     {
         $data['country'] = $country;
