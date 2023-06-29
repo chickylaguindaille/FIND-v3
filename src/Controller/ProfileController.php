@@ -44,7 +44,7 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/profile", name="profile")
+     * @Route("/app/profile", name="profile")
      * @Template()
      */
     public function profile(Request $request)
@@ -62,7 +62,7 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/modification/informations", name="modification_informations")
+     * @Route("/app/modification/informations", name="modification_informations")
      * @Template()
      */
     public function modificationInformations(Request $request)
@@ -83,7 +83,7 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/modification/informations/patch", name="modification_informations_patch")
+     * @Route("/app/modification/informations/patch", name="modification_informations_patch")
      * @Template()
      */
     public function patchModificationInformations(Request $request)
