@@ -82,7 +82,7 @@ class __TwigTemplate_edaaf2726c85b59a248323a1d854bdb4 extends Template
             <div class=\"section\">
                 <img src=\"";
         // line 21
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sample/photo/vector4.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/img/sample/photo/vector4.png"), "html", null, true);
         echo "\" alt=\"image\" class=\"form-image\">
             </div>
             <div class=\"section mt-1\">
@@ -200,7 +200,7 @@ class __TwigTemplate_edaaf2726c85b59a248323a1d854bdb4 extends Template
 
         <div class=\"login-form mt-1\">
             <div class=\"section\">
-                <img src=\"{{ asset('assets/img/sample/photo/vector4.png')}}\" alt=\"image\" class=\"form-image\">
+                <img src=\"{{ asset('app/assets/img/sample/photo/vector4.png')}}\" alt=\"image\" class=\"form-image\">
             </div>
             <div class=\"section mt-1\">
                 <h1>FIND</h1>
@@ -256,6 +256,7 @@ class __TwigTemplate_edaaf2726c85b59a248323a1d854bdb4 extends Template
     </div>
     <!-- * App Capsule -->
 
-{% endblock %}", "security/login.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/security/login.html.twig");
+{% endblock %}
+", "security/login.html.twig", "/home/zcsadjyj/public_html/FIND-v3/templates/security/login.html.twig");
     }
 }

@@ -58,21 +58,21 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
         <meta name=\"theme-color\" content=\"#000000\">
         <link rel=\"icon\" type=\"image/png\" href=\"";
         // line 10
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/32x32.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/img/32x32.png"), "html", null, true);
         echo "\" sizes=\"32x32\">
         <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"";
         // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/icon/192x192.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/img/icon/192x192.png"), "html", null, true);
         echo "\">
         ";
         // line 13
         echo "        <link rel=\"stylesheet\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/style.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/css/style.css"), "html", null, true);
         echo "\">
         ";
         // line 15
         echo "        <link rel=\"manifest\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("__manifest.json"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/__manifest.json"), "html", null, true);
         echo "\">
         ";
         // line 16
@@ -209,12 +209,12 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
         <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />
         <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">
         <meta name=\"theme-color\" content=\"#000000\">
-        <link rel=\"icon\" type=\"image/png\" href=\"{{ asset(\"assets/img/32x32.png\") }}\" sizes=\"32x32\">
-        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{{ asset(\"assets/img/icon/192x192.png\") }}\">
-        {# <link rel=\"stylesheet\" href=\"assets/css/style.css\"> #}
-        <link rel=\"stylesheet\" href=\"{{ asset(\"assets/css/style.css\") }}\">
+        <link rel=\"icon\" type=\"image/png\" href=\"{{ asset(\"app/assets/img/32x32.png\") }}\" sizes=\"32x32\">
+        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{{ asset(\"app/assets/img/icon/192x192.png\") }}\">
+        {# <link rel=\"stylesheet\" href=\"app/assets/css/style.css\"> #}
+        <link rel=\"stylesheet\" href=\"{{ asset(\"app/assets/css/style.css\") }}\">
         {# <link rel=\"manifest\" href=\"__manifest.json\"> #}
-        <link rel=\"manifest\" href=\"{{ asset(\"__manifest.json\") }}\">
+        <link rel=\"manifest\" href=\"{{ asset(\"app/__manifest.json\") }}\">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -227,6 +227,6 @@ class __TwigTemplate_e81cff2a485b4e67e119ce164375c31d extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/base.html.twig");
+", "base.html.twig", "/home/zcsadjyj/public_html/FIND-v3/templates/base.html.twig");
     }
 }

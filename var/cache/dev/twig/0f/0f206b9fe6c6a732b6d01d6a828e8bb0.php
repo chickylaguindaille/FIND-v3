@@ -247,7 +247,7 @@ class __TwigTemplate_bae101e3e273a3ed10fa47013e023d5b extends Template
     ";
         // line 33
         echo "    <script src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/lib/bootstrap.min.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/js/lib/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Ionicons -->
     <script type=\"module\" src=\"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js\"></script>
@@ -255,19 +255,19 @@ class __TwigTemplate_bae101e3e273a3ed10fa47013e023d5b extends Template
     ";
         // line 38
         echo "    <script src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/plugins/splide/splide.min.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/js/plugins/splide/splide.min.js"), "html", null, true);
         echo "\"></script>
     <!-- ProgressBar js -->
     ";
         // line 41
         echo "    <script src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/plugins/progressbar-js/progressbar.min.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/js/plugins/progressbar-js/progressbar.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Base Js File -->
     ";
         // line 44
         echo "    <script src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/base.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/js/base.js"), "html", null, true);
         echo "\"></script>
 ";
         
@@ -327,20 +327,20 @@ class __TwigTemplate_bae101e3e273a3ed10fa47013e023d5b extends Template
 
     <!-- Bootstrap -->
     {# <script src=\"assets/js/lib/bootstrap.min.js\"></script> #}
-    <script src=\"{{ asset(\"assets/js/lib/bootstrap.min.js\") }}\"></script>
+    <script src=\"{{ asset(\"app/assets/js/lib/bootstrap.min.js\") }}\"></script>
     <!-- Ionicons -->
     <script type=\"module\" src=\"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js\"></script>
     <!-- Splide -->
     {# <script src=\"assets/js/plugins/splide/splide.min.js\"></script> #}
-    <script src=\"{{ asset(\"assets/js/plugins/splide/splide.min.js\") }}\"></script>
+    <script src=\"{{ asset(\"app/assets/js/plugins/splide/splide.min.js\") }}\"></script>
     <!-- ProgressBar js -->
     {# <script src=\"assets/js/plugins/progressbar-js/progressbar.min.js\"></script> #}
-    <script src=\"{{ asset(\"assets/js/plugins/progressbar-js/progressbar.min.js\") }}\"></script>
+    <script src=\"{{ asset(\"app/assets/js/plugins/progressbar-js/progressbar.min.js\") }}\"></script>
     <!-- Base Js File -->
     {# <script src=\"assets/js/base.js\"></script> #}
-    <script src=\"{{ asset(\"assets/js/base.js\") }}\"></script>
+    <script src=\"{{ asset(\"app/assets/js/base.js\") }}\"></script>
 {% endblock %}
 
-", "layout.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/layout.html.twig");
+", "layout.html.twig", "/home/zcsadjyj/public_html/FIND-v3/templates/layout.html.twig");
     }
 }
