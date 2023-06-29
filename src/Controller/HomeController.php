@@ -42,7 +42,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/connexions", name="connexions")
+     * @Route("/app/connexions", name="connexions")
      * @Template()
      */
     public function connexions(Request $request)
@@ -51,7 +51,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/calendar", name="calendar")
+     * @Route("/app/calendar", name="calendar")
      * @Template()
      */
     public function calendar(Request $request)
@@ -60,7 +60,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/accueil", name="accueil")
+     * @Route("/app/accueil", name="accueil")
      * @Template()
      */
     public function accueil(Request $request)
@@ -81,7 +81,7 @@ class HomeController extends AbstractController
     }
     
     /**
-     * @Route("/revisions", name="revisions")
+     * @Route("/app/revisions", name="revisions")
      * @Template()
      */
     public function revisions(Request $request)
