@@ -1,6 +1,0 @@
-1bba75,::1,GET,http://localhost/FIND-v3/public/index.php/app/login,1688068254,,200
-300004,::1,GET,http://localhost/FIND-v3/public/index.php/app/service-worker.js,1688068254,b82b0a,404
-b82b0a,::1,GET,http://localhost/FIND-v3/public/index.php/app/service-worker.js,1688068254,,404
-1fd9b6,::1,GET,http://localhost/FIND-v3/public/index.php/app/login,1688069075,,200
-e464df,::1,GET,http://localhost/FIND-v3/public/index.php/app/service-worker.js,1688069075,f877ae,404
-f877ae,::1,GET,http://localhost/FIND-v3/public/index.php/app/service-worker.js,1688069075,,404
