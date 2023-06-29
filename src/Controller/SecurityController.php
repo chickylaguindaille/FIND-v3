@@ -29,7 +29,7 @@ class SecurityController extends BaseController
     }
 
     /**
-     * @Route("/login", name="login")
+     * @Route("/app/login", name="login")
      */
     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
