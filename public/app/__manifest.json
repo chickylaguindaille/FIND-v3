@@ -1,7 +1,7 @@
 {
-    "name": "Mobilekit",
-    "short_name": "Mobilekit",
-    "start_url": "index.html",
+    "name": "Folklore Is Not Dead",
+    "short_name": "FIND",
+    "start_url": "folklore-is-not-dead.com",
     "display": "standalone",
     "scope" : "/",
     "background_color": "#000000",
