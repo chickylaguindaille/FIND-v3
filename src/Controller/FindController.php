@@ -46,7 +46,7 @@ class FindController extends AbstractController
         #[Route('/app/Localisation/{country}/Villes', name: 'ville', methods: ['GET'])]
         public function villes($country, Request $request, VilleRepository $villeRepository): Response
         {
-
+        $data['page'] = "FIND";
         // $country = $request->get('country');
         $data['country'] = $country;
 
@@ -64,7 +64,7 @@ class FindController extends AbstractController
         public function changeVilles($country, Request $request, VilleRepository $villeRepository): Response
         {
     
-
+        $data['page'] = "FIND";
         // TABLEAU VILLE
         $serializer = SerializerBuilder::create()->build();
         $ville = $villeRepository->findAll();
@@ -113,6 +113,7 @@ class FindController extends AbstractController
         #[Route('/app/Localisation/{country}/{ville}/Corporations', name: 'corporations', methods: ['GET'])]
         public function corporations($country, $ville, Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
         {
+            $data['page'] = "FIND";
             $data['country'] = $country;
             $data['ville'] = $ville;
             $villeid = $request->get('villeid');
@@ -147,7 +148,7 @@ class FindController extends AbstractController
         #[Route('/app/Localisation/{country}/{ville}/Corporations/change', name: 'change_corporations', methods: ['GET'])]
         public function rechercheCorporations($country, $ville, Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
         {
-
+            $data['page'] = "FIND";
             $data['country'] = $country;
             // $ville = $request->get('ville');
 
@@ -202,6 +203,7 @@ class FindController extends AbstractController
     #[Route('/app/Localisation/{country}/{ville}/{corpo}', name: 'corporation', methods: ['GET'])]
     public function corporation($country, $ville, Request $request): Response
     {
+        $data['page'] = "FIND";
         $data['country'] = $country;
         $data['ville'] = $ville;
         $associationid = $request->get('associationid');
@@ -221,6 +223,7 @@ class FindController extends AbstractController
         #[Route('/Localisation/corporation', name: 'corporation_html', methods: ['GET'])]
         public function corporationHtml()
         {
+            $data['page'] = "FIND";
             return $this->render('find/corporation.html.twig');
         }
 
