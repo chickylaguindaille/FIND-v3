@@ -47,7 +47,8 @@ class HomeController extends AbstractController
      */
     public function connexions(Request $request)
     {
-        return $this->render('connexions/connexions.html.twig');
+	$data['page'] = "connexions";
+        return $this->render('connexions/connexions.html.twig', $data);
     }
 
     /**
@@ -56,7 +57,8 @@ class HomeController extends AbstractController
      */
     public function calendar(Request $request)
     {
-        return $this->render('calendar/calendar.html.twig');
+	$data['page'] = "calendar";
+        return $this->render('calendar/calendar.html.twig', $data);
     }
 
     /**
@@ -65,7 +67,7 @@ class HomeController extends AbstractController
      */
     public function accueil(Request $request)
     {
-
+	$data['page'] = "FIND";
 		$data['required'] = $_ENV['REQUIRED_INPUT'];
 
         $associations = $this->findApi->getAssociations();
@@ -86,7 +88,8 @@ class HomeController extends AbstractController
      */
     public function revisions(Request $request)
     {
-        return $this->render('revisions/revisions.html.twig');
+	$data['page'] = "revisions";
+        return $this->render('revisions/revisions.html.twig', $data);
     }
 
 
