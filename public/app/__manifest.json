@@ -1,7 +1,7 @@
 {
     "name": "Folklore Is Not Dead",
     "short_name": "FIND",
-    "start_url": "folklore-is-not-dead.com",
+    "start_url": "/",
     "display": "standalone",
     "scope" : "/",
     "background_color": "#000000",
