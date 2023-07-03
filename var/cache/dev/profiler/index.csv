@@ -81,3 +81,6 @@ e9b33f,::1,GET,http://localhost/FIND-v3/public/index.php/app/revisions,168837383
 f1a8d8,::1,GET,http://localhost/FIND-v3/public/index.php/app/revisions,1688374175,,200
 a4274f,::1,GET,http://localhost/FIND-v3/public/index.php/app/service-worker.js,1688374175,5e52ca,404
 5e52ca,::1,GET,http://localhost/FIND-v3/public/index.php/app/service-worker.js,1688374175,,404
+f9cb9f,::1,GET,http://localhost/FIND-v3/public/index.php/app/revisions,1688374295,,200
+be80e7,::1,GET,http://localhost/FIND-v3/public/index.php/app/service-worker.js,1688374296,8f872d,404
+8f872d,::1,GET,http://localhost/FIND-v3/public/index.php/app/service-worker.js,1688374296,,404
