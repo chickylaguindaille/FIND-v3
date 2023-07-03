@@ -337,7 +337,7 @@ button:hover, button:active, button:focus {
 }
 
 .appBottomMenu {
-  max-height: 80px;
+  min-height: 75px;
   position: fixed;
   z-index: 999;
   bottom: 0;
