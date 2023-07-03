@@ -72,7 +72,7 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
         ";
         // line 15
         echo "        <link rel=\"manifest\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/__manifest.json"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/__manifest.json"), "html", null, true);
         echo "\">
         ";
         // line 16
@@ -214,7 +214,7 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
         {# <link rel=\"stylesheet\" href=\"app/assets/css/style.css\"> #}
         <link rel=\"stylesheet\" href=\"{{ asset(\"app/assets/css/style.css\") }}\">
         {# <link rel=\"manifest\" href=\"__manifest.json\"> #}
-        <link rel=\"manifest\" href=\"{{ asset(\"build/__manifest.json\") }}\">
+        <link rel=\"manifest\" href=\"{{ asset(\"app/__manifest.json\") }}\">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
