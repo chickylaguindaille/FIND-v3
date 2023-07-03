@@ -26,19 +26,21 @@ use JMS\Serializer\SerializerBuilder;
 use Psr\Log\LoggerInterface;
 
 use App\Service\FindApiService;
+use App\Service\FindAuthService;
 
 
 class FindController extends AbstractController
 {
 
     private $findApi;
+    private $findAuth;
 
 
-    public function __construct(LoggerInterface $logger, FindApiService $findApi)
+    public function __construct(LoggerInterface $logger, FindApiService $findApi, FindAuthService $findAuth)
     {
         // parent::__construct($logger);
         $this->findApi = $findApi;
-
+        $this->findAuth = $findAuth;
     }
 
 
@@ -47,6 +49,11 @@ class FindController extends AbstractController
         public function villes($country, Request $request, VilleRepository $villeRepository): Response
         {
         $data['page'] = "FIND";
+
+        $user = $this->getUser();
+        $profile = $this->findAuth->getUserByEmail($user->getEmail());
+        $data['profile'] = $profile;
+
         // $country = $request->get('country');
         $data['country'] = $country;
 
@@ -65,6 +72,11 @@ class FindController extends AbstractController
         {
     
         $data['page'] = "FIND";
+
+        $user = $this->getUser();
+        $profile = $this->findAuth->getUserByEmail($user->getEmail());
+        $data['profile'] = $profile;
+
         // TABLEAU VILLE
         $serializer = SerializerBuilder::create()->build();
         $ville = $villeRepository->findAll();
@@ -114,6 +126,11 @@ class FindController extends AbstractController
         public function corporations($country, $ville, Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
         {
             $data['page'] = "FIND";
+
+            $user = $this->getUser();
+            $profile = $this->findAuth->getUserByEmail($user->getEmail());
+            $data['profile'] = $profile;
+
             $data['country'] = $country;
             $data['ville'] = $ville;
             $villeid = $request->get('villeid');
@@ -149,6 +166,11 @@ class FindController extends AbstractController
         public function rechercheCorporations($country, $ville, Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
         {
             $data['page'] = "FIND";
+
+            $user = $this->getUser();
+            $profile = $this->findAuth->getUserByEmail($user->getEmail());
+            $data['profile'] = $profile;
+
             $data['country'] = $country;
             // $ville = $request->get('ville');
 
@@ -204,6 +226,11 @@ class FindController extends AbstractController
     public function corporation($country, $ville, Request $request): Response
     {
         $data['page'] = "FIND";
+
+        $user = $this->getUser();
+        $profile = $this->findAuth->getUserByEmail($user->getEmail());
+        $data['profile'] = $profile;
+
         $data['country'] = $country;
         $data['ville'] = $ville;
         $associationid = $request->get('associationid');
@@ -223,6 +250,10 @@ class FindController extends AbstractController
         #[Route('/Localisation/corporation', name: 'corporation_html', methods: ['GET'])]
         public function corporationHtml()
         {
+            $user = $this->getUser();
+            $profile = $this->findAuth->getUserByEmail($user->getEmail());
+            $data['profile'] = $profile;
+
             $data['page'] = "FIND";
             return $this->render('find/corporation.html.twig');
         }

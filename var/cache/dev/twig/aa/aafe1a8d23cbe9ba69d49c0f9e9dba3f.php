@@ -44,15 +44,15 @@ class __TwigTemplate_7bbadfc3d6e6bb830f3d5c006a82574f extends Template
     <div class=\"appBottomMenu\">
         <a href=\"";
         // line 3
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexions");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("bar");
         echo "\" class=\"item ";
-        if ((array_key_exists("page", $context) && ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 3, $this->source); })()) == "connexions"))) {
+        if ((array_key_exists("page", $context) && ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 3, $this->source); })()) == "bar"))) {
             echo "active";
         }
         echo "\">
             <div class=\"col\">
-                <ion-icon name=\"earth-outline\"></ion-icon>
-                <strong>Connexions</strong>
+                <ion-icon name=\"beer-outline\"></ion-icon>
+                <strong>Bar</strong>
             </div>
         </a>
         <a href=\"";
@@ -141,10 +141,10 @@ class __TwigTemplate_7bbadfc3d6e6bb830f3d5c006a82574f extends Template
     {
         return new Source("<!-- App Bottom Menu -->
     <div class=\"appBottomMenu\">
-        <a href=\"{{ path('connexions')}}\" class=\"item {% if page is defined and page == \"connexions\" %}active{% endif %}\">
+        <a href=\"{{ path('bar')}}\" class=\"item {% if page is defined and page == \"bar\" %}active{% endif %}\">
             <div class=\"col\">
-                <ion-icon name=\"earth-outline\"></ion-icon>
-                <strong>Connexions</strong>
+                <ion-icon name=\"beer-outline\"></ion-icon>
+                <strong>Bar</strong>
             </div>
         </a>
         <a href=\"{{ path('calendar')}}\" class=\"item {% if page is defined and page == \"calendar\" %}active{% endif %}\">

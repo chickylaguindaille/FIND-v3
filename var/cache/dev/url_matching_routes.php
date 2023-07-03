@@ -9,7 +9,7 @@ return [
     false, // $matchHost
     [ // $staticRoutes
         '/Localisation/corporation' => [[['_route' => 'corporation_html', '_controller' => 'App\\Controller\\FindController::corporationHtml'], null, ['GET' => 0], null, false, false, null]],
-        '/app/connexions' => [[['_route' => 'connexions', '_controller' => 'App\\Controller\\HomeController::connexions'], null, null, null, false, false, null]],
+        '/app/bar' => [[['_route' => 'bar', '_controller' => 'App\\Controller\\HomeController::bar'], null, null, null, false, false, null]],
         '/app/calendar' => [[['_route' => 'calendar', '_controller' => 'App\\Controller\\HomeController::calendar'], null, null, null, false, false, null]],
         '/app/accueil' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\HomeController::accueil'], null, null, null, false, false, null]],
         '/app/revisions' => [[['_route' => 'revisions', '_controller' => 'App\\Controller\\HomeController::revisions'], null, null, null, false, false, null]],

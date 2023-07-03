@@ -9,7 +9,7 @@ return [
     'change_corporations' => [['country', 'ville'], ['_controller' => 'App\\Controller\\FindController::rechercheCorporations'], [], [['text', '/Corporations/change'], ['variable', '/', '[^/]++', 'ville', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/app/Localisation']], [], [], []],
     'corporation' => [['country', 'ville', 'corpo'], ['_controller' => 'App\\Controller\\FindController::corporation'], [], [['variable', '/', '[^/]++', 'corpo', true], ['variable', '/', '[^/]++', 'ville', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/app/Localisation']], [], [], []],
     'corporation_html' => [[], ['_controller' => 'App\\Controller\\FindController::corporationHtml'], [], [['text', '/Localisation/corporation']], [], [], []],
-    'connexions' => [[], ['_controller' => 'App\\Controller\\HomeController::connexions'], [], [['text', '/app/connexions']], [], [], []],
+    'bar' => [[], ['_controller' => 'App\\Controller\\HomeController::bar'], [], [['text', '/app/bar']], [], [], []],
     'calendar' => [[], ['_controller' => 'App\\Controller\\HomeController::calendar'], [], [['text', '/app/calendar']], [], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\HomeController::accueil'], [], [['text', '/app/accueil']], [], [], []],
     'revisions' => [[], ['_controller' => 'App\\Controller\\HomeController::revisions'], [], [['text', '/app/revisions']], [], [], []],

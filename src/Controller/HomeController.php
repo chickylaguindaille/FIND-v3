@@ -26,29 +26,34 @@ use JMS\Serializer\SerializerBuilder;
 use Psr\Log\LoggerInterface;
 
 use App\Service\FindApiService;
-
+use App\Service\FindAuthService;
 
 class HomeController extends AbstractController
 {
 
     private $findApi;
+    private $findAuth;
 
 
-    public function __construct(LoggerInterface $logger, FindApiService $findApi)
+    public function __construct(LoggerInterface $logger, FindApiService $findApi, FindAuthService $findAuth)
     {
         // parent::__construct($logger);
         $this->findApi = $findApi;
-
+        $this->findAuth = $findAuth;
     }
 
     /**
-     * @Route("/app/connexions", name="connexions")
+     * @Route("/app/bar", name="bar")
      * @Template()
      */
-    public function connexions(Request $request)
+    public function bar(Request $request)
     {
-	$data['page'] = "connexions";
-        return $this->render('connexions/connexions.html.twig', $data);
+	$data['page'] = "bar";
+    $user = $this->getUser();
+    $profile = $this->findAuth->getUserByEmail($user->getEmail());
+    $data['profile'] = $profile;
+        // return $this->render('bar/bar.html.twig', $data);
+        return $this->render('construction.html.twig', $data);
     }
 
     /**
@@ -58,7 +63,12 @@ class HomeController extends AbstractController
     public function calendar(Request $request)
     {
 	$data['page'] = "calendar";
-        return $this->render('calendar/calendar.html.twig', $data);
+    $user = $this->getUser();
+    $profile = $this->findAuth->getUserByEmail($user->getEmail());
+    $data['profile'] = $profile;
+        // return $this->render('calendar/calendar.html.twig', $data);
+        return $this->render('construction.html.twig', $data);
+
     }
 
     /**
@@ -79,6 +89,10 @@ class HomeController extends AbstractController
         $data['towns'] = $towns['data'];
         $data['regions'] = array_unique(array_column($towns['data'], 'region'));
 
+        $user = $this->getUser();
+        $profile = $this->findAuth->getUserByEmail($user->getEmail());
+        $data['profile'] = $profile;
+
         return $this->render('home.html.twig', $data);
     }
     
@@ -89,7 +103,11 @@ class HomeController extends AbstractController
     public function revisions(Request $request)
     {
 	$data['page'] = "revisions";
-        return $this->render('revisions/revisions.html.twig', $data);
+    $user = $this->getUser();
+    $profile = $this->findAuth->getUserByEmail($user->getEmail());
+    $data['profile'] = $profile;
+        // return $this->render('revisions/revisions.html.twig', $data);
+        return $this->render('construction.html.twig', $data);
     }
 
 

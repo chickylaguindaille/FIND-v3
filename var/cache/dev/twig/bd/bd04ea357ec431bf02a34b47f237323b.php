@@ -315,7 +315,7 @@ w-75\">
         <!-- app footer -->
 
 
-        <div class=\"section inset mt-2 mb-5\">
+        <div class=\"section inset mt-2\" style=\"padding-bottom: 68px !important;\">
 
             <div class=\"accordion\" id=\"accordionExample3\">
                 <div class=\"accordion-item\">
@@ -620,7 +620,7 @@ w-75\">
         <!-- app footer -->
 
 
-        <div class=\"section inset mt-2 mb-5\">
+        <div class=\"section inset mt-2\" style=\"padding-bottom: 68px !important;\">
 
             <div class=\"accordion\" id=\"accordionExample3\">
                 <div class=\"accordion-item\">

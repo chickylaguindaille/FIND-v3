@@ -35,17 +35,14 @@ class SecurityController extends BaseController
     {
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
-        
         $user = $this->getUser();
         if (isset($user)){
             return $this->redirectToRoute('accueil');
         }else{
             $data= array();
-            // $response['message'];
-            // $data['errorMsg'] = "test";
-            // $data['errorMsg'] = $request->get('email');
+            $needtoconnect = $request->get('needtoconnect');            
 
-        return $this->render('security/login.html.twig', ['page' => "login",'last_username' => $lastUsername, 'error' => $error, 'confirmSuccess' => $request->get('confirmSuccess')]);
+        return $this->render('security/login.html.twig', ['needtoconnect' => $needtoconnect,'page' => "login",'last_username' => $lastUsername, 'error' => $error, 'confirmSuccess' => $request->get('confirmSuccess')]);
 
         }
     }

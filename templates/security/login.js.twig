@@ -1,0 +1,11 @@
+<script>
+{% if needtoconnect is defined and needtoconnect == 1 %}
+  window.addEventListener('DOMContentLoaded', function() {
+    var needtoconnect = document.getElementById('toast-11');
+    needtoconnect.classList.add('d-block');
+    setTimeout(function() {
+      needtoconnect.classList.remove('d-block');
+    }, 2000);
+  });
+{% endif %}
+</script>

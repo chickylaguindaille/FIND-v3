@@ -69,6 +69,7 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
+    <parameter key="UPLOADS_DIR_PICTURE">%env(UPLOADS_DIR_PICTURE)%</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -356,6 +357,7 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="monolog.logger"/>
       <argument type="service" id="App\Service\FindApiService"/>
+      <argument type="service" id="App\Service\FindAuthService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\FindController"/>
       </call>
@@ -365,6 +367,7 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="monolog.logger"/>
       <argument type="service" id="App\Service\FindApiService"/>
+      <argument type="service" id="App\Service\FindAuthService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\HomeController"/>
       </call>
