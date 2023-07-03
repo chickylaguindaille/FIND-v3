@@ -528,6 +528,7 @@ button:hover, button:active, button:focus {
   padding: 56px 0;
   margin-bottom: env(safe-area-inset-bottom);
   margin-top: env(safe-area-inset-top);
+  height: 100vh !important;
 }
 
 #appCapsule.extra-header-active {
