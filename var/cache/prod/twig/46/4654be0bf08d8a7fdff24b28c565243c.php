@@ -66,7 +66,7 @@ class __TwigTemplate_acecb60f47fcf122107256d24fcd57ba extends Template
         ";
         // line 15
         echo "        <link rel=\"manifest\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/__manifest.json"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/__manifest.json"), "html", null, true);
         echo "\">
         ";
         // line 16

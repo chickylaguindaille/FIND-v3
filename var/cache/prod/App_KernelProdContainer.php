@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelProdContainer::class, false)) {
 
 return new \ContainerTnGhCsh\App_KernelProdContainer([
     'container.build_hash' => 'TnGhCsh',
-    'container.build_id' => 'a2180429',
-    'container.build_time' => 1688122384,
+    'container.build_id' => 'ac8139b4',
+    'container.build_time' => 1688374685,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerTnGhCsh');
