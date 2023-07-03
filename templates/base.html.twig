@@ -12,7 +12,7 @@
         {# <link rel="stylesheet" href="app/assets/css/style.css"> #}
         <link rel="stylesheet" href="{{ asset("app/assets/css/style.css") }}">
         {# <link rel="manifest" href="__manifest.json"> #}
-        <link rel="manifest" href="{{ asset("build/__manifest.json") }}">
+        <link rel="manifest" href="{{ asset("app/__manifest.json") }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
