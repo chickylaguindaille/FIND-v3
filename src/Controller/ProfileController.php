@@ -45,40 +45,42 @@ class ProfileController extends AbstractController
 
 
 
-    protected function saveFile($file,$dir)
+    protected function saveImgprofile($file, $dirfolder, $dirfile, $filename)
     {
 
         // exit(var_dump($dir));
-        $filename = null;
+        // $filename = null;
 
         if (!empty($file)) 
 
         {
             // Verifier l'existence du dossier
-            if (!file_exists($dir)) 
+            if (!file_exists($dirfile)) 
             {
+                $dirfolder = $this->getParameter('kernel.project_dir') . $dirfolder;
+
                 // Tentative de création du répertoire
-                if (mkdir($dir)) 
+                if (mkdir($dirfolder)) 
                 {   
-                    $destination = $dir;
-                    $filename = $file->getClientOriginalName();
+                    $destination = $dirfolder;
+                    // $filename = $file->getClientOriginalName();
                     $file->move($destination, $filename);
                 } 
                 else 
                 {
-                    $filestodelete = glob($dir);
+                    $filestodelete = glob($dirfolder);
                 }
             } 
             else 
             {
                 // Suppression des fichiers dans le dossier
-                $filestodelete = glob($dir . '/*');
+                $filestodelete = glob($dirfile . '/*');
                 foreach ($filestodelete as $filetodelete) {
                     if (is_file($filetodelete))
                         unlink($filetodelete);
                 }
                 $filename = $file->getClientOriginalName();
-                $file->move($dir, $filename);
+                $file->move($dirfile, $filename);
             }
         }
 
@@ -144,20 +146,16 @@ class ProfileController extends AbstractController
 
             $user = $this->getUser();
             $profile = $this->findAuth->getUserByEmail($user->getEmail());
-            $dir = $this->getParameter("UPLOADS_DIR_PICTURE") . $profile['id'] . '/imgprofile';
+            $dirfolder = $this->getParameter("UPLOADS_DIR_PICTURE") . $profile['id'];
+            $dirfile = "https://folklore-is-not-dead.com". $this->getParameter("UPLOADS_DIR_PICTURE") . $profile['id'] . '/imgprofile';
+            // exit(var_dump($dirfile));
+            $filename="imgprofile";
 
-
-            $filename = $uploadedFile->getClientOriginalName();
+            
             // exit(var_dump($dir));
-            return $this->saveFile($uploadedFile, $dir);
+            return $this->saveImgprofile($uploadedFile, $dirfolder, $dirfile, $filename);
         
 
-            // Déplacez le fichier vers le répertoire de destination
-            $destination = 'https://folklore-is-not-dead.com/uploads/';
-            $uploadedFile->move($destination, $filename);
-    
-            // Effectuez les opérations nécessaires avec le fichier téléchargé
-            // ...
         }else{
             exit(var_dump("image non détectée"));
         }

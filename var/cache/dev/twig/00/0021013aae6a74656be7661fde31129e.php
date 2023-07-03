@@ -65,7 +65,7 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
             if (twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "username", [], "any", true, true, false, 11)) {
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 11, $this->source); })()), "username", [], "any", false, false, false, 11), "html", null, true);
             } else {
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 11, $this->source); })()), "firstaneme", [], "any", false, false, false, 11), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 11, $this->source); })()), "firstname", [], "any", false, false, false, 11), "html", null, true);
                 echo " ";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 11, $this->source); })()), "lastname", [], "any", false, false, false, 11), "html", null, true);
             }
@@ -261,7 +261,7 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
                 </div>
                 {% if app.user %}
                     <div class=\"in\">
-                        <strong>{% if profile.username is defined %}{{profile.username}}{% else %}{{profile.firstaneme}} {{profile.lastname}}{% endif %}</strong>
+                        <strong>{% if profile.username is defined %}{{profile.username}}{% else %}{{profile.firstname}} {{profile.lastname}}{% endif %}</strong>
                         <div class=\"text-muted\">
                             <i class=\"bi bi-mortarboard-fill\"></i>
                             {% for keybaptism, status in profile.baptism %}

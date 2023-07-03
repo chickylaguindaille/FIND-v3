@@ -8,7 +8,7 @@
                 </div>
                 {% if app.user %}
                     <div class="in">
-                        <strong>{% if profile.username is defined %}{{profile.username}}{% else %}{{profile.firstaneme}} {{profile.lastname}}{% endif %}</strong>
+                        <strong>{% if profile.username is defined %}{{profile.username}}{% else %}{{profile.firstname}} {{profile.lastname}}{% endif %}</strong>
                         <div class="text-muted">
                             <i class="bi bi-mortarboard-fill"></i>
                             {% for keybaptism, status in profile.baptism %}
