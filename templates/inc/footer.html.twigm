@@ -1,0 +1,36 @@
+<!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="{{ path('connexions')}}" class="item {% if page is defined and page == "connexions" %}active{% endif %}">
+            <div class="col">
+                <ion-icon name="earth-outline"></ion-icon>
+                <strong>Connexions</strong>
+            </div>
+        </a>
+        <a href="{{ path('calendar')}}" class="item {% if page is defined and page == "calendar" %}active{% endif %}">
+            <div class="col">
+                <ion-icon name="calendar-outline"></ion-icon>
+                <strong>Calendar</strong>
+            </div>
+        </a>
+        <a href="{{ path('accueil')}}" class="item {% if page is defined and 
+page == "FIND" %}active{% endif %}">
+            <div class="col">
+                <ion-icon name="search-outline"></ion-icon>
+                <strong>FIND</strong>
+            </div>
+        </a>
+        <a href="{{ path('revisions')}}" class="item {% if page is defined and page == "revisions" %}active{% endif %}">
+            <div class="col">
+                <ion-icon name="book-outline"></ion-icon>
+                <strong>Révisions</strong>
+            </div>
+        </a>
+        <a href="{{ path('profile')}}" class="item {% if page is defined and page == "profile" %}active{% endif %}">
+            <div class="col">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <strong>Mon folklore</strong>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
