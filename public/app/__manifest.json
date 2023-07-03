@@ -1,7 +1,7 @@
 {
     "name": "Folklore Is Not Dead",
     "short_name": "FIND",
-    "start_url": "https://folklore-is-not-dead.com/app/login",
+    "start_url": "https://folklore-is-not-dead.com/app/accueil",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000",

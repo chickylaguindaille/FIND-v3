@@ -11,7 +11,7 @@ var CACHE_NAME = 'mobilekit-cache-v'+CACHE_VERSION;
 
 // Files
 var REQUIRED_FILES = [
-  'index.html'
+//  'index.html'
 ];
 
 self.addEventListener('install', function (event) {
