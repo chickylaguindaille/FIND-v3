@@ -4,7 +4,7 @@
             <!-- profile box -->
             <div class="profileBox">
                 <div class="image-wrapper">
-                    <img src="{% if app.user %}{{ asset("app/assets/img/sample/avatar/avatar1.jpg") }}{% else %}{{ asset("app/logos/384x384.png") }}{% endif %}" alt="image" class="imaged rounded">
+                    <img src="{% if app.user %}{% if profile.imgprofile is defined and profile.imgprofile != "" %}{{profile.imgprofile}}{% else %}https://www.photoprof.fr/images_dp/photographes/profil_vide.jpg{% endif %}{% else %}{{ asset("app/logos/384x384.png") }}{% endif %}" alt="image" class="imaged rounded">
                 </div>
                 {% if app.user %}
                     <div class="in">

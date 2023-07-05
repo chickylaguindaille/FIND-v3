@@ -49,7 +49,11 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
                     <img src=\"";
         // line 7
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "user", [], "any", false, false, false, 7)) {
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/assets/img/sample/avatar/avatar1.jpg"), "html", null, true);
+            if ((twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "imgprofile", [], "any", true, true, false, 7) && (twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 7, $this->source); })()), "imgprofile", [], "any", false, false, false, 7) != ""))) {
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 7, $this->source); })()), "imgprofile", [], "any", false, false, false, 7), "html", null, true);
+            } else {
+                echo "https://www.photoprof.fr/images_dp/photographes/profil_vide.jpg";
+            }
         } else {
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("app/logos/384x384.png"), "html", null, true);
         }
@@ -246,7 +250,7 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  225 => 132,  217 => 128,  210 => 124,  205 => 121,  203 => 120,  192 => 111,  149 => 71,  143 => 67,  141 => 57,  139 => 56,  107 => 26,  101 => 22,  96 => 19,  90 => 18,  84 => 16,  81 => 15,  77 => 14,  65 => 11,  62 => 10,  60 => 9,  51 => 7,  43 => 1,);
+        return array (  229 => 132,  221 => 128,  214 => 124,  209 => 121,  207 => 120,  196 => 111,  153 => 71,  147 => 67,  145 => 57,  143 => 56,  111 => 26,  105 => 22,  100 => 19,  94 => 18,  88 => 16,  85 => 15,  81 => 14,  69 => 11,  66 => 10,  64 => 9,  51 => 7,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -257,7 +261,7 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
             <!-- profile box -->
             <div class=\"profileBox\">
                 <div class=\"image-wrapper\">
-                    <img src=\"{% if app.user %}{{ asset(\"app/assets/img/sample/avatar/avatar1.jpg\") }}{% else %}{{ asset(\"app/logos/384x384.png\") }}{% endif %}\" alt=\"image\" class=\"imaged rounded\">
+                    <img src=\"{% if app.user %}{% if profile.imgprofile is defined and profile.imgprofile != \"\" %}{{profile.imgprofile}}{% else %}https://www.photoprof.fr/images_dp/photographes/profil_vide.jpg{% endif %}{% else %}{{ asset(\"app/logos/384x384.png\") }}{% endif %}\" alt=\"image\" class=\"imaged rounded\">
                 </div>
                 {% if app.user %}
                     <div class=\"in\">
