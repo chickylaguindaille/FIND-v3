@@ -59,7 +59,7 @@ class ProfileController extends AbstractController
                 $filename = $file->getClientOriginalName();
                 $dirfile = $dirfolder . '/' . $filename;
                 // exit(var_dump($dirfile));
-                $file->move($dirfile);
+                $file->move($dirfolder, $filename);
             } 
             // else {
             //     // Suppression des fichiers dans le dossier

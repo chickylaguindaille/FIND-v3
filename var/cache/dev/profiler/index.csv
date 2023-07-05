@@ -920,3 +920,15 @@ b7f088,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modifica
 97741c,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/informations,1688547727,,200
 de4343,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/service-worker.js,1688547729,77a175,404
 77a175,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/service-worker.js,1688547729,,404
+e2ccfa,127.0.0.1,POST,http://localhost:8888/FIND-v3/public/index.php/app/modification/informations/patch,1688548453,,302
+4d5715,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/informations,1688548455,,200
+2b086e,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/service-worker.js,1688548457,beebac,404
+beebac,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/service-worker.js,1688548457,,404
+ae68dc,127.0.0.1,POST,http://localhost:8888/FIND-v3/public/index.php/app/modification/informations/patch,1688548544,,302
+976d3c,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/informations,1688548545,,200
+fcda1e,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/service-worker.js,1688548547,ee6508,404
+ee6508,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/service-worker.js,1688548547,,404
+2ce0ab,127.0.0.1,POST,http://localhost:8888/FIND-v3/public/index.php/app/modification/informations/patch,1688548588,,302
+b769ce,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/informations,1688548591,,200
+d71264,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/service-worker.js,1688548595,459691,404
+459691,127.0.0.1,GET,http://localhost:8888/FIND-v3/public/index.php/app/modification/service-worker.js,1688548595,,404
