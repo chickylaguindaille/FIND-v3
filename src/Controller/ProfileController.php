@@ -47,45 +47,38 @@ class ProfileController extends AbstractController
 
     protected function saveImgprofile($file, $dirfolder, $dirfile, $filename)
     {
-
-        // exit(var_dump($dir));
-        // $filename = null;
-
-        if (!empty($file)) 
-
-        {
-            // Verifier l'existence du dossier
-            if (!file_exists($dirfile)) 
-            {
-                $dirfolder = $this->getParameter('kernel.project_dir') . $dirfolder;
-
+        if (!empty($file)) {
+            // Vérifier l'existence du dossier
+            $dirfolder = $this->getParameter('kernel.project_dir') . $dirfolder;
+    
                 // Tentative de création du répertoire
-                if (mkdir($dirfolder)) 
-                {   
-                    $destination = $dirfolder;
-                    // $filename = $file->getClientOriginalName();
-                    $file->move($destination, $filename);
-                } 
-                else 
-                {
-                    $filestodelete = glob($dirfolder);
+                if (!is_dir($dirfolder)) {
+                    mkdir($dirfolder);
                 }
-            } 
-            else 
-            {
-                // Suppression des fichiers dans le dossier
-                $filestodelete = glob($dirfile . '/*');
-                foreach ($filestodelete as $filetodelete) {
-                    if (is_file($filetodelete))
-                        unlink($filetodelete);
-                }
+                
                 $filename = $file->getClientOriginalName();
-                $file->move($dirfile, $filename);
-            }
-        }
+                $dirfile = $dirfolder . '/' . $filename;
+                // exit(var_dump($dirfile));
+                $file->move($dirfile);
+            } 
+            // else {
+            //     // Suppression des fichiers dans le dossier
+            //     $filestodelete = glob($dirfile . '/*');
+            //     foreach ($filestodelete as $filetodelete) {
+            //         if (is_file($filetodelete))
+            //             unlink($filetodelete);
+            //     }
+                
+            //     $filename = $file->getClientOriginalName();
+            //     $file->move($dirfile, $filename);
+            // }
 
-        return $filename;
-    }
+            return $filename;
+        }
+    
+
+    // }
+    
 
 
 
@@ -153,14 +146,15 @@ class ProfileController extends AbstractController
 
             
             // exit(var_dump($dir));
-            return $this->saveImgprofile($uploadedFile, $dirfolder, $dirfile, $filename);
-        
+            $filename = $this->saveImgprofile($uploadedFile, $dirfolder, $dirfile, $filename);
+            $inputData['imgprofile'] = "https://folklore-is-not-dead.com". $this->getParameter("UPLOADS_DIR_PICTURE") . $profile['id'] . '/' . $filename;
+            // $inputData['imgprofile'] = $dirfile;
 
         }else{
             exit(var_dump("image non détectée"));
         }
 
-        exit(var_dump($uploadedFile));
+        // exit(var_dump($uploadedFile));
 
         $user = $this->getUser();
         $profile = $this->findAuth->getUserByEmail($user->getEmail());

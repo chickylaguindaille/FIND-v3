@@ -227,6 +227,6 @@ class __TwigTemplate_d402b493fbf0345f1cc863af05897ca9 extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/base.html.twig");
+", "base.html.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/base.html.twig");
     }
 }

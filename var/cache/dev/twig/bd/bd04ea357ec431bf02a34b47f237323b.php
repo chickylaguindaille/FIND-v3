@@ -708,6 +708,6 @@ w-75\">
     </div>
     <!-- * App Capsule -->
 {% endblock %}
-", "home.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/home.html.twig");
+", "home.html.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/home.html.twig");
     }
 }

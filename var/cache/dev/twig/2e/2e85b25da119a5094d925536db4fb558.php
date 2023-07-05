@@ -91,6 +91,6 @@ class __TwigTemplate_1a639991d458e313e48c2152dd3470c1 extends Template
     }, 2000);
   });
 {% endif %}
-</script>", "security/login.js.twig", "/opt/lampp/htdocs/FIND-v3/templates/security/login.js.twig");
+</script>", "security/login.js.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/security/login.js.twig");
     }
 }

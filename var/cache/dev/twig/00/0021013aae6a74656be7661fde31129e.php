@@ -385,6 +385,6 @@ class __TwigTemplate_32235245def651010f00a7dc9fc218d3 extends Template
         </div>
         <!-- * sidebar buttons -->
     </div>
-    <!-- * App Sidebar -->", "inc/sidebar.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/inc/sidebar.html.twig");
+    <!-- * App Sidebar -->", "inc/sidebar.html.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/inc/sidebar.html.twig");
     }
 }

@@ -73,6 +73,6 @@ class __TwigTemplate_1a9e76e027b6be96cc587aec0bd06fe8 extends Template
     height: 25px !important;
 }
 
-</style>", "home/home.css.twig", "/opt/lampp/htdocs/FIND-v3/templates/home/home.css.twig");
+</style>", "home/home.css.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/home/home.css.twig");
     }
 }

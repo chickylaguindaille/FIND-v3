@@ -573,6 +573,6 @@ class __TwigTemplate_6b1b181a2dba9b04e05896d2e618f1e4 extends Template
     </div>
 </div>
 
-{% endblock %}", "inc/profilemodification/informationsmodification.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/inc/profilemodification/informationsmodification.html.twig");
+{% endblock %}", "inc/profilemodification/informationsmodification.html.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/inc/profilemodification/informationsmodification.html.twig");
     }
 }

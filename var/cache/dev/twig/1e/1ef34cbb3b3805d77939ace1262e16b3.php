@@ -154,6 +154,6 @@ class __TwigTemplate_7fa23b2f45a251963a77aaf1aede04f0 extends Template
         </form>
     </div>
     <!-- * Search Component -->
-", "inc/navbar.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/inc/navbar.html.twig");
+", "inc/navbar.html.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/inc/navbar.html.twig");
     }
 }

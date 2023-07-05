@@ -326,6 +326,6 @@ class __TwigTemplate_b466cf3169748b7be66d0958f742fbb0 extends Template
 {% block javascript %}
     {{ parent() }}
     {% include 'security/login.js.twig' %}
-{% endblock %}", "security/login.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/security/login.html.twig");
+{% endblock %}", "security/login.html.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/security/login.html.twig");
     }
 }

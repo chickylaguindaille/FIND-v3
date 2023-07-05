@@ -177,6 +177,6 @@ page == \"profile\" %}active{% endif %}\">
     </div>
     <!-- * App Bottom Menu -->
 
-", "inc/footer.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/inc/footer.html.twig");
+", "inc/footer.html.twig", "/Applications/MAMP/htdocs/FIND-v3/templates/inc/footer.html.twig");
     }
 }
