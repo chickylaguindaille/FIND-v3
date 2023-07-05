@@ -6,6 +6,7 @@
 parameters:
         # find_api_base_url: '%env(FIND_API_URL)%'
         UPLOADS_DIR_PICTURE: '%env(UPLOADS_DIR_PICTURE)%'
+        UPLOADS_DIR_PICTURE_ONLINE: '%env(UPLOADS_DIR_PICTURE_ONLINE)%'
 
 services:
     # default configuration for services in *this* file

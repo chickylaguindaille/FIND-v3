@@ -147,7 +147,7 @@ class ProfileController extends AbstractController
             
             // exit(var_dump($dir));
             $filename = $this->saveImgprofile($uploadedFile, $dirfolder, $dirfile, $filename);
-            $inputData['imgprofile'] = "https://folklore-is-not-dead.com". $this->getParameter("UPLOADS_DIR_PICTURE") . $profile['id'] . '/' . $filename;
+            $inputData['imgprofile'] = "https://folklore-is-not-dead.com". $this->getParameter("UPLOADS_DIR_PICTURE_ONLINE") . $profile['id'] . '/' . $filename;
             // $inputData['imgprofile'] = $dirfile;
 
         }else{
