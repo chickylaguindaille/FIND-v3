@@ -150,8 +150,6 @@ class ProfileController extends AbstractController
             $inputData['imgprofile'] = "https://folklore-is-not-dead.com". $this->getParameter("UPLOADS_DIR_PICTURE_ONLINE") . $profile['id'] . '/' . $filename;
             // $inputData['imgprofile'] = $dirfile;
 
-        }else{
-            exit(var_dump("image non détectée"));
         }
 
         // exit(var_dump($uploadedFile));
