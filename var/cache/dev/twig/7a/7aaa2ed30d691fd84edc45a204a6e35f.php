@@ -26,6 +26,7 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
 
         $this->blocks = [
             'content' => [$this, 'block_content'],
+            'javascript' => [$this, 'block_javascript'],
         ];
     }
 
@@ -98,7 +99,10 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
             <div class=\"px-4\">
                 <form class=\"search-form\">
                     <div class=\"form-group searchbox\">
-                        <input type=\"text\" class=\"form-control\" value=\"\" placeholder=\"FIND\">
+                        <input type=\"text\" class=\"form-control inputsearch\" value=\"\" placeholder=\"FIND\" data-urlaction=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search_towns");
+        echo "\" >
                         <i class=\"input-icon\">
                             <ion-icon name=\"search-outline\"></ion-icon>
                         </i>
@@ -138,7 +142,7 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
 
         ";
         // line 89
-        echo "
+        echo "        <div id=\"resulttowns\">
         ";
         // line 90
         $context["alphabet"] = "?";
@@ -204,14 +208,41 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['town'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 119
-        echo "
+        echo "        </div>
+
 
 
     </div>
 
 
     <!-- * App Capsule -->
+
 ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 130
+    public function block_javascript($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        // line 131
+        echo "    ";
+        $this->displayParentBlock("javascript", $context, $blocks);
+        echo "
+    ";
+        // line 132
+        $this->loadTemplate("find/towns/town.js.twig", "find/towns/town.html.twig", 132)->display($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -232,7 +263,7 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
 
     public function getDebugInfo()
     {
-        return array (  207 => 119,  190 => 110,  185 => 108,  178 => 104,  172 => 101,  168 => 99,  162 => 96,  159 => 95,  156 => 94,  153 => 93,  149 => 92,  146 => 91,  144 => 90,  141 => 89,  94 => 25,  76 => 9,  73 => 8,  71 => 7,  68 => 6,  58 => 5,  35 => 1,);
+        return array (  245 => 132,  240 => 131,  230 => 130,  211 => 119,  194 => 110,  189 => 108,  182 => 104,  176 => 101,  172 => 99,  166 => 96,  163 => 95,  160 => 94,  157 => 93,  153 => 92,  150 => 91,  148 => 90,  145 => 89,  104 => 31,  95 => 25,  77 => 9,  74 => 8,  72 => 7,  69 => 6,  59 => 5,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -267,7 +298,7 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
             <div class=\"px-4\">
                 <form class=\"search-form\">
                     <div class=\"form-group searchbox\">
-                        <input type=\"text\" class=\"form-control\" value=\"\" placeholder=\"FIND\">
+                        <input type=\"text\" class=\"form-control inputsearch\" value=\"\" placeholder=\"FIND\" data-urlaction=\"{{ path(\"search_towns\") }}\" >
                         <i class=\"input-icon\">
                             <ion-icon name=\"search-outline\"></ion-icon>
                         </i>
@@ -325,7 +356,7 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
                 </div>
             </li>
         </ul> #}
-
+        <div id=\"resulttowns\">
         {% set alphabet = \"?\" %}
 
         {% for town in towns %}
@@ -355,6 +386,7 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
                 </li>
             </ul>
         {% endfor %}
+        </div>
 
 
 
@@ -362,7 +394,12 @@ class __TwigTemplate_ec46fec5356c426516b05292f3ba02ef extends Template
 
 
     <!-- * App Capsule -->
+
 {% endblock %}
-", "find/towns/town.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/find/towns/town.html.twig");
+
+{% block javascript %}
+    {{ parent() }}
+    {% include 'find/towns/town.js.twig' %}
+{% endblock %}", "find/towns/town.html.twig", "/opt/lampp/htdocs/FIND-v3/templates/find/towns/town.html.twig");
     }
 }

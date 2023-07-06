@@ -28,7 +28,7 @@
             <div class="px-4">
                 <form class="search-form">
                     <div class="form-group searchbox">
-                        <input type="text" class="form-control" value="" placeholder="FIND">
+                        <input type="text" class="form-control inputsearch" value="" placeholder="FIND" data-urlaction="{{ path("search_towns") }}" >
                         <i class="input-icon">
                             <ion-icon name="search-outline"></ion-icon>
                         </i>
@@ -86,7 +86,7 @@
                 </div>
             </li>
         </ul> #}
-
+        <div id="resulttowns">
         {% set alphabet = "?" %}
 
         {% for town in towns %}
@@ -116,6 +116,7 @@
                 </li>
             </ul>
         {% endfor %}
+        </div>
 
 
 
@@ -123,4 +124,10 @@
 
 
     <!-- * App Capsule -->
+
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    {% include 'find/towns/town.js.twig' %}
 {% endblock %}

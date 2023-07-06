@@ -8,6 +8,7 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/search/towns' => [[['_route' => 'search_towns', '_controller' => 'App\\Controller\\FindController::changeVilles'], null, ['GET' => 0], null, false, false, null]],
         '/Localisation/corporation' => [[['_route' => 'corporation_html', '_controller' => 'App\\Controller\\FindController::corporationHtml'], null, ['GET' => 0], null, false, false, null]],
         '/app/bar' => [[['_route' => 'bar', '_controller' => 'App\\Controller\\HomeController::bar'], null, null, null, false, false, null]],
         '/app/calendar' => [[['_route' => 'calendar', '_controller' => 'App\\Controller\\HomeController::calendar'], null, null, null, false, false, null]],
@@ -32,48 +33,44 @@ return [
     [ // $regexpList
         0 => '{^(?'
                 .'|/app/Localisation/([^/]++)/(?'
-                    .'|Villes(?'
-                        .'|(*:46)'
-                        .'|/change(*:60)'
-                    .')'
+                    .'|Villes(*:43)'
                     .'|([^/]++)/(?'
                         .'|Corporations(?'
-                            .'|(*:95)'
-                            .'|/change(*:109)'
+                            .'|(*:77)'
+                            .'|/change(*:91)'
                         .')'
-                        .'|([^/]++)(*:126)'
+                        .'|([^/]++)(*:107)'
                     .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:167)'
-                    .'|wdt/([^/]++)(*:187)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:148)'
+                    .'|wdt/([^/]++)(*:168)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:233)'
-                            .'|router(*:247)'
+                            .'|search/results(*:214)'
+                            .'|router(*:228)'
                             .'|exception(?'
-                                .'|(*:267)'
-                                .'|\\.css(*:280)'
+                                .'|(*:248)'
+                                .'|\\.css(*:261)'
                             .')'
                         .')'
-                        .'|(*:290)'
+                        .'|(*:271)'
                     .')'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        46 => [[['_route' => 'ville', '_controller' => 'App\\Controller\\FindController::villes'], ['country'], ['GET' => 0], null, false, false, null]],
-        60 => [[['_route' => 'change_ville', '_controller' => 'App\\Controller\\FindController::changeVilles'], ['country'], ['GET' => 0], null, false, false, null]],
-        95 => [[['_route' => 'corporations', '_controller' => 'App\\Controller\\FindController::corporations'], ['country', 'ville'], ['GET' => 0], null, false, false, null]],
-        109 => [[['_route' => 'change_corporations', '_controller' => 'App\\Controller\\FindController::rechercheCorporations'], ['country', 'ville'], ['GET' => 0], null, false, false, null]],
-        126 => [[['_route' => 'corporation', '_controller' => 'App\\Controller\\FindController::corporation'], ['country', 'ville', 'corpo'], ['GET' => 0], null, false, true, null]],
-        167 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        187 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        233 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        247 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        267 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        280 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        290 => [
+        43 => [[['_route' => 'ville', '_controller' => 'App\\Controller\\FindController::villes'], ['country'], ['GET' => 0], null, false, false, null]],
+        77 => [[['_route' => 'corporations', '_controller' => 'App\\Controller\\FindController::corporations'], ['country', 'ville'], ['GET' => 0], null, false, false, null]],
+        91 => [[['_route' => 'change_corporations', '_controller' => 'App\\Controller\\FindController::rechercheCorporations'], ['country', 'ville'], ['GET' => 0], null, false, false, null]],
+        107 => [[['_route' => 'corporation', '_controller' => 'App\\Controller\\FindController::corporation'], ['country', 'ville', 'corpo'], ['GET' => 0], null, false, true, null]],
+        148 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        168 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        214 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        228 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        248 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        261 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        271 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

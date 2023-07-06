@@ -4,7 +4,7 @@
 
 return [
     'ville' => [['country'], ['_controller' => 'App\\Controller\\FindController::villes'], [], [['text', '/Villes'], ['variable', '/', '[^/]++', 'country', true], ['text', '/app/Localisation']], [], [], []],
-    'change_ville' => [['country'], ['_controller' => 'App\\Controller\\FindController::changeVilles'], [], [['text', '/Villes/change'], ['variable', '/', '[^/]++', 'country', true], ['text', '/app/Localisation']], [], [], []],
+    'search_towns' => [[], ['_controller' => 'App\\Controller\\FindController::changeVilles'], [], [['text', '/search/towns']], [], [], []],
     'corporations' => [['country', 'ville'], ['_controller' => 'App\\Controller\\FindController::corporations'], [], [['text', '/Corporations'], ['variable', '/', '[^/]++', 'ville', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/app/Localisation']], [], [], []],
     'change_corporations' => [['country', 'ville'], ['_controller' => 'App\\Controller\\FindController::rechercheCorporations'], [], [['text', '/Corporations/change'], ['variable', '/', '[^/]++', 'ville', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/app/Localisation']], [], [], []],
     'corporation' => [['country', 'ville', 'corpo'], ['_controller' => 'App\\Controller\\FindController::corporation'], [], [['variable', '/', '[^/]++', 'corpo', true], ['variable', '/', '[^/]++', 'ville', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/app/Localisation']], [], [], []],

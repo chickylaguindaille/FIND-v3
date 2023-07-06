@@ -1,0 +1,38 @@
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<script>
+
+$(document).ready(function () {
+
+    $('.inputsearch').keyup(searchTowns);
+
+    function searchTowns() {
+
+        let text = $(this).val();
+        let urlAction = $(this).attr("data-urlaction");
+        let country = '{{country??""}}';
+
+            {# let params = {
+                text: text,
+                country: country
+            } #}
+
+            $.ajax({
+                url: urlAction,
+                method: 'GET',
+                data: 'text=' + encodeURIComponent(text) + '&country=' + country,
+                success: function (data) {
+                    $('#resulttowns').html('');
+                    $('#resulttowns').append(data);
+                },
+                error: function (data) {
+                    console.log(data);
+                    console.log("erreur");
+                }
+            });
+
+    }
+
+});
+
+</script>

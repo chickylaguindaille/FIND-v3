@@ -67,44 +67,19 @@ class FindController extends AbstractController
 
     
     // VILLES RECHERCHE
-        #[Route('/app/Localisation/{country}/Villes/change', name: 'change_ville', methods: ['GET'])]
-        public function changeVilles($country, Request $request, VilleRepository $villeRepository): Response
+        #[Route('/search/towns', name: 'search_towns', methods: ['GET'])]
+        public function changeVilles(Request $request, VilleRepository $villeRepository): Response
         {
-    
-        $data['page'] = "FIND";
+        
+        $country = $_GET['country'];
+        $startsearch = $_GET['text'];
 
-        $user = $this->getUser();
-        $profile = $this->findAuth->getUserByEmail($user->getEmail());
-        $data['profile'] = $profile;
-
-        // TABLEAU VILLE
-        $serializer = SerializerBuilder::create()->build();
-        $ville = $villeRepository->findAll();
-        $ville = $serializer->toArray($ville);
+        $filteredtowns = $this->findApi->getTowns($country, null, $startsearch, null);
+        $data['towns'] = $filteredtowns['data'];
+        $data['country'] = $country;
+        // exit(var_dump($filteredtowns['data']));
     
-        if(isset($_GET['texte'])){
-            $texte = $_GET['texte'];
-            $tri = $_GET['tri'];
-    
-            $numbervilles = count($ville) - 1;
-            $filterarray = array();
-
-            for ($i = 0; $i <= $numbervilles; $i++) {
-                if($tri == 'debut')
-                    if (str_starts_with($ville[$i]['nom'], ucfirst($texte))) {
-                        array_push($filterarray, $ville[$i]);
-                    }
-                if($tri == 'contenu')
-                    if (str_contains(strtolower($ville[$i]['nom']), strtolower($texte))) {
-                        array_push($filterarray, $ville[$i]);
-                    }
-            }
-    
-        }
-            $data['villes'] = $filterarray;
-            $data['country'] = $country;
-    
-            return $this->render('location/town.search.html.twig', $data );
+            return $this->render('find/towns/townfiltered.html.twig', $data );
         }
 
 
