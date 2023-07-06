@@ -90,8 +90,11 @@ class HomeController extends AbstractController
         $data['regions'] = array_unique(array_column($towns['data'], 'region'));
 
         $user = $this->getUser();
-        $profile = $this->findAuth->getUserByEmail($user->getEmail());
-        $data['profile'] = $profile;
+        if ($user !== null) {
+            $profile = $this->findAuth->getUserByEmail($user->getEmail());
+            $data['profile'] = $profile;
+        }
+        
 
         return $this->render('home.html.twig', $data);
     }

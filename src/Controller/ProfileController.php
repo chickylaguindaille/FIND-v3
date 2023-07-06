@@ -158,7 +158,6 @@ class ProfileController extends AbstractController
 
         $user = $this->getUser();
         $profile = $this->findAuth->getUserByEmail($user->getEmail());
-
         $profile = $this->findAuth->patchUser($user, $profile['id'], $inputData);
 
 
@@ -167,6 +166,5 @@ class ProfileController extends AbstractController
         
         return $this->redirectToRoute('modification_informations');
     }
-
 
 }

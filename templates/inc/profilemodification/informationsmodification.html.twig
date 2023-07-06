@@ -184,9 +184,12 @@
                     <div class="custom-file-upload" id="fileUpload1">
                         <input type="file" id="fileuploadInput" name="file" accept=".png, .jpg, .jpeg">
                         <label for="fileuploadInput">
-                            <span>
-                                <strong>
-                                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                            <span class="p-0 d-flex justify-content-center align-items-center">
+                            {% if profile.imgprofile is defined and profile.imgprofile != "" %}
+                                <img src="{{profile.imgprofile}}" alt="Photo de profil" class="w-100" style="opacity: 0.2;">
+                            {% endif %}
+                                <strong class="{% if profile.imgprofile is defined and profile.imgprofile != "" %}position-absolute text-dark{% endif %}">
+                                    <ion-icon name="cloud-upload-outline" class="{% if profile.imgprofile is defined and profile.imgprofile != "" %}text-dark{% endif %}"></ion-icon>
                                     <i>Change ta photo de profil</i>
                                 </strong>
                             </span>
