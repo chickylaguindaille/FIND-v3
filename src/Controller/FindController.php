@@ -69,7 +69,7 @@ class FindController extends AbstractController
 
     
     // VILLES RECHERCHE
-        #[Route('/search/towns', name: 'search_towns', methods: ['GET'])]
+        #[Route('/app/search/towns', name: 'search_towns', methods: ['GET'])]
         public function changeVilles(Request $request, VilleRepository $villeRepository): Response
         {
         
