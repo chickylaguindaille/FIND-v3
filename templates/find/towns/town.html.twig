@@ -7,10 +7,15 @@
     {% include 'inc/allpage.css.twig' %}
     {% include 'find/towns/town.css.twig' %}
 
+     <!-- loader -->
+    {# <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div> #}
+    <!-- * loader -->
 
     <!-- App Capsule -->
     <div id="appCapsule">
-
+        
         <div class="section full mt-2 mb-3">
             <div class="pb-2 d-flex justify-content-center">
 
@@ -86,7 +91,7 @@
                 </div>
             </li>
         </ul> #}
-        <div id="resulttowns">
+        <div id="resulttowns"  style="padding-bottom: 60px !important;">
         {% set alphabet = "?" %}
 
         {% for town in towns %}

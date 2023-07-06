@@ -51,8 +51,10 @@ class FindController extends AbstractController
         $data['page'] = "FIND";
 
         $user = $this->getUser();
-        $profile = $this->findAuth->getUserByEmail($user->getEmail());
-        $data['profile'] = $profile;
+        if ($user !== null) {
+            $profile = $this->findAuth->getUserByEmail($user->getEmail());
+            $data['profile'] = $profile;
+        }
 
         // $country = $request->get('country');
         $data['country'] = $country;
@@ -103,8 +105,10 @@ class FindController extends AbstractController
             $data['page'] = "FIND";
 
             $user = $this->getUser();
-            $profile = $this->findAuth->getUserByEmail($user->getEmail());
-            $data['profile'] = $profile;
+            if ($user !== null) {
+                $profile = $this->findAuth->getUserByEmail($user->getEmail());
+                $data['profile'] = $profile;
+            }
 
             $data['country'] = $country;
             $data['ville'] = $ville;
@@ -203,8 +207,10 @@ class FindController extends AbstractController
         $data['page'] = "FIND";
 
         $user = $this->getUser();
-        $profile = $this->findAuth->getUserByEmail($user->getEmail());
-        $data['profile'] = $profile;
+        if ($user !== null) {
+            $profile = $this->findAuth->getUserByEmail($user->getEmail());
+            $data['profile'] = $profile;
+        }
 
         $data['country'] = $country;
         $data['ville'] = $ville;

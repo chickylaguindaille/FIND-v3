@@ -12,18 +12,15 @@ $(document).ready(function () {
         let urlAction = $(this).attr("data-urlaction");
         let country = '{{country??""}}';
 
-            {# let params = {
-                text: text,
-                country: country
-            } #}
+            $('#resulttowns').html('<div class="justify-content-center d-flex"><div class="spinner-border text-primary" role="status"></div></div>');
 
             $.ajax({
                 url: urlAction,
                 method: 'GET',
                 data: 'text=' + encodeURIComponent(text) + '&country=' + country,
                 success: function (data) {
-                    $('#resulttowns').html('');
-                    $('#resulttowns').append(data);
+                        $('#resulttowns').html('');
+                        $('#resulttowns').append(data);
                 },
                 error: function (data) {
                     console.log(data);
