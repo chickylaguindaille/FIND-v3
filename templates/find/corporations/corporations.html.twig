@@ -27,7 +27,7 @@
             <div class="px-4">
                 <form class="search-form">
                     <div class="form-group searchbox">
-                        <input type="text" class="form-control" value="" placeholder="FIND">
+                        <input type="text" class="form-control inputsearch" value="" placeholder="FIND">
                         <i class="input-icon">
                             <ion-icon name="search-outline"></ion-icon>
                         </i>
@@ -92,7 +92,7 @@
         </div>
 
 
-
+        <div id="resultassociations"  style="padding-bottom: 60px !important;">
         {% set alphabet = "?" %}
 
         {% for association in associations %}
@@ -122,6 +122,7 @@
                 </li>
             </ul>
         {% endfor %}
+        </div>
 
 
         {# <div class="listview-title sticky-title">
@@ -185,4 +186,9 @@
 
 
     <!-- * App Capsule -->
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    {% include 'find/corportions/corportions.js.twig' %}
 {% endblock %}

@@ -135,7 +135,7 @@ class FindController extends AbstractController
 
             // $data['corporations'] = $filterarray;
 
-            return $this->render('corporations/corporations.html.twig', $data);
+            return $this->render('find/corporations/corporations.html.twig', $data);
         }
 
 

@@ -1,0 +1,35 @@
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<script>
+
+$(document).ready(function () {
+
+    $('.inputsearch').keyup(searchAssociations);
+
+    function searchAssociations() {
+
+        let text = $(this).val();
+        let urlAction = $(this).attr("data-urlaction");
+        let country = '{{country??""}}';
+
+            $('#resultassociations').html('<div class="justify-content-center d-flex"><div class="spinner-border text-primary" role="status"></div></div>');
+
+            $.ajax({
+                url: urlAction,
+                method: 'GET',
+                data: 'text=' + encodeURIComponent(text) + '&country=' + country,
+                success: function (data) {
+                        $('#resultassociations').html('');
+                        $('#resultassociations').append(data);
+                },
+                error: function (data) {
+                    console.log(data);
+                    console.log("erreur");
+                }
+            });
+
+    }
+
+});
+
+</script>
