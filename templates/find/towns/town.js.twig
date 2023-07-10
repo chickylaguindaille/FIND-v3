@@ -5,21 +5,26 @@
 $(document).ready(function () {
 
     $('.inputsearch').keyup(searchTowns);
+    $('.filtermodalclose').click(searchTowns);
+    $('#buttontri').click(searchTowns);
 
     function searchTowns() {
 
-        let text = $(this).val();
-        let urlAction = $(this).attr("data-urlaction");
+        let text = $('.inputsearch').val();
+        let urlAction = $('.inputsearch').attr("data-urlaction");
         let country = '{{country??""}}';
+        let tri = $('input[name="tri"]:checked').val();
+        let search = $('input[name="search"]:checked').val();
 
             $('#resulttowns').html('<div class="justify-content-center d-flex"><div class="spinner-border text-primary" role="status"></div></div>');
 
             $.ajax({
                 url: urlAction,
                 method: 'GET',
-                data: 'text=' + encodeURIComponent(text) + '&country=' + country,
+                data: 'text=' + encodeURIComponent(text) + '&country=' + country + '&tri=' + tri + '&search=' + search,
                 success: function (data) {
                         $('#resulttowns').html('');
+                        console.log(data);
                         $('#resulttowns').append(data);
                 },
                 error: function (data) {

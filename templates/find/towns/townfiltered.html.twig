@@ -1,33 +1,65 @@
 {% if towns is not empty %}
-    {% set alphabet = "?" %}
+    {% if tri is not defined or tri == "alphabet" %}
+        {% set alphabet = "?" %}
 
-    {% for town in towns %}
-        {% if town.name|first != alphabet %}
-            {% set alphabet = town.name|first %}
-            <div class="listview-title sticky-title">
-                <strong>{{alphabet}}</strong>
-            </div>
-        {% endif %}
-        <ul class="listview image-listview media">
-            <li>
-                <a href="{{ path('corporations', {'country': country, 'villeid': town.id, 'ville': town.name })}}">
-                    <div class="item">
-                        <div class="imageWrapper">
-                            <img src="{{asset(town.blason)}}" alt="image" class="blason">
-                        </div>
-                        <div class="in">
-                            <div>
-                                <h4 class="mb-05">{{town.name}}</h4>
-                                <div class="text-muted">
-                                    <div>{{town.region}}, {{town.country}}</div>
+        {% for town in towns %}
+            {% if town.name|first != alphabet %}
+                {% set alphabet = town.name|first %}
+                <div class="listview-title sticky-title">
+                    <strong>{{alphabet}}</strong>
+                </div>
+            {% endif %}
+            <ul class="listview image-listview media">
+                <li>
+                    <a href="{{ path('corporations', {'country': country, 'villeid': town.id, 'ville': town.name })}}">
+                        <div class="item">
+                            <div class="imageWrapper">
+                                <img src="{{asset(town.blason)}}" alt="image" class="blason">
+                            </div>
+                            <div class="in">
+                                <div>
+                                    <h4 class="mb-05">{{town.name}}</h4>
+                                    <div class="text-muted">
+                                        <div>{{town.region}}, {{town.country}}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
-    {% endfor %}
+                    </a>
+                </li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        {% set region = "?" %}
+
+        {% for town in towns %}
+            {% if town.region != region %}
+                {% set region = town.region %}
+                <div class="listview-title sticky-title">
+                    <strong>{{region}}</strong>
+                </div>
+            {% endif %}
+            <ul class="listview image-listview media">
+                <li>
+                    <a href="{{ path('corporations', {'country': country, 'villeid': town.id, 'ville': town.name })}}">
+                        <div class="item">
+                            <div class="imageWrapper">
+                                <img src="{{asset(town.blason)}}" alt="image" class="blason">
+                            </div>
+                            <div class="in">
+                                <div>
+                                    <h4 class="mb-05">{{town.name}}</h4>
+                                    <div class="text-muted">
+                                        <div>{{town.region}}, {{town.country}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        {% endfor %}
+    {% endif %}
 {% else %}
 
     <div class="text-center item">Aucun résultat</div>

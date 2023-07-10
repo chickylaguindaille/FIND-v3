@@ -32,32 +32,16 @@
                             <ion-icon name="search-outline"></ion-icon>
                         </i>
                     </div>
-                    <button type="button" class="btn btn-primary btn-sm  mt-1" data-bs-toggle="offcanvas" data-bs-target="#actionSheetContent">Filtrer</button>
 
-                        <!-- Content Action Sheet -->
-                        <div class="offcanvas offcanvas-bottom action-sheet" tabindex="-1" id="actionSheetContent">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title">Filtrer votre recherche</h5>
-                            </div>
-                            <div class="offcanvas-body">
-                                <div class="action-sheet-content p-1">
-                                    <div class="section full mb-2">
-                                            <div class="input-list">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="radioList" id="radioList1" checked>
-                                                    <label class="form-check-label" for="radioList1">Début du mot</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="radioList" id="radioList2">
-                                                    <label class="form-check-label" for="radioList2">Dans le contenu</label>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-block" data-bs-dismiss="offcanvas">Sauvegarder</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- * Content Action Sheet -->
+                    <button type="button" class="btn btn-primary btn-sm  mt-1" data-bs-toggle="modal" data-bs-target="#Modalfilter">
+                        <span>Filtrer</span>
+                    </button>
+
+                    {% include 'inc/tri_filtre/filtre.html.twig' %}</div>
+
+                    <button type="button" class="btn btn-primary btn-sm  mt-1" data-bs-toggle="offcanvas" data-bs-target="#actionSheetContentTri">Tri</button>
+
+                    {% include 'inc/tri_filtre/tri.html.twig' %}
 
                 </form>
             </div>
@@ -86,35 +70,7 @@
             </li>
         </ul> #}
         <div id="resulttowns"  style="padding-bottom: 60px !important;">
-        {% set alphabet = "?" %}
-
-        {% for town in towns %}
-            {% if town.name|first != alphabet %}
-                {% set alphabet = town.name|first %}
-                <div class="listview-title sticky-title">
-                    <strong>{{alphabet}}</strong>
-                </div>
-            {% endif %}
-            <ul class="listview image-listview media">
-                <li>
-                    <a href="{{ path('corporations', {'country': country, 'villeid': town.id, 'ville': town.name })}}">
-                        <div class="item">
-                            <div class="imageWrapper">
-                                <img src="{{asset(town.blason)}}" alt="image" class="blason">
-                            </div>
-                            <div class="in">
-                                <div>
-                                    <h4 class="mb-05">{{town.name}}</h4>
-                                    <div class="text-muted">
-                                        <div>{{town.region}}, {{town.country}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        {% endfor %}
+            {% include 'find/towns/townfiltered.html.twig' %}
         </div>
 
 

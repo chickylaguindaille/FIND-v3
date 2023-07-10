@@ -4,7 +4,7 @@
 
 {% block content %}
 
-{% include 'home/home.css.twig' %}
+{% include 'find/home.css.twig' %}
  <!-- App Capsule -->
     <div id="appCapsule">
 
@@ -47,14 +47,19 @@
             {# INPUT RECHERCHE #}
             <div class="section full mt-2">
                 <div class="pt-2 pb-1 px-4">
-                    <form class="search-form">
+                    <form class="search-form" action="{{ path('corporations_hp')}}" method="post" enctype="multipart/form-data">
                         <div class="form-group searchbox">
-                            <input type="text" class="form-control" value="" placeholder="FIND">
+                            <input type="text" class="form-control" name="text" placeholder="Recherche..">
                             <i class="input-icon">
                                 <ion-icon name="search-outline"></ion-icon>
                             </i>
+                            {# <a href="{{ path('corporations_hp', {'country': 'France'})}}"> #}
+                                <button type="submit" class="btn btn-primary ms-1 p-0" style="height: 36px !important;">
+                                    <span class="mx-2">FIND</span>
+                                </button>
+                            {# </a> #}
                         </div>
-                    </form>
+                    
                 </div>
             </div>
             {# FIN INPUT RECHERCHE #}
@@ -64,86 +69,20 @@
                 <button type="button" class="btn btn-primary p-0 ms-4" data-bs-toggle="modal" data-bs-target="#Modalfilter">
                 <span class="mx-2">Filtrer</span>
                 </button>
+
+                <span id="countrychoice"></span>
+                <span id="regionchoice"></span>
+                <span id="townchoice"></span>
+                <span id="typechoice"></span>
+                <span id="hatchoice"></span>
+                <span id="genderchoice"></span>
             </div>
 
-            <!-- MODAL TRI -->
-            <div class="modal fade" id="Modalfilter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered ">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Filtrer la recherche</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
 
-                        <div class="form-group col-12">
-                            <label for="hat">Pays</label>
-                            <select name="hat" class="form-select" id="countryfilter" {{required}}>
-                                <option value="">/</option>
-                                <option value="France">France</option>
-                                <option value="Belgique">Belgique</option>
-                            </select>
-                        </div>
+{% include 'inc/tri_filtre/filtre.html.twig' %}
 
-                        <div class="form-group col-12">
-                            <label for="town">Région</label>
-                            <select name="town" class="form-select" id="regionfilter" {{required}}>
-                                <option value="">/</option>
-                                {% for name in regions|sort %}
-                                    <option value="{{name}}">{{name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
 
-                        <div class="form-group col-12">
-                            <label for="town">Ville</label>
-                            <select name="town" class="form-select" id="townfilter" {{required}}>
-                                <option value="">/</option>
-                                {% for town in towns|sort %}
-                                    <option value="{{town.name}}">{{town.name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-
-                        <div class="form-group col-12">
-                            <label for="type">Type</label>
-                            <select name="type" class="form-select" id="typefilter" {{required}}>
-                                <option value="">/</option>
-                                {% for name in listes[0]['assotype']|sort %}
-                                    <option value="{{name}}">{{name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-
-                        <div class="form-group col-12">
-                            <label for="hat">Couvre-Chef</label>
-                            <select name="hat" class="form-select" id="hatfilter" {{required}}>
-                                <option value="">/</option>
-                                {% for name in listes[0]['hats']|sort %}
-                                    <option value="{{name}}">{{name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-
-                        <div class="form-group col-12">
-                            <label for="hat">Genre</label>
-                            <select name="hat" class="form-select" id="genderfilter" {{required}}>
-                                <option value="">/</option>
-                                <option value="Mixte">Mixte</option>
-                                <option value="Masculin">Masculin</option>
-                                <option value="Féminin">Féminin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                        <button id="btntrier" type="button" class="btn btn-primary" data-bs-dismiss="modal">Trier</button>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            {# FIN MODAL TRI #}
-
+</form>
             <!-- cards location -->
             {# <div class="section mt-2">
                 <div class="row">
@@ -271,4 +210,9 @@ w-75">
 
     </div>
     <!-- * App Capsule -->
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    {% include 'find/home.js.twig' %}
 {% endblock %}

@@ -5,34 +5,37 @@
 {% block content %}
 
     {% include 'inc/allpage.css.twig' %}
-    {% include 'find/home.css.twig' %}
+    {% include 'find/find.css.twig' %}
 
     <!-- App Capsule -->
     <div id="appCapsule">
 
         <div class="section full mt-2 mb-3">
             <div class="pb-2 d-flex justify-content-center">
-
+{# {{dump(allfilter)}}; #}
                 <div class="py-2 px-3 position-absolute start-0">
                     <a href="javascript:;" class=" goBack text-secondary">
                         <ion-icon name="chevron-back-outline"></ion-icon>
                     </a>
                 </div>
                 <div class="d-flex align-items-center">
-                    <img src="{{asset(town.blason)}}" alt="image" class="blason"> 
-                    <h3 class="m-0 px-2">  - </h3>
-                    <h3 class="m-0">{{town.name}}</h3>
+                    <b><h2 id="titleFIND" class="my-auto {% if allfilter.country is empty and allfilter.town is empty and allfilter.typeasso is empty and allfilter.hat is empty and allfilter.gendertype is empty %}d-block{% else %}d-none{% endif %}">FIND</h2></b>
+                    <span id="countrychoice"></span>
+                    <span id="regionchoice"></span>
+                    <span id="townchoice"></span>
+                    <span id="typechoice"></span>
+                    <span id="hatchoice"></span>
+                    <span id="genderchoice"></span>
                 </div>
             </div>
             <div class="px-4">
                 <form class="search-form">
                     <div class="form-group searchbox">
-                        <input type="text" class="form-control inputsearch" value="" placeholder="FIND" data-urlaction="{{ path("search_corporations") }}">
+                        <input type="text" class="form-control inputsearch" value="{{allfilter.text}}" placeholder="FIND" data-urlaction="{{ path("search_corporations") }}">
                         <i class="input-icon">
                             <ion-icon name="search-outline"></ion-icon>
                         </i>
                     </div>
-
 
                     <button type="button" class="btn btn-primary btn-sm  mt-1" data-bs-toggle="modal" data-bs-target="#Modalfilter">
                         <span>Filtrer</span>
@@ -44,50 +47,49 @@
 
                     {% include 'inc/tri_filtre/tri.html.twig' %}
 
-                    {# <span id="countrychoice"></span>
-                    <span id="regionchoice"></span>
-                    <span id="townchoice"></span> #}
-                    <span id="typechoice"></span>
-                    <span id="hatchoice"></span>
-                    <span id="genderchoice"></span>
-
                 </form>
             </div>
         </div>
 
 
         <div id="resultassociations"  style="padding-bottom: 60px !important;">
-        {# {% set alphabet = "?" %}
+        {# {% if associations is not empty %}
+            {% set alphabet = "?" %}
 
-        {% for association in associations %}
-            {% if association.name|first != alphabet %}
-                {% set alphabet = association.name|first %}
-                <div class="listview-title sticky-title">
-                    <strong>{{alphabet}}</strong>
-                </div>
-            {% endif %}
-            <ul class="listview image-listview media">
-                <li>
-                    <a href="{{ path('corporation', {'country': country, 'ville': ville, 'corpo': association.name, 'associationid': association.id })}}">
-                        <div class="item">
-                            <div class="imageWrapper">
-                                <img src="{{asset(association.logo??"")}}" alt="image" class="blason">
-                            </div>
-                            <div class="in">
-                                <div>
-                                    <h4 class="mb-05">{{association.name}}</h4>
-                                    <div class="text-muted">
-                                        <div>{% if association.nickname is defined and association.nickname != '' %}({{association.nickname}}){% endif %}</div>
+            {% for association in associations %}
+                {% if association.name|first != alphabet %}
+                    {% set alphabet = association.name|first %}
+                    <div class="listview-title sticky-title">
+                        <strong>{{alphabet}}</strong>
+                    </div>
+                {% endif %}
+                <ul class="listview image-listview media">
+                    <li>
+                        <a href="{{ path('corporation', {'country': association.country, 'ville': association.town, 'corpo': association.name, 'associationid': association.id })}}">
+                            <div class="item">
+                                <div class="imageWrapper">
+                                    <img src="{{asset(association.logo??"")}}" alt="image" class="blason">
+                                </div>
+                                <div class="in">
+                                    <div>
+                                        <h4 class="mb-05">{{association.name}}</h4>
+                                        <div class="text-muted">
+                                            <div>{% if association.nickname is defined and association.nickname != '' %}({{association.nickname}}){% endif %}</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        {% endfor %} #}
+                        </a>
+                    </li>
+                </ul>
+            {% endfor %}
+            </div>
+        {% else %}
+
+            <div class="text-center item">Aucun résultat</div>
+
+        {% endif %} #}
         {% include 'find/corporations/corporationsfiltered.html.twig' %}
-        </div>
 
 
         {# <div class="listview-title sticky-title">

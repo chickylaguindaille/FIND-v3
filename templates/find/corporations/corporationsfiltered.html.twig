@@ -1,0 +1,85 @@
+{% if associations is not empty %}
+
+    {% if (tri is not defined) or (tri == "alphabet") %}
+        {% set alphabet = "?" %}
+        {% for association in associations %}
+            {% if association.name|first != alphabet %}
+                {% set alphabet = association.name|first %}
+                <div class="listview-title sticky-title">
+                    <strong>{{alphabet}}</strong>
+                </div>
+            {% endif %}
+            <ul class="listview image-listview media">
+                <li>
+                    <a href="{{ path('corporation', {'country': association.country, 'ville': association.town, 'corpo': association.name, 'associationid': association.id })}}">
+                        <div class="item">
+                            <div class="imageWrapper">
+                                <img src="{{asset(association.logo??"")}}" alt="image" class="blason">
+                            </div>
+                            <div class="in">
+                                <div>
+                                    <h4 class="mb-05">{{association.name}}</h4>
+                                    <div class="text-muted">
+                                        <div>{% if association.nickname is defined and association.nickname != '' %}({{association.nickname}}){% endif %}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        {% endfor %}
+    {% else %}
+
+        {% set typesommaire = "?" %}
+        {% for association in associations %}
+
+
+            {% if tri == "typeasso" %}
+                {% set trié =  association['type'] %}
+            {% endif %}
+
+            {% if tri == "hat" %}
+                {% set trié =  association['hat'] %}
+            {% endif %}
+            
+            {% if tri == "gender" %}
+                {% set trié = association['additionalinformations']['gendertype']??"Inconnu" %}
+            {% endif %}
+            
+
+            {% if trié != typesommaire %}
+                {% set typesommaire = trié %}
+
+                <div class="listview-title sticky-title">
+                    <strong>{{typesommaire}}</strong>
+                </div>
+            {% endif %}
+
+            <ul class="listview image-listview media">
+                <li>
+                    <a href="{{ path('corporation', {'country': association.country, 'ville': association.town, 'corpo': association.name, 'associationid': association.id })}}">
+                        <div class="item">
+                            <div class="imageWrapper">
+                                <img src="{{asset(association.logo??"")}}" alt="image" class="blason">
+                            </div>
+                            <div class="in">
+                                <div>
+                                    <h4 class="mb-05">{{association.name}}</h4>
+                                    <div class="text-muted">
+                                        <div>{% if association.nickname is defined and association.nickname != '' %}({{association.nickname}}){% endif %}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        {% endfor %}
+    {% endif %}
+
+{% else %}
+
+    <div class="text-center item">Aucun résultat</div>
+
+{% endif %}

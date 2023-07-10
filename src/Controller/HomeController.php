@@ -77,7 +77,9 @@ class HomeController extends AbstractController
      */
     public function accueil(Request $request)
     {
-	$data['page'] = "FIND";
+        $data['page'] = "FIND";
+        $data['typepage'] = "homepage";
+        
 		$data['required'] = $_ENV['REQUIRED_INPUT'];
 
         $associations = $this->findApi->getAssociations();
@@ -96,7 +98,7 @@ class HomeController extends AbstractController
         }
         
 
-        return $this->render('home.html.twig', $data);
+        return $this->render('find/home.html.twig', $data);
     }
     
     /**

@@ -1,0 +1,95 @@
+            <!-- MODAL FILTRE -->
+            <div class="modal fade" id="Modalfilter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Filtrer la recherche</h5>
+                            <button type="button" class="btn-close filtermodalclose" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <div class="modal-body">
+                    
+
+                    {% if typepage != "towns" and typepage != "associationsbylocalisation" %}
+                        <div class="form-group col-12">
+                            <label for="country">Pays</label>
+                            <select name="country" class="form-select" id="countryfilter" >
+                                <option value="">/</option>
+                                <option value="France" {% if allfilter.country is defined and allfilter.country == "France" %}selected{% endif %}>France</option>
+                                <option value="Belgique" {% if allfilter.country is defined and allfilter.country == "Belgique" %}selected{% endif %}>Belgique</option>
+                            </select>
+                        </div>
+
+                        {# <div class="form-group col-12">
+                            <label for="region">Région</label>
+                            <select name="region" class="form-select" id="regionfilter" >
+                                <option value="">/</option>
+                                {% for name in regions|sort %}
+                                    <option value="{{name}}">{{name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div> #}
+
+                        <div class="form-group col-12">
+                            <label for="town">Ville</label>
+                            <select name="town" class="form-select" id="townfilter" >
+                                <option id="" value="">/</option>
+                                {% for town in towns|sort %}
+                                    <option id="{{asset(town.blason)}}" value="{{town.name}}" {% if allfilter.town is defined and allfilter.town == town.name %}selected{% endif %}>{{town.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endif %}
+                    {% if typepage != "towns" %}
+                        <div class="form-group col-12">
+                            <label for="type">Type</label>
+                            <select name="typeasso" class="form-select" id="typefilter" >
+                                <option value="">/</option>
+                                {% for name in listes[0]['assotype']|sort %}
+                                    <option value="{{name}}" {% if allfilter.typeasso is defined and allfilter.typeasso == name %}selected{% endif %}>{{name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label for="hat">Couvre-Chef</label>
+                            <select name="hat" class="form-select" id="hatfilter" >
+                                <option value="">/</option>
+                                {% for name in listes[0]['hats']|sort %}
+                                    <option value="{{name}}" {% if allfilter.hat is defined and allfilter.hat == name %}selected{% endif %}>{{name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label for="gendertype">Genre</label>
+                            <select name="gendertype" class="form-select" id="genderfilter" >
+                                <option value="">/</option>
+                                <option value="Mixte" {% if allfilter.gendertype is defined and allfilter.gendertype == "Mixte" %}selected{% endif %}>Mixte</option>
+                                <option value="Masculin" {% if allfilter.gendertype is defined and allfilter.gendertype == "Masculin" %}selected{% endif %}>Masculin</option>
+                                <option value="Féminin" {% if allfilter.gendertype is defined and allfilter.gendertype == "Féminin" %}selected{% endif %}>Féminin</option>
+                            </select>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="input-list justify-content-center d-flex">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="search" id="radioList1" value="startsearch" {% if (allfilter.gendertype is defined and allfilter.search != "onsearch") or (allfilter.gendertype is not defined)  %}checked{% endif %}>
+                            <label class="form-check-label" for="radioList1">Début contenu</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="search" id="radioList2" value="onsearch" {% if allfilter.gendertype is defined and allfilter.search == "onsearch" %}checked{% endif %}>
+                            <label class="form-check-label" for="radioList2">Dans le contenu</label>
+                        </div>
+                    </div>
+                    {# {% if typepage is defined and typepage =="homepage" %} #}
+                        <div style="margin-left: 1rem; margin-right: 1rem;">
+                            <button type="button" class="btn btn-primary btn-block py-3 mb-2 mx-auto savefilterbutton" data-bs-dismiss="modal">
+                                <span class="mx-2">Sauvegarder</span>
+                            </button>
+                        </div>
+                    {# {% endif %} #}
+                    </div>
+                </div>
+            </div>
+            {# FIN MODAL FILTRE #}

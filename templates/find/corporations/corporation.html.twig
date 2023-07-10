@@ -3,7 +3,7 @@
 {% block content %}
 
     {% include 'inc/allpage.css.twig' %}
-    {% include 'corporations/corporation.css.twig' %}
+    {% include 'find/corporations/corporation.css.twig' %}
 
     <!-- App Capsule -->
     <div id="appCapsule">
@@ -108,7 +108,7 @@
                                             {% if anecdo.file is defined and anecdo.file is not empty %}<img src="{% if anecdo.file is defined and anecdo.file is not empty %}{{asset(anecdo.file.0.path)}}{% else %}{{asset("assets/img/sample/photo/Faluche.png")}}{% endif %}" alt="image" class="imaged w64">{% endif %}
                                             <div class="my-auto">
                                                 <div class="mx-3">{{anecdo.text}}</div>
-                                                <div class="mx-3 text-muted">{{anecdo.source}}</div>
+                                                <div class="mx-3 text-muted">{{anecdo.source??""}}</div>
                                             </div>
                                         </div>
                                         </li>

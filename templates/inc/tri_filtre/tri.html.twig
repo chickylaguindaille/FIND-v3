@@ -1,0 +1,45 @@
+    <!-- Content Action Sheet -->
+    <div class="offcanvas offcanvas-bottom action-sheet" tabindex="-1" id="actionSheetContentTri">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Trier la page par</h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="action-sheet-content p-1">
+                <div class="section full mb-2">
+                        <div class="input-list">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tri" id="alphabet" value="alphabet" checked>
+                                <label class="form-check-label" for="alphabet">L'alphabet</label>
+                            </div>
+                            {% if typepage is defined and (typepage =="associations" or typepage == "associationsbylocalisation") %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tri" id="typeasso" value="typeasso">
+                                    <label class="form-check-label" for="typeasso">Type d'association</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tri" id="hat" value="hat">
+                                    <label class="form-check-label" for="hat">Couvre-chef</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tri" id="gender" value="gender">
+                                    <label class="form-check-label" for="gender">Mixité</label>
+                                </div>
+                            {% endif %}
+                            {% if typepage is defined and typepage =="towns" %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tri" id="region" value="region">
+                                    <label class="form-check-label" for="region">{% if country == "France" %}Région{% elseif country == "Belgique" %}Province{% endif %}</label>
+                                </div>
+                            {% endif %}
+                        </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-block" id="buttontri" data-bs-dismiss="offcanvas">
+                        <span class="mx-2">Sauvegarder</span>
+                    </button>
+                </div>
+                {# <a href="" class="btn btn-primary btn-block" data-bs-dismiss="offcanvas">Sauvegarder</a> #}
+            </div>
+        </div>
+    </div>
+    <!-- * Content Action Sheet -->

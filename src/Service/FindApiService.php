@@ -23,9 +23,9 @@ class FindApiService extends FindService
 	//------------------------------------------------------------------------------------------------------------------
 	// Town
 	//------------------------------------------------------------------------------------------------------------------
-	public function getTowns($country = null, $region = null, $startsearch = null, $onsearch = null)
+	public function getTowns($country = null, $region = null, $startsearch = null, $onsearch = null, $tri = null)
 	{
-		return $this->request(null, 'GET', 'api/villes?country=' . $country . '&region=' . $region. '&startsearch=' . $startsearch . '&onsearch=' . $onsearch);
+		return $this->request(null, 'GET', 'api/villes?country=' . $country . '&region=' . $region. '&startsearch=' . $startsearch . '&onsearch=' . $onsearch . '&tri=' . $tri);
 	}
 
 	public function getTown($id)
@@ -70,9 +70,9 @@ class FindApiService extends FindService
 	//------------------------------------------------------------------------------------------------------------------
 	// Association
 	//------------------------------------------------------------------------------------------------------------------
-	public function getAssociations($country = null ,$region = null, $town = null, $typeasso = null, $hat = null, $gendertype = null)
+	public function getAssociations($country = null, $region = null, $town = null, $typeasso = null, $hat = null, $gendertype = null, $startsearch = null, $onsearch = null, $tri = null)
 	{
-		return $this->request(null, 'GET', 'api/associations?country=' . $country . '&region=' . $region. '&town=' . $town. '&type=' . $typeasso. '&hat=' . $hat. '&town=' . $town. '&gendertype=' . $gendertype);
+		return $this->request(null, 'GET', 'api/associations?country=' . $country . '&region=' . $region . '&town=' . $town . '&type=' . $typeasso . '&hat=' . $hat . '&gendertype=' . $gendertype . '&startsearch=' . $startsearch . '&onsearch=' . $onsearch . '&tri=' . $tri);
 	}
 
 	public function getAssociation($id)

@@ -49,6 +49,7 @@ class FindController extends AbstractController
         public function villes($country, Request $request, VilleRepository $villeRepository): Response
         {
         $data['page'] = "FIND";
+        $data['typepage'] = "towns";
 
         $user = $this->getUser();
         if ($user !== null) {
@@ -60,6 +61,7 @@ class FindController extends AbstractController
         $data['country'] = $country;
 
         $towns = $this->findApi->getTowns($country);
+        // exit(var_dump($towns));
         $data['towns'] = $towns['data'];
         // exit(var_dump($data['towns']));
 
@@ -72,11 +74,26 @@ class FindController extends AbstractController
         #[Route('/app/search/towns', name: 'search_towns', methods: ['GET'])]
         public function changeVilles(Request $request, VilleRepository $villeRepository): Response
         {
-        
+
         $country = $_GET['country'];
         $startsearch = $_GET['text'];
+        // $onsearch = $_GET['text'];
+        $tri = $_GET['tri'];
+        $data['tri'] = $tri;
 
-        $filteredtowns = $this->findApi->getTowns($country, null, $startsearch, null);
+        if($_GET['search'] == "startsearch"){
+            $startsearch = $_GET['text'];
+        }else{
+            $startsearch = null;
+        }
+
+        if($_GET['search'] == "onsearch"){
+            $onsearch = $_GET['text'];
+        }else{
+            $onsearch = null;
+        }
+
+        $filteredtowns = $this->findApi->getTowns($country, null, $startsearch, $onsearch, $tri);
         $data['towns'] = $filteredtowns['data'];
         $data['country'] = $country;
         // exit(var_dump($filteredtowns['data']));
@@ -103,12 +120,17 @@ class FindController extends AbstractController
         public function corporations($country, $ville, Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
         {
             $data['page'] = "FIND";
+            $data['typepage'] = "associationsbylocalisation";
+            // exit(var_dump($data['typepage']));
 
             $user = $this->getUser();
             if ($user !== null) {
                 $profile = $this->findAuth->getUserByEmail($user->getEmail());
                 $data['profile'] = $profile;
             }
+
+            $listes = $this->findApi->getListes();
+            $data['listes'] = $listes['data'];
 
             $data['country'] = $country;
             $data['ville'] = $ville;
@@ -117,80 +139,116 @@ class FindController extends AbstractController
             $data['town'] = $this->findApi->getTown($villeid);
             $associations = $this->findApi->getAssociations($country, null, $ville, null, null, null);
             $data['associations'] = $associations['data'];
-            // exit(var_dump($data['associations']));
-
-            // TABLEAU CORPORATIONS
-            // $serializer = SerializerBuilder::create()->build();
-            // $corporations = $corporationsRepository->findAll();
-            // $corporations = $serializer->toArray($corporations);
-
-
-            // $numbercorpos = count($corporations) - 1;
-            // $filterarray = array();
-
-            // for ($i = 0; $i <= $numbercorpos; $i++) {
-            //     if($corporations[$i]['ville'] == $ville)
-            //             array_push($filterarray, $corporations[$i]);
-            // }
-
-            // $data['corporations'] = $filterarray;
 
             return $this->render('find/corporations/corporations.html.twig', $data);
         }
 
 
-
-    // RECHERCHE CORPORATIONS
-        #[Route('/app/Localisation/{country}/{ville}/Corporations/change', name: 'change_corporations', methods: ['GET'])]
-        public function rechercheCorporations($country, $ville, Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
+        // CORPORATION RECHERCHE
+        #[Route('/app/search/corporations', name: 'search_corporations', methods: ['GET'])]
+        public function changeCorporations(Request $request): Response
         {
+            
+            // $country = $_GET['country'];
+            // $data['country'] = $country;
+
+            // $town = $_GET['town'];
+            // $data['ville'] = $town;
+
+            // $startsearch = $_GET['text'];
+            $inputData['text'] = $_GET['text'];
+            $inputData['country'] = $_GET['country'];
+            $inputData['town'] = $_GET['town'];
+            $inputData['typeasso'] = $_GET['typeasso'];
+            $inputData['hat'] = $_GET['hat'];
+            $inputData['gender'] = $_GET['gender'];
+            $inputData['search'] = $_GET['search'];
+            $data['tri'] = $_GET['tri'];
+
+            $data['allfilter'] = $inputData;
+            if($inputData['search'] == "startsearch"){
+                $startsearch = $inputData['text'];
+            }else{
+                $startsearch = null;
+            }
+
+            if($inputData['search'] == "onsearch"){
+                $onsearch = $inputData['text'];
+            }else{
+                $onsearch = null;
+            }
+
+            $associations = $this->findApi->getAssociations($inputData['country'], null, $inputData['town'], $inputData['typeasso'], $inputData['hat'], $inputData['gender'], $startsearch, $onsearch, $data['tri']);
+            
+            // exit(var_dump($associations));
+            // exit(var_dump($data['allfilter']));
+            
+            $data['associations'] = $associations['data'];
+            // $data['country'] = $country;
+            // exit(var_dump($data['associations']));
+
+            return $this->render('find/corporations/corporationsfiltered.html.twig', $data );
+        }
+
+        // CORPORATIONS HOMEPAGE FILTERED
+        #[Route('/app/search/Corporations', name: 'corporations_hp', methods: ['POST'])]
+        public function corporationsHP(Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
+        {
+
             $data['page'] = "FIND";
+            $data['typepage'] = "associations";
+
+            $associations = $this->findApi->getAssociations();
+            $listes = $this->findApi->getListes();
+            $towns = $this->findApi->getTowns(null);
+
+            $data['listes'] = $listes['data'];
+            $data['towns'] = $towns['data'];
+            $data['regions'] = array_unique(array_column($towns['data'], 'region'));
 
             $user = $this->getUser();
-            $profile = $this->findAuth->getUserByEmail($user->getEmail());
-            $data['profile'] = $profile;
-
-            $data['country'] = $country;
-            // $ville = $request->get('ville');
-
-            // TABLEAU CORPORATIONS
-            $serializer = SerializerBuilder::create()->build();
-            $corporations = $corporationsRepository->findAll();
-            $corporations = $serializer->toArray($corporations);
-
-            $numbercorpos = count($corporations) - 1;
-            $filterarray = array();
-
-            for ($i = 0; $i <= $numbercorpos; $i++) {
-                if($corporations[$i]['ville'] == $ville)
-                        array_push($filterarray, $corporations[$i]);
+            if ($user !== null) {
+                $profile = $this->findAuth->getUserByEmail($user->getEmail());
+                $data['profile'] = $profile;
             }
 
+            $inputData = $request->request->all();
 
-            if(isset($_GET['texte'])){
-                $texte = $_GET['texte'];
-                $tri = $_GET['tri'];
+            // exit(var_dump($inputData));
 
-                $numbercorpotown = count($filterarray) - 1;
-                $filterarraycorpos = array();
-
-                for ($i = 0; $i <= $numbercorpotown; $i++) {
-                    if($tri == 'debut')
-                        if (str_starts_with($filterarray[$i]['nom'], ucfirst($texte))) {
-                            array_push($filterarraycorpos, $filterarray[$i]);
-                        }
-                    if($tri == 'contenu')
-                        if (str_contains(strtolower($filterarray[$i]['nom']), strtolower($texte))) {
-                            array_push($filterarraycorpos, $filterarray[$i]);
-                        }
-                }
-        
+            $data['allfilter'] = $inputData;
+            if($inputData['search'] == "startsearch"){
+                $startsearch = $inputData['text'];
+            }else{
+                $startsearch = null;
             }
-                $data['corporations'] = $filterarraycorpos;
+
+            if($inputData['search'] == "onsearch"){
+                $onsearch = $inputData['text'];
+            }else{
+                $onsearch = null;
+            }
+
+            $associations = $this->findApi->getAssociations($inputData['country'], null, $inputData['town'], $inputData['typeasso'], $inputData['hat'], $inputData['gendertype'], $startsearch, $onsearch);
+            $data['associations'] = $associations['data'];
+            // exit(var_dump($associations['data']));
+
+            $data['country'] = $inputData['country'];
+            $data['ville'] = $inputData['town'];
+            // $villeid = $request->get('villeid');
+
+            // $data['town'] = $this->findApi->getTown($villeid);
 
 
-            return $this->render('corporations/corporations.search.html.twig', $data);
+            return $this->render('find/find.html.twig', $data);
         }
+
+
+
+
+
+
+
 
 
 
@@ -222,22 +280,22 @@ class FindController extends AbstractController
             return $b - $a;
         });
 
-        return $this->render('corporations/corporation.html.twig', $data);
+        return $this->render('find/corporations/corporation.html.twig', $data);
     }
 
 
 
         // CORPORATION
-        #[Route('/Localisation/corporation', name: 'corporation_html', methods: ['GET'])]
-        public function corporationHtml()
-        {
-            $user = $this->getUser();
-            $profile = $this->findAuth->getUserByEmail($user->getEmail());
-            $data['profile'] = $profile;
+        // #[Route('/Localisation/corporation', name: 'corporation_html', methods: ['GET'])]
+        // public function corporationHtml()
+        // {
+        //     $user = $this->getUser();
+        //     $profile = $this->findAuth->getUserByEmail($user->getEmail());
+        //     $data['profile'] = $profile;
 
-            $data['page'] = "FIND";
-            return $this->render('find/corporation.html.twig');
-        }
+        //     $data['page'] = "FIND";
+        //     return $this->render('find/corporation.html.twig');
+        // }
 
 
 }

@@ -4,20 +4,44 @@
 
 $(document).ready(function () {
 
+
+    
+
+        let country = '{{allfilter.country??""}}';
+        let town = '{{allfilter.town??""}}';
+        let typeasso = '{{allfilter.typeasso??""}}';
+        let hat = '{{allfilter.hat??""}}';
+        let gender = '{{allfilter.gender??""}}';
+
     $('.inputsearch').keyup(searchAssociations);
+    $('.savefilterbutton').click(searchAssociations);
+    $('#buttontri').click(searchAssociations);
 
     function searchAssociations() {
 
-        let text = $(this).val();
-        let urlAction = $(this).attr("data-urlaction");
-        let country = '{{country??""}}';
+        let text = $('.inputsearch').val();
+        let urlAction = $('.inputsearch').attr("data-urlaction");
+
+        {% if typepage != "associationsbylocalisation" %}
+            let country = $('#countryfilter').val();
+            let town = $('#townfilter').val();
+        {% else %}
+            let country = '{{country??""}}';
+            let town = '{{town.name??""}}';
+        {% endif %}
+        let typeasso = $('#typefilter').val();
+        let hat = $('#hatfilter').val();
+        let gender = $('#genderfilter').val();
+        let search = $('input[name="search"]:checked').val();
+        let tri = $('input[name="tri"]:checked').val();
+
 
             $('#resultassociations').html('<div class="justify-content-center d-flex"><div class="spinner-border text-primary" role="status"></div></div>');
 
             $.ajax({
                 url: urlAction,
                 method: 'GET',
-                data: 'text=' + encodeURIComponent(text) + '&country=' + country,
+                data: 'text=' + encodeURIComponent(text) + '&country=' + country + '&town=' + town + '&typeasso=' + typeasso + '&hat=' + hat + '&gender=' + gender + '&search=' + search + '&tri=' + tri,
                 success: function (data) {
                         $('#resultassociations').html('');
                         $('#resultassociations').append(data);
