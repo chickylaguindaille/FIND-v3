@@ -18,9 +18,10 @@ $(document).ready(function() {
 
 
   $('.savefilterbutton').click(filterCountry);
+  filterCountry();
 
   function filterCountry() {
-    var selectedOption = $('#countryfilter').val(); // Récupère la valeur sélectionnée
+    var selectedOption = $('#countryfilter').val();
 
     if (selectedOption === 'France') {
       $('#countrychoice').html('<img src="{{ asset("app/assets/img/sample/photo/France.png") }}" class="ms-1 iconfilter">');
@@ -50,6 +51,7 @@ $(document).ready(function() {
 
 
   $('.savefilterbutton').click(filterTown);
+  filterTown()
 
   function filterTown() {
     var selectedOptionId = $("#townfilter").find(":selected").attr("id");
@@ -64,6 +66,7 @@ $(document).ready(function() {
 
 
   $('.savefilterbutton').click(filterTypeasso);
+  filterTypeasso()
 
   function filterTypeasso() {
     var selectedOption = $('#typefilter').val();
@@ -87,6 +90,7 @@ $(document).ready(function() {
 
 
   $('.savefilterbutton').click(filterHat);
+  filterHat()
 
   function filterHat() {
     var selectedOption = $('#hatfilter').val();
@@ -105,7 +109,8 @@ $(document).ready(function() {
 };
 
   $('.savefilterbutton').click(filterGender);
-
+  filterGender()
+  
   function filterGender() {
     var selectedOption = $('#genderfilter').val();
 
