@@ -2,9 +2,16 @@
 
 {# {% block title %}Accueil{% endblock %} #}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {% include 'find/home.css.twig' %}
+    <script src="{{ asset("app/autocomplete/library/bootstrap-5/bootstrap.bundle.min.js") }}"></script>
+    <script src="{{ asset("app/autocomplete/library/autocomplete.js") }}"></script>
+
+{% endblock %}
+
 {% block content %}
 
-{% include 'find/home.css.twig' %}
  <!-- App Capsule -->
     <div id="appCapsule">
 
@@ -16,7 +23,7 @@
         <div class="section full mt-3 mb-3">
 
             <!-- CARDS COUNTRY -->
-            <div class="section mt-4">
+            {# <div class="section mt-4">
                 <div class="row">
                     <div class="col-2">
                     </div>
@@ -41,32 +48,66 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> #}
             <!-- * FIN CARDS COUNTRY-->
 
             {# INPUT RECHERCHE #}
             <div class="section full mt-2">
                 <div class="pt-2 pb-1 px-4">
                     <form class="search-form" action="{{ path('corporations_hp')}}" method="post" enctype="multipart/form-data">
+
+
                         <div class="form-group searchbox">
-                            <input type="text" class="form-control" name="text" placeholder="Recherche..">
+                            <input type="text" class="form-control inputsearch" name="text" placeholder="Recherche.." id="findinput" data-urlaction="{{ path("search_corporations") }}">
+                            
+                            {# <input type="text" name="country_name" id="" class="form-control form-control-lg" placeholder="Country Name" /> #}
+
+                            
                             <i class="input-icon">
                                 <ion-icon name="search-outline"></ion-icon>
                             </i>
-                            {# <a href="{{ path('corporations_hp', {'country': 'France'})}}"> #}
-                                <button type="submit" class="btn btn-primary ms-1 p-0" style="height: 36px !important;">
+                                <button type="submit" class="btn btn-primary ms-1 p-0 " style="height: 36px !important;">
                                     <span class="mx-2">FIND</span>
                                 </button>
-                            {# </a> #}
                         </div>
-                    
+                         
+                        {# <div class="form-group searchbox d-flex">
+                            <div class="">
+                                <input type="text" name="remote" class="form-control autocomplete inputsearch" id="select-remote" placeholder="Recherche.."
+                                data-full-width="1" data-server="" data-live-server="true" data-server-data-key="items"
+                                data-hidden-input="true" data-label-field="title" data-value-field="id" data-url-param="url" data-live-server="true" data-urlaction="{{ path("search_corporations") }}" />
+                                <i class="input-icon">
+                                    <ion-icon name="search-outline"></ion-icon>
+                                </i>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary ms-1 p-0 " style="height: 36px !important;">
+                                <span class="mx-2">FIND</span>
+                            </button>
+                        </div> #}
+
+                        {# <div class="form-group searchbox d-flex">
+                            <div class="">
+                                <input type="text" class="form-control autocomplete inputsearch" id="select-remote" placeholder="Recherche.."
+                                data-full-width="1" data-server="" data-live-server="true" data-server-data-key="items"
+                                data-hidden-input="true" data-label-field="title" data-value-field="id" data-url-param="url" data-live-server="true" data-urlaction="{{ path("search_corporations") }}" />
+                                
+                                <i class="input-icon">
+                                    <ion-icon name="search-outline"></ion-icon>
+                                </i>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary ms-1 p-0 " style="height: 36px !important;">
+                                <span class="mx-2">FIND</span>
+                            </button>
+                        </div> #}
                 </div>
             </div>
             {# FIN INPUT RECHERCHE #}
 
             <!-- BOUTON MODAL TRI -->
             <div>
-                <button type="button" class="btn btn-primary p-0 ms-4" data-bs-toggle="modal" data-bs-target="#Modalfilter">
+                <button type="button" class="homebtn btn btn-primary p-0 ms-4" data-bs-toggle="modal" data-bs-target="#Modalfilter">
                 <span class="mx-2">Filtrer</span>
                 </button>
 
@@ -215,4 +256,8 @@ w-75">
 {% block javascript %}
     {{ parent() }}
     {% include 'find/home.js.twig' %}
+    {% include 'find/corporations/corporations.js.twig' %}
+
+
 {% endblock %}
+

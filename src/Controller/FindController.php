@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\Generator\UrlGenerator;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 use App\Entity\Ville;
 use App\Form\VilleType;
@@ -164,6 +165,7 @@ class FindController extends AbstractController
             $inputData['gender'] = $_GET['gender'];
             $inputData['search'] = $_GET['search'];
             $data['tri'] = $_GET['tri'];
+            $data['typepage'] = $_GET['typepage'];
 
             $data['allfilter'] = $inputData;
             if($inputData['search'] == "startsearch"){
@@ -185,9 +187,32 @@ class FindController extends AbstractController
             
             $data['associations'] = $associations['data'];
             // $data['country'] = $country;
-            // exit(var_dump($data['associations']));
+            // exit(var_dump($data['typepage']));
+            if ($data['typepage'] == "homepage"){
+                // exit(var_dump("homepage"));
+                // return new JsonResponse($data);
+                // exit(var_dump($data['associations']));
+                $data = array();
+                foreach($associations['data'] as $asso)
+                {
+                    $data[] = array(
+                        'label'     =>  $asso['name'],
+                        'value'     =>  $asso['id']
+                    );
+                }
 
-            return $this->render('find/corporations/corporationsfiltered.html.twig', $data );
+                if (empty($data)){
+                    $data[] = array(
+                        'label'     =>  "",
+                        'value'     =>  ""
+                    );
+                }
+
+                return new JsonResponse($data);
+                // return new JsonResponse(json_encode($data));
+            }else{
+                return $this->render('find/corporations/corporationsfiltered.html.twig', $data );
+            }
         }
 
         // CORPORATIONS HOMEPAGE FILTERED

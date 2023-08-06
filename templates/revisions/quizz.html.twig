@@ -1,0 +1,73 @@
+{% extends "layout.html.twig" %}
+
+{# {% block title %}Accueil{% endblock %} #}
+
+{% block content %}
+
+    {% include 'inc/allpage.css.twig' %}
+    {% include 'find/find.css.twig' %}
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+
+        {# <div class="d-flex align-items-center" style="height: calc(100% - 56px);">
+            <div class="text-center mx-3 mt-3">
+                <h2 class="title">Quizz sur les circulaires</h2>
+                <div class="text mb-2">
+                    Sélectionne le nombre de questions auquel tu veux répondre.
+                </div>
+                <div class="stepper stepper-sm text-center mb-5">
+                    <a href="#" class="stepper-button stepper-down">-</a>
+                    <input type="text" class="form-control" value="5" disabled />
+                    <a href="#" class="stepper-button stepper-up">+</a>
+                </div>
+            
+                <div class="mx-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="app-pages.html" class="btn btn-primary btn-lg btn-block">Commencer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> #}
+
+{# {% for i in 0..10 %} #}
+    {% for answered in answer %}
+    {# {{dump(answered)}} #}
+        <div class="section full mb-2 ">
+            <div class="section-title">Quel est le circulaire correspondant à {{answered['name']}} ?</div>
+            <div class="wide-block p-0">
+
+                <div class="input-list">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioList" id="radioList1">
+                        <label class="form-check-label" for="radioList1">{{answered['data'][0]}}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioList" id="radioList2">
+                        <label class="form-check-label" for="radioList2">{{answered['data'][1]}}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioList" id="radioList3">
+                        <label class="form-check-label" for="radioList3">{{answered['data'][2]}}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioList" id="radioList4">
+                        <label class="form-check-label" for="radioList4">{{answered['data'][3]}}</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+    </div>
+    <!-- * App Capsule -->
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    {# {% include 'find/home.js.twig' %} #}
+{% endblock %}

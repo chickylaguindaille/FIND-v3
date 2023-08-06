@@ -5,7 +5,7 @@
 $(document).ready(function () {
 
 
-    
+        const selectRemoteInput = $("#select-remote");
 
         let country = '{{allfilter.country??""}}';
         let town = '{{allfilter.town??""}}';
@@ -34,17 +34,53 @@ $(document).ready(function () {
         let gender = $('#genderfilter').val();
         let search = $('input[name="search"]:checked').val();
         let tri = $('input[name="tri"]:checked').val();
-
+        let typepage = "{{typepage??"nohomepage"}}";
 
             $('#resultassociations').html('<div class="justify-content-center d-flex"><div class="spinner-border text-primary" role="status"></div></div>');
+
+
+
+
+            var auto_complete = new Autocomplete(document.getElementById('findinput'), {
+                data: [], // Les données seront mises à jour via AJAX
+                maximumItems: 10,
+                highlightTyped: true,
+                highlightClass: 'fw-bold text-primary'
+            });
+
+
 
             $.ajax({
                 url: urlAction,
                 method: 'GET',
-                data: 'text=' + encodeURIComponent(text) + '&country=' + country + '&town=' + town + '&typeasso=' + typeasso + '&hat=' + hat + '&gender=' + gender + '&search=' + search + '&tri=' + tri,
+                data: 'text=' + encodeURIComponent(text) + '&country=' + country + '&town=' + town + '&typeasso=' + typeasso + '&hat=' + hat + '&gender=' + gender + '&search=' + search + '&tri=' + tri + '&typepage=' + typepage,
                 success: function (data) {
-                        $('#resultassociations').html('');
-                        $('#resultassociations').append(data);
+                        {% if typepage == "homepage" %}
+
+                            console.log(data);
+
+                            if (data.length === 0) {
+                                $('.dropdown-menu').not('.show').remove();
+                            }
+                            // Sélectionnez tous les div ayant la classe donnée
+                            var divsToDelete = $('.dropdown-menu.show');
+
+                            // Si vous voulez supprimer les div les plus anciens en premier
+                            divsToDelete.sort(function(a, b) {
+                                return $(a).data('timestamp') - $(b).data('timestamp');
+                            });
+
+                            // Supprimez les div les plus anciens
+                            for (var i = 0; i < divsToDelete.length; i++) {
+                                $(divsToDelete[i]).remove();
+                            }
+
+                            auto_complete.setData(data);
+
+                        {% else %}
+                            $('#resultassociations').html('');
+                            $('#resultassociations').append(data);
+                        {% endif %}
                 },
                 error: function (data) {
                     console.log(data);
@@ -57,3 +93,21 @@ $(document).ready(function () {
 });
 
 </script>
+
+  <script type="module">
+    import Autocomplete from "https://cdn.jsdelivr.net/gh/lekoala/bootstrap5-autocomplete@master/autocomplete.js";
+    // import Autocomplete from "./autocomplete.min.js";
+    
+      var src = [];
+
+      function handleItemSelected(item) {
+      console.log("Selected item:", item);
+      const selectedUrl = item.url;
+      window.location.href = selectedUrl;
+    }
+
+    Autocomplete.init("input.autocomplete", {
+      onSelectItem: handleItemSelected, // Utilisation de la fonction pour gérer la sélection
+    });
+
+  </script>

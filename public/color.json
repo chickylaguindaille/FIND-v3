@@ -1,0 +1,28 @@
+{
+	"color": [
+	  { "id": 1, "name": "Velours violet", "data": [26] },
+	  { "id": 2, "name": "Velours rouge", "data": [27] },
+	  { "id": 3, "name": "Velours bleu roy", "data": [28] },
+	  { "id": 4, "name": "Velours rose", "data": [29] },
+	  { "id": 5, "name": "Velours vert", "data": [30] },
+	  { "id": 6, "name": "Velours marron", "data": [31] },
+	  { "id": 7, "name": "Velours fuchsia", "data": [32] },
+	  { "id": 8, "name": "Velours bordeaux", "data": [33] },
+	  { "id": 9, "name": "Satin vert clair", "data": [34] },
+	  { "id": 10, "name": "Satin bleu", "data": [35] },
+	  { "id": 11, "name": "Satin marron", "data": [36] },
+	  { "id": 12, "name": "Satin suivant l’UFR de rattachement", "data": [37] },
+	  { "id": 13, "name": "Satin rouge", "data": [38] },
+	  { "id": 14, "name": "Satin vert & rouge", "data": [39] },
+	  { "id": 15, "name": "Satin bleu & noir", "data": [40] },
+	  { "id": 17, "name": "Satin vert foncé", "data": [41] },
+	  { "id": 18, "name": "Satin blanc", "data": [42] },
+	  { "id": 20, "name": "Satin jaune", "data": [43] },
+	  { "id": 21, "name": "Satin argenté", "data": [44] },
+	  { "id": 22, "name": "Satin saumon", "data": [45] },
+	  { "id": 23, "name": "Satin violet", "data": [46] },
+	  { "id": 24, "name": "Satin orange", "data": [47] },
+	  { "id": 25, "name": "Satin bleu & rouge", "data": [48] }
+	]
+  }
+  

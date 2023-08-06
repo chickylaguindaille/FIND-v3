@@ -1,0 +1,37 @@
+{
+	"study_fr": [
+		{ "id": 26, "name": "Chirurgie dentaire", "data": [1] },
+		{ "id": 27, "name": "Médecine", "data": [2] },
+		{ "id": 28, "name": "Ostéopathie", "data": [3] },
+		{ "id": 29, "name": "Paramédical", "data": [4] },
+		{ "id": 30, "name": "Pharmacie, Préparateur en pharmacie", "data": [5] },
+		{ "id": 31, "name": "Prépas santé", "data": [6] },
+		{ "id": 32, "name": "Sage-Femme", "data": [7] },
+		{ "id": 33, "name": "Vétérinaire", "data": [8] },
+		{ "id": 34, "name": "Administration Économique et Sociale (AES)", "data": [9] },
+		{ "id": 35, "name": "Architecture, Beaux-arts, Audio-visuel, Arts, Arts du spectacle", "data": [10] },
+		{ "id": 36, "name": "Classes préparatoires", "data": [11] },
+		{ "id": 37, "name": "Communication", "data": [12] },
+		{ "id": 38, "name": "Droit", "data": [13] },
+		{ "id": 39, "name": "Écoles de commerce, Gestion, Communication, Journalisme", "data": [14] },
+		{ "id": 40, "name": "Écoles d’ingénieurs", "data": [15] },
+		{ "id": 41, "name": "MEEF, Second degré, IUP", "data": [17] },
+		{ "id": 42, "name": "Filières sportives", "data": [18] },
+		{ "id": 43, "name": "DUT", "data": [20] },
+		{ "id": 44, "name": "BTS", "data": [21] },
+		{ "id": 45, "name": "Lettres, Langues, Sciences humaines, Sciences sociales", "data": [22] },
+		{ "id": 46, "name": "Musique, Musicologie", "data": [23] },
+		{ "id": 47, "name": "OEnologie", "data": [24] },
+		{ "id": 48, "name": "Sciences", "data": [25] },
+		{ "id": 49, "name": "Sciences économiques, Gestion, IAE", "data": [26] },
+		{ "id": 50, "name": "Sciences politiques", "data": [27] }
+		]
+	}
+	
+	
+	
+	
+		
+		
+		
+		
