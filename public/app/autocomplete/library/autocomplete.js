@@ -88,7 +88,7 @@ class Autocomplete {
       }
     }
 
-    return ce(`<button type="button" class="dropdown-item" data-label="${item.label}" data-value="${item.value}">${label}</button>`);
+    return ce(`<button type="button" class="text-truncate dropdown-item" data-label="${item.label}" data-value="${item.value}">${label}</button>`);
   }
 
   createItems() {

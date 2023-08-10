@@ -32,9 +32,9 @@
                         <div class="form-group col-12">
                             <label for="town">Ville</label>
                             <select name="town" class="form-select" id="townfilter" >
-                                <option id="" value="">/</option>
+                                <option id="" value="" data-country="" >/</option>
                                 {% for town in towns|sort %}
-                                    <option id="{{asset(town.blason)}}" value="{{town.name}}" {% if allfilter.town is defined and allfilter.town == town.name %}selected{% endif %}>{{town.name}}</option>
+                                    <option id="{{asset(town.blason)}}" value="{{town.name}}" data-country="{{town.country}}" {% if allfilter.town is defined and allfilter.town == town.name %}selected{% endif %}>{{town.name}}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -45,7 +45,7 @@
                             <select name="typeasso" class="form-select" id="typefilter" >
                                 <option value="">/</option>
                                 {% for name in listes[0]['assotype']|sort %}
-                                    <option value="{{name}}" {% if allfilter.typeasso is defined and allfilter.typeasso == name %}selected{% endif %}>{{name}}</option>
+                                    <option value="{{name}}" data-country="{% if name == "Filière" or name == "Association" or name == "Corporation" %}France{% elseif name == "Cercle" or name == "Régionale" %}Belgique{% endif %}" {% if allfilter.typeasso is defined and allfilter.typeasso == name %}selected{% endif %}>{{name}}</option>
                                 {% endfor %}
                             </select>
                         </div>

@@ -23,7 +23,7 @@
         <div class="section full mt-3 mb-3">
 
             <!-- CARDS COUNTRY -->
-            {# <div class="section mt-4">
+            <div class="section mt-4">
                 <div class="row">
                     <div class="col-2">
                     </div>
@@ -48,14 +48,13 @@
                         </a>
                     </div>
                 </div>
-            </div> #}
+            </div>
             <!-- * FIN CARDS COUNTRY-->
 
             {# INPUT RECHERCHE #}
             <div class="section full mt-2">
                 <div class="pt-2 pb-1 px-4">
                     <form class="search-form" action="{{ path('corporations_hp')}}" method="post" enctype="multipart/form-data">
-
 
                         <div class="form-group searchbox">
                             <input type="text" class="form-control inputsearch" name="text" placeholder="Recherche.." id="findinput" data-urlaction="{{ path("search_corporations") }}">
@@ -164,7 +163,7 @@ w-75">
         <!-- app footer -->
 
 
-        <div class="section inset mt-2" style="padding-bottom: 68px !important;">
+        <div class="section inset mt-2 mb-2">
 
             <div class="accordion" id="accordionExample3">
                 <div class="accordion-item">
@@ -257,7 +256,7 @@ w-75">
     {{ parent() }}
     {% include 'find/home.js.twig' %}
     {% include 'find/corporations/corporations.js.twig' %}
-
+    {% include 'inc/tri_filtre/filtre.js.twig' %}
 
 {% endblock %}
 

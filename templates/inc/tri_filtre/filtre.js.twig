@@ -1,0 +1,71 @@
+<script>
+
+$(document).ready(function() {
+  // Sélectionnez l'élément <select> par son ID ou sa classe
+  var countryselect = $('#countryfilter');
+  var townselect = $('#townfilter');
+  var typefilter = $('#typefilter');
+
+
+// GESTION DE VILLE EN FONCTION DE PAYS
+  countryselect.on('change', function() {
+    // Récupérez la valeur sélectionnée
+    var selectedValue = $(this).val();
+
+        if (selectedValue === "France") {
+            townselect.find('option').each(function() {
+                var dataCountry = $(this).data('country');
+
+                if (dataCountry === 'France' || dataCountry === "") {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            typefilter.find('option').each(function() {
+                var dataCountry = $(this).data('country');
+
+                if (dataCountry === 'France' || dataCountry === "") {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+
+        if (selectedValue === "Belgique") {
+            townselect.find('option').each(function() {
+                var dataCountry = $(this).data('country');
+                if (dataCountry === 'Belgique' || dataCountry === "") {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            typefilter.find('option').each(function() {
+                var dataCountry = $(this).data('country');
+
+                if (dataCountry === 'Belgique' || dataCountry === "") {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+
+        if (selectedValue === "") {
+            townselect.find('option').each(function() {
+                $(this).show();
+            });
+
+            typefilter.find('option').each(function() {
+                $(this).show();
+            });
+        }
+  });
+});
+
+
+</script>

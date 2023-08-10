@@ -195,8 +195,11 @@ class FindController extends AbstractController
                 $data = array();
                 foreach($associations['data'] as $asso)
                 {
+
+                    $name = $asso['name'] . " (" . $asso['nickname'] . ") - " . $asso['town'];
+
                     $data[] = array(
-                        'label'     =>  $asso['name'],
+                        'label'     =>  $name,
                         'value'     =>  $asso['id']
                     );
                 }
@@ -216,7 +219,7 @@ class FindController extends AbstractController
         }
 
         // CORPORATIONS HOMEPAGE FILTERED
-        #[Route('/app/search/Corporations', name: 'corporations_hp', methods: ['POST'])]
+        #[Route('/app/search/Corporations', name: 'corporations_hp')]
         public function corporationsHP(Request $request, VilleRepository $villeRepository, CorporationsRepository $corporationsRepository): Response
         {
 
@@ -284,6 +287,31 @@ class FindController extends AbstractController
 
 
     // CORPORATION
+
+    #[Route('/app/Localisation/corpowithid', name: 'corporation_with_id', methods: ['GET'])]
+    public function corporationWithId(Request $request): Response
+    {
+
+        $user = $this->getUser();
+        if ($user !== null) {
+            $profile = $this->findAuth->getUserByEmail($user->getEmail());
+            $data['profile'] = $profile;
+        }
+
+        $associationid = $request->get('associationid');
+        $association = $this->findApi->getAssociation($associationid);
+
+        // exit(var_dump($association));
+
+        return $this->redirectToRoute('corporation', [
+            'country' => $association['country'],
+            'ville' => $association['town'],
+            'corpo' => $association['name'],
+            'associationid' => $associationid,
+        ]);
+    }
+
+
     #[Route('/app/Localisation/{country}/{ville}/{corpo}', name: 'corporation', methods: ['GET'])]
     public function corporation($country, $ville, Request $request): Response
     {

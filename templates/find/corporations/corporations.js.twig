@@ -40,15 +40,14 @@ $(document).ready(function () {
 
 
 
-
+        {% if typepage == "homepage" %}
             var auto_complete = new Autocomplete(document.getElementById('findinput'), {
                 data: [], // Les données seront mises à jour via AJAX
                 maximumItems: 10,
                 highlightTyped: true,
                 highlightClass: 'fw-bold text-primary'
             });
-
-
+        {% endif %}
 
             $.ajax({
                 url: urlAction,
@@ -77,6 +76,19 @@ $(document).ready(function () {
 
                             auto_complete.setData(data);
 
+                            var divToHide = $('.dropdown-menu');
+                            // Ajoutez un gestionnaire d'événements de clic au document
+                            $(document).on('click', function(event) {
+                                // Vérifiez si le clic a eu lieu en dehors de la div
+                                if (!divToHide.is(event.target) && divToHide.has(event.target).length === 0) {
+                                // Faites disparaître la div
+                                divToHide.hide();
+                                }
+                            });
+
+                            // Reinitialiser la redirection
+                            $('.dropdown-item').click(redirectAutocomplete);
+
                         {% else %}
                             $('#resultassociations').html('');
                             $('#resultassociations').append(data);
@@ -89,6 +101,17 @@ $(document).ready(function () {
             });
 
     }
+
+
+
+    function redirectAutocomplete() {
+        var dataValue = $(this).data('value');
+
+        var redirectUrl = "{{ path('corporation_with_id') }}";
+        window.location.href = redirectUrl + '?associationid=' + encodeURIComponent(dataValue);
+
+    }
+
 
 });
 
