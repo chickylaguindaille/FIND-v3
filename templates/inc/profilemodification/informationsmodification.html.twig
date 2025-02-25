@@ -62,7 +62,7 @@
                 <div class="input-wrapper">
                     <label class="form-label" for="address5">Baptême</label>
 
-                    {% for key, name in listes[0]['hats']|sort %}
+                    {% for key, name in listes[0]['hats']|default([])|sort %}
                         {% if name != "Aucun"  %}
                             <div class="form-check mb-1">
                                 <input type="checkbox" class="form-check-input" name="baptism[{{name}}]" id="customCheckb{{key}}"
