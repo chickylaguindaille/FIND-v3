@@ -44,7 +44,7 @@
                             <label for="type">Type</label>
                             <select name="typeasso" class="form-select" id="typefilter" >
                                 <option value="">/</option>
-                                {% for name in listes[0]['assotype']|sort %}
+                                {% for name in (listes[0]['assotype']|default([]))|sort %}
                                     <option value="{{name}}" data-country="{% if name == "Filière" or name == "Association" or name == "Corporation" %}France{% elseif name == "Cercle" or name == "Régionale" %}Belgique{% endif %}" {% if allfilter.typeasso is defined and allfilter.typeasso == name %}selected{% endif %}>{{name}}</option>
                                 {% endfor %}
                             </select>
@@ -54,7 +54,7 @@
                             <label for="hat">Couvre-Chef</label>
                             <select name="hat" class="form-select" id="hatfilter" >
                                 <option value="">/</option>
-                                {% for name in listes[0]['hats']|sort %}
+                                {% for name in listes[0]['hats']|default([])|sort %}
                                     <option value="{{name}}" {% if allfilter.hat is defined and allfilter.hat == name %}selected{% endif %}>{{name}}</option>
                                 {% endfor %}
                             </select>

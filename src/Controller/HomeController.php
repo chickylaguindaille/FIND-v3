@@ -50,10 +50,12 @@ class HomeController extends AbstractController
     {
 	$data['page'] = "bar";
     $user = $this->getUser();
-    $profile = $this->findAuth->getUserByEmail($user->getEmail());
-    $data['profile'] = $profile;
-        // return $this->render('bar/bar.html.twig', $data);
-        return $this->render('construction.html.twig', $data);
+    if ($user  != null){
+        $profile = $this->findAuth->getUserByEmail($user->getEmail());
+        $data['profile'] = $profile;
+    }
+        return $this->render('bar/bar.html.twig', $data);
+        //return $this->render('construction.html.twig', $data);
     }
 
     /**
@@ -64,10 +66,12 @@ class HomeController extends AbstractController
     {
 	$data['page'] = "calendar";
     $user = $this->getUser();
-    $profile = $this->findAuth->getUserByEmail($user->getEmail());
-    $data['profile'] = $profile;
-        // return $this->render('calendar/calendar.html.twig', $data);
-        return $this->render('construction.html.twig', $data);
+    if ($user  != null){
+        $profile = $this->findAuth->getUserByEmail($user->getEmail());
+        $data['profile'] = $profile;
+    }
+        return $this->render('calendar/calendar.html.twig', $data);
+        //return $this->render('construction.html.twig', $data);
 
     }
 
@@ -109,8 +113,10 @@ class HomeController extends AbstractController
     {
 	$data['page'] = "revisions";
     $user = $this->getUser();
-    $profile = $this->findAuth->getUserByEmail($user->getEmail());
-    $data['profile'] = $profile;
+    if ($user  != null){
+        $profile = $this->findAuth->getUserByEmail($user->getEmail());
+        $data['profile'] = $profile;
+    }
         // return $this->render('revisions/revisions.html.twig', $data);
         return $this->render('construction.html.twig', $data);
     }
