@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
 # ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # Définir la variable d'environnement APP_ENV
-# ENV APP_ENV=prod
+ENV APP_ENV=prod
 
 # Installer Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
