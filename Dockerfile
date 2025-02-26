@@ -40,6 +40,9 @@ RUN mv /root/.symfony*/bin/symfony /usr/local/bin/symfony
 RUN pecl install mongodb \
     && docker-php-ext-enable mongodb
 
+# Installer Symfony Dotenv
+RUN composer require symfony/dotenv
+
 # Copier le code source dans le conteneur
 WORKDIR /var/www/html
 COPY . /var/www/html
