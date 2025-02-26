@@ -49,8 +49,8 @@ RUN composer require symfony/dotenv
 # Copier le code source dans le conteneur
 WORKDIR /var/www/html
 COPY . /var/www/html
-COPY .env /var/www/html/.env
-RUN chmod 644 /var/www/html/.env
+# COPY .env /var/www/html/.env
+# RUN chmod 644 /var/www/html/.env
 
 
 # Donner les bonnes permissions
