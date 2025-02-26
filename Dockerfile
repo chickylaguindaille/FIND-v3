@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Ajouter LD_LIBRARY_PATH pour résoudre les problèmes de bibliothèques partagées
-# ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # Définir la variable d'environnement APP_ENV
 ENV APP_ENV=prod
