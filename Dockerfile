@@ -1,7 +1,7 @@
-# Utiliser l'image PHP 7 officielle
+# Utiliser l'image PHP officielle pour Symfony avec la dernière version de PHP
 FROM php:8.1-cli
 
-# Installer les dépendances de base nécessaires pour compiler les extensions PHP
+# Installer les dépendances de base nécessaires pour compiler les extensions PHP et Symfony
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -24,44 +24,34 @@ RUN apt-get update && apt-get install -y \
 # Ajouter LD_LIBRARY_PATH pour résoudre les problèmes de bibliothèques partagées
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
-# Définir la variable d'environnement APP_ENV
+# Définir les variables d'environnement nécessaires pour Symfony
 ENV APP_ENV=prod
+ENV DATABASE_URL="mysql://user:password@mysql_host/db_name"
+ENV MONGODB_URL="mongodb+srv://user:password@host/database"
 
 # Installer Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Installer php-pear via PEAR
-RUN curl -sS https://pear.php.net/go-pear.phar -o go-pear.phar \
-    && php go-pear.phar \
-    && rm -f go-pear.phar
+# Installer Symfony CLI (optionnel mais utile pour les commandes Symfony dans le conteneur)
+RUN curl -sS https://get.symfony.com/cli/installer | bash
+RUN mv /root/.symfony*/bin/symfony /usr/local/bin/symfony
 
-# Installer MongoDB extension pour PHP
+# Installer l'extension MongoDB pour PHP
 RUN pecl install mongodb \
     && docker-php-ext-enable mongodb
-
-# Installer Symfony Dotenv
-RUN composer require symfony/dotenv
-
-# Définir les variable d'environnement pour MongoDB
-# ENV MONGODB_DB=find_bdd
-# ENV MONGODB_URL=mongodb+srv://folkloreisnotdead:Papeleroy02@find.cv25s88.mongodb.net
 
 # Copier le code source dans le conteneur
 WORKDIR /var/www/html
 COPY . /var/www/html
-# COPY .env /var/www/html/.env
-# RUN chmod 644 /var/www/html/.env
-
 
 # Donner les bonnes permissions
 RUN chmod -R 755 /var/www/html
 
 # Installer les dépendances PHP via Composer
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 # Exposer le port sur lequel PHP écoutera
 EXPOSE 9000
 
 # Lancer le serveur PHP avec les bonnes configurations pour Railway
 CMD echo "PORT is set to: $PORT" && php -S 0.0.0.0:$PORT -t public
-
