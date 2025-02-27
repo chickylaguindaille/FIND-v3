@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libz-dev \
     build-essential \
+    apache2 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Ajouter LD_LIBRARY_PATH pour résoudre les problèmes de bibliothèques partagées
@@ -50,6 +51,9 @@ RUN composer require symfony/dotenv
 WORKDIR /var/www/html
 COPY . /var/www/html
 
+# Copier le fichier .htaccess pour Apache
+COPY .htaccess /var/www/html/.htaccess
+
 # Donner les bonnes permissions
 RUN chmod -R 755 /var/www/html
 
@@ -59,5 +63,8 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts
 # Exposer le port sur lequel PHP écoutera
 EXPOSE 9000
 
-# Lancer le serveur PHP avec les bonnes configurations pour Railway
-CMD echo "PORT is set to: $PORT" && php -S 0.0.0.0:$PORT -t public
+# Activer mod_rewrite pour Apache
+RUN a2enmod rewrite
+
+# Lancer Apache en mode foreground pour que le serveur PHP fonctionne dans le conteneur
+CMD echo "PORT is set to: $PORT" && apache2-foreground
