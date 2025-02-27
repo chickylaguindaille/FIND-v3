@@ -24,6 +24,9 @@ RUN apt-get update && apt-get install -y \
 # Ajouter LD_LIBRARY_PATH pour résoudre les problèmes de bibliothèques partagées
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
+# Installer PDO MySQL
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Définir les variables d'environnement nécessaires pour Symfony
 ENV APP_ENV=prod
 ENV DATABASE_URL="mysql://user:password@mysql_host/db_name"
