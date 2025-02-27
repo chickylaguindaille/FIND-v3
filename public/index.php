@@ -48,6 +48,6 @@ $routes = $router->getRouteCollection(); // Obtenir toutes les routes
 // Afficher les routes avec var_dump
 // exit(var_dump($routes));
 
-// $response = $kernel->handle($request);
-// $response->send();
-// $kernel->terminate($request, $response);
+$response = $kernel->handle($request);
+$response->send();
+$kernel->terminate($request, $response);
