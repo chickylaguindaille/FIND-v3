@@ -1,7 +1,7 @@
-# Utiliser l'image PHP avec Apache
-FROM php:8.1-apache
+# Utiliser l'image PHP officielle pour Symfony avec la dernière version de PHP
+FROM php:8.1-cli
 
-# Installer les dépendances nécessaires
+# Installer les dépendances de base nécessaires pour compiler les extensions PHP et Symfony
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -50,17 +50,14 @@ RUN composer require symfony/dotenv
 WORKDIR /var/www/html
 COPY . /var/www/html
 
-# Copier le fichier .htaccess pour Apache
-COPY .htaccess /var/www/html/.htaccess
-
 # Donner les bonnes permissions
 RUN chmod -R 755 /var/www/html
 
 # Installer les dépendances PHP via Composer
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# Exposer le port sur lequel Apache écoutera
-EXPOSE 80
+# Exposer le port sur lequel PHP écoutera
+EXPOSE 9000
 
-# Lancer Apache
-CMD ["apache2-foreground"]
+# Lancer le serveur PHP avec les bonnes configurations pour Railway
+CMD echo "PORT is set to: $PORT" && php -S 0.0.0.0:$PORT -t public
