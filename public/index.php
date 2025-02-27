@@ -20,10 +20,10 @@ if (!$env) {
     putenv('SYMFONY_DOTENV_VARS=1');
 }
 
+$debug = (bool) (getenv('APP_DEBUG') ?: ('prod' !== $env));
+
 exit(var_dump($env));
 
-
-$debug = (bool) (getenv('APP_DEBUG') ?: ('prod' !== $env));
 
 if ($debug) {
     umask(0000);
