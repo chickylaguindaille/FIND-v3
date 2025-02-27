@@ -63,4 +63,4 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts
 EXPOSE 80
 
 # Lancer Apache pour servir l'application Symfony
-CMD apache2-foreground
+CMD echo "PORT is set to: $PORT" && apache2-foreground
