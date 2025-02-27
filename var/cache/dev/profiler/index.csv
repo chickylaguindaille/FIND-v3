@@ -575,3 +575,7 @@ c94bdf,::1,GET,http://localhost:8888/FIND-v3/public/index.php/app/login,17406540
 432ac5,::1,GET,http://localhost:8888/FIND-v3/public/index.php/app/login,1740654042,,200
 e4203a,::1,GET,http://localhost:8888/FIND-v3/public/index.php/app/service-worker.js,1740654042,bb147e,404
 bb147e,::1,GET,http://localhost:8888/FIND-v3/public/index.php/app/service-worker.js,1740654042,,404
+a31f0a,::1,GET,http://localhost:8888/FIND-v3/public/index.php/app/login,1740666998,,200
+4d21e1,::1,GET,http://localhost:8888/FIND-v3/public/index.php/app/login,1740666998,,200
+65c4e2,::1,GET,http://localhost:8888/FIND-v3/public/index.php/app/service-worker.js,1740666998,c585e4,404
+c585e4,::1,GET,http://localhost:8888/FIND-v3/public/index.php/app/service-worker.js,1740666998,,404
