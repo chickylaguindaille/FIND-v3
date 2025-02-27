@@ -60,4 +60,4 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts
 EXPOSE 9000
 
 # Lancer le serveur PHP avec les bonnes configurations pour Railway
-CMD echo "PORT is set to: $PORT" && php -S 0.0.0.0:$PORT -t public/app
+CMD echo "PORT is set to: $PORT" && php -S 0.0.0.0:$PORT
