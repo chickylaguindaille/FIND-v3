@@ -37,8 +37,6 @@ if ($trustedHosts = getenv('TRUSTED_HOSTS')) {
     Request::setTrustedHosts(explode(',', $trustedHosts));
 }
 
-exit(var_dump($env));
-
 // Initialisation du Kernel
 $kernel = new Kernel($env, $debug);
 $request = Request::createFromGlobals();
