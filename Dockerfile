@@ -1,7 +1,7 @@
-# Utiliser l'image PHP officielle pour Symfony avec la dernière version de PHP
-FROM php:8.1-cli
+# Utiliser l'image PHP avec Apache
+FROM php:8.1-apache
 
-# Installer les dépendances de base nécessaires pour compiler les extensions PHP et Symfony
+# Installer les dépendances nécessaires
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -19,7 +19,6 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libz-dev \
     build-essential \
-    apache2 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Ajouter LD_LIBRARY_PATH pour résoudre les problèmes de bibliothèques partagées
@@ -60,11 +59,8 @@ RUN chmod -R 755 /var/www/html
 # Installer les dépendances PHP via Composer
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# Exposer le port sur lequel PHP écoutera
-EXPOSE 9000
+# Exposer le port sur lequel Apache écoutera
+EXPOSE 80
 
-# Activer mod_rewrite pour Apache
-RUN a2enmod rewrite
-
-# Lancer Apache en mode foreground pour que le serveur PHP fonctionne dans le conteneur
-CMD echo "PORT is set to: $PORT" && apache2-foreground
+# Lancer Apache
+CMD ["apache2-foreground"]
