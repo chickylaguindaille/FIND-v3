@@ -59,7 +59,5 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts
 # Exposer le port sur lequel PHP écoutera
 EXPOSE 9000
 
-RUN php bin/console debug:router
-
 # Lancer le serveur PHP avec les bonnes configurations pour Railway
-CMD echo "PORT is set to: $PORT" && php -S 0.0.0.0:$PORT -t public
+CMD echo "PORT is set to: $PORT" && php -S 0.0.0.0:$PORT -t public/app
