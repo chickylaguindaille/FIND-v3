@@ -22,8 +22,6 @@ if (!$env) {
 
 $debug = (bool) (getenv('APP_DEBUG') ?: ('prod' !== $env));
 
-exit(var_dump($env));
-
 
 if ($debug) {
     umask(0000);
@@ -45,3 +43,5 @@ $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);
+
+exit(var_dump($env));
