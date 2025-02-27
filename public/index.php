@@ -42,7 +42,7 @@ $kernel = new Kernel($env, $debug);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
-exit(var_dump($env));
+exit(var_dump($response));
 $kernel->terminate($request, $response);
 
 
