@@ -22,7 +22,6 @@ if (!$env) {
 
 $debug = (bool) (getenv('APP_DEBUG') ?: ('prod' !== $env));
 
-
 if ($debug) {
     umask(0000);
     Symfony\Component\ErrorHandler\Debug::enable();
@@ -40,10 +39,15 @@ if ($trustedHosts = getenv('TRUSTED_HOSTS')) {
 // Initialisation du Kernel
 $kernel = new Kernel($env, $debug);
 $request = Request::createFromGlobals();
-// exit(var_dump($request));
+
+// Récupérer les routes du container Symfony
+$kernel->boot(); // Initialiser le kernel avant d'accéder au container
+$router = $kernel->getContainer()->get('router'); // Récupérer le service router
+$routes = $router->getRouteCollection(); // Obtenir toutes les routes
+
+// Afficher les routes avec var_dump
+exit(var_dump($routes));
+
 $response = $kernel->handle($request);
 $response->send();
-// exit(var_dump($response));
 $kernel->terminate($request, $response);
-
-
