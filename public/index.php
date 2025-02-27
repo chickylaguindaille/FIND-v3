@@ -1,23 +1,25 @@
 <?php
 
 use App\Kernel;
-use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Dotenv\Dotenv;
 
 require dirname(__DIR__).'/vendor/autoload.php';
 
-// Vérifie si on est en production (défini par le serveur)
+// Vérifier si on est en production
 $env = getenv('APP_ENV');
 
 if (!$env) {
-    // Si aucune variable d'environnement, charge le fichier .env (LOCAL UNIQUEMENT)
+    // Si APP_ENV n'est pas défini, on suppose qu'on est en local et on charge .env
     if (file_exists(dirname(__DIR__).'/.env')) {
         (new Dotenv())->load(dirname(__DIR__).'/.env');
     }
     $env = getenv('APP_ENV') ?: 'dev';
+} else {
+    // Si on est en prod, on empêche le chargement de .env
+    putenv('SYMFONY_DOTENV_VARS=1');
 }
 
-// Mode debug activé sauf si APP_ENV=prod
 $debug = (bool) (getenv('APP_DEBUG') ?: ('prod' !== $env));
 
 if ($debug) {
