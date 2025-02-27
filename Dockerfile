@@ -27,6 +27,9 @@ RUN docker-php-ext-install pdo pdo_mysql
 # Activer mod_rewrite pour gérer .htaccess
 RUN a2enmod rewrite
 
+# Ajouter ServerName pour éviter le warning
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 # Copier le code source dans le conteneur
 WORKDIR /var/www/html
 COPY . /var/www/html
