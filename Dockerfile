@@ -60,7 +60,7 @@ RUN chmod -R 755 /var/www/html
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 # Exposer le port 80 (Apache)
-EXPOSE 80
+EXPOSE 8080
 
 # Lancer Apache pour servir l'application Symfony
 CMD echo "PORT is set to: $PORT" && apache2-foreground
