@@ -1,4 +1,4 @@
-# Utiliser l'image PHP officielle avec Apache
+# Utiliser l'image PHP officielle pour Symfony avec la dernière version de PHP
 FROM php:8.1-apache
 
 # Installer les dépendances de base nécessaires pour compiler les extensions PHP et Symfony
@@ -59,8 +59,8 @@ RUN chmod -R 755 /var/www/html
 # Installer les dépendances PHP via Composer
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# Exposer le port 80 (Apache)
-EXPOSE 8080
+# Exposer le port sur lequel PHP écoutera
+EXPOSE 9000
 
-# Lancer Apache pour servir l'application Symfony
-CMD echo "PORT is set to: $PORT" && apache2-foreground
+# Lancer le serveur PHP avec les bonnes configurations pour Railway
+CMD echo "PORT is set to: $PORT" && php -S 0.0.0.0:$PORT -t public
