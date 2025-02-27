@@ -9,8 +9,6 @@ require dirname(__DIR__).'/vendor/autoload.php';
 // Vérifier si on est en production
 $env = getenv('APP_ENV');
 
-exit(var_dump($env));
-
 if (!$env) {
     // Si APP_ENV n'est pas défini, on suppose qu'on est en local et on charge .env
     if (file_exists(dirname(__DIR__).'/.env')) {
@@ -21,6 +19,9 @@ if (!$env) {
     // Si on est en prod, on empêche le chargement de .env
     putenv('SYMFONY_DOTENV_VARS=1');
 }
+
+exit(var_dump($env));
+
 
 $debug = (bool) (getenv('APP_DEBUG') ?: ('prod' !== $env));
 
