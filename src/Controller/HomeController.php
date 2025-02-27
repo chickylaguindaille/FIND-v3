@@ -100,8 +100,7 @@ class HomeController extends AbstractController
             $profile = $this->findAuth->getUserByEmail($user->getEmail());
             $data['profile'] = $profile;
         }
-        
-
+    
         return $this->render('find/home.html.twig', $data);
     }
     
