@@ -40,10 +40,10 @@ if ($trustedHosts = getenv('TRUSTED_HOSTS')) {
 // Initialisation du Kernel
 $kernel = new Kernel($env, $debug);
 $request = Request::createFromGlobals();
-exit(var_dump($request));
+// exit(var_dump($request));
 $response = $kernel->handle($request);
 $response->send();
-exit(var_dump($response));
+// exit(var_dump($response));
 $kernel->terminate($request, $response);
 
 
